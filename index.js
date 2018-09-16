@@ -33,6 +33,9 @@ client.on("guildDelete", guild => {
 
 
 client.on("message", async message => {
+    if (message.content == "Bonjour") {
+        message.channel.send("Salut " + message.author + ", comment ça va ?");
+    }
     // This event will run on every single message received, from any channel or DM.
 
     // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -124,8 +127,8 @@ client.on("message", async message => {
         const deleteCount = parseInt(args[0], 10);
 
         // Ooooh nice, combined conditions. <3
-        if (!deleteCount || deleteCount < 2 || deleteCount > 100)
-            return message.reply("Merci d'indiquer le nombre de messages entre 2 et 100 à supprimer");
+        if (!deleteCount || deleteCount < 0 || deleteCount > 2)
+            return message.reply("Merci d'indiquer le nombre de messages entre 1 et 1 à supprimer");
 
         // So we get our messages, and delete them. Simple enough, right?
         const fetched = await message.channel.fetchMessages({ limit: deleteCount });
