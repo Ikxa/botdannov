@@ -74,7 +74,7 @@ client.on("message", async message => {
         // Please read on Array.some() to understand this bit: 
         // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
         if (!message.member.roles.some(r => ["Administrator", "Moderator"].includes(r.name)))
-            return message.reply("Désolé, vous n'avez pas les permissions nécessaires!");
+            return message.reply("T'as cru t'étais le chef ?! Mange tes morts !");
 
         // Let's first check if we have a member and if we can kick them!
         // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
