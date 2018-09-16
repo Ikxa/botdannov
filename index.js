@@ -135,6 +135,10 @@ client.on("message", async message => {
         message.channel.bulkDelete(fetched)
             .catch(error => message.reply(`Je n'ai pas pu supprimer les messages car : ${error}`));
     }
+
+    if (command === "play") {
+        message.member.voiceChannel.join();
+    }
 });
 
 client.login(process.env.TOKEN);
