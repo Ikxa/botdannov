@@ -12,6 +12,6 @@
   "dependencies": {
     "opusscript": "0.0.6",
     "ytdl-core": "^0.25.2",
-    "discord.js”: "^11.4.2",
+    "discord.js”: "^11.4.2"
   }
 }
