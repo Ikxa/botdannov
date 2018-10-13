@@ -135,6 +135,14 @@ client.on("message", async message => {
         message.channel.bulkDelete(fetched)
             .catch(error => message.reply(`Je n'ai pas pu supprimer les messages car : ${error}`));
     }
+
+    if (command === "huh") {
+        message.channel.send('Message that goes above image', {
+            files: [
+                "./huh.png"
+            ]
+        });
+    }
 });
 
 client.login(process.env.TOKEN);
