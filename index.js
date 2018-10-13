@@ -137,7 +137,7 @@ client.on("message", async message => {
     }
 
     if (command === "huh") {
-        message.channel.send('Message that goes above image', {
+        message.channel.send('', {
             files: [
                 "./huh.png"
             ]
