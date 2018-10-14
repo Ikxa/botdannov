@@ -151,6 +151,14 @@ client.on("message", async message => {
             ]
         });
     }
+
+    if (command === "yessay") {
+        message.channel.send('', {
+            files: [
+                "./yessay.png"
+            ]
+        });
+    }
 });
 
 client.login(process.env.TOKEN);
