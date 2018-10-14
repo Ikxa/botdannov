@@ -171,7 +171,7 @@ client.on("message", async message => {
     if (command === "spr") {
         message.channel.send('', {
             files: [
-                "./suprised.png"
+                "./surprised.png"
             ]
         });
     }
