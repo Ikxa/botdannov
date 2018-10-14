@@ -167,6 +167,14 @@ client.on("message", async message => {
             ]
         });
     }
+
+    if (command === "spr") {
+        message.channel.send('', {
+            files: [
+                "./suprised.png"
+            ]
+        });
+    }
 });
 
 client.login(process.env.TOKEN);
