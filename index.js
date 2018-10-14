@@ -143,6 +143,14 @@ client.on("message", async message => {
             ]
         });
     }
+
+    if (command === "ap") {
+        message.channel.send('', {
+            files: [
+                "./auplaisir.png"
+            ]
+        });
+    }
 });
 
 client.login(process.env.TOKEN);
