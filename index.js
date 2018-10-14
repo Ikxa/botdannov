@@ -159,6 +159,14 @@ client.on("message", async message => {
             ]
         });
     }
+
+    if (command === "giclette") {
+        message.channel.send('', {
+            files: [
+                "./giclette.png"
+            ]
+        });
+    }
 });
 
 client.login(process.env.TOKEN);
