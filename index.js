@@ -125,7 +125,7 @@ client.on("message", async message => {
     
     
     if (command === "help") {
-        message.channel.send('Voici les commandes disponibles : \n !ping - Commande inutile \n !say - Commande sympa \n !kick - Voyez avec le chef, Swytax \n !ban - Voyez avec le chef, Swytax \n !purge - Commande cool \n\n Voici les emotes : \n !huh - Tête marrante \n !ap - Au plaisir chef \n !yessay - Yessay bonhomme \n !giclette - Ce sont des choses qui arrivent \n !spr - Suprise !');
+        message.channel.send('Yo @everyone, \n\n Voici les commandes disponibles : \n\n !ping - Commande inutile \n !say - Commande sympa \n !kick - Voyez avec le chef, Swytax \n !ban - Voyez avec le chef, Swytax \n !purge - Commande cool \n\n Voici les emotes : \n\n !huh - Tête marrante \n !ap - Au plaisir chef \n !yessay - Yessay bonhomme \n !giclette - Ce sont des choses qui arrivent \n !spr - Suprise !');
     }
 
     // Emotes
