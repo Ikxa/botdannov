@@ -16,21 +16,8 @@ client.on("ready", () => {
     console.log(`BotDanNov a démarré, avec ${client.users.size} utilisateurs, dans ${client.channels.size} channels de ${client.guilds.size} guildes.`);
     // Example of changing the bot's playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
+    client.user.setActivity(`Consulte PornHub`);
 });
-
-client.on("guildCreate", guild => {
-    // This event triggers when the bot joins a guild.
-    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
-
-client.on("guildDelete", guild => {
-    // this event triggers when the bot is removed from a guild.
-    console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setActivity(`Serving ${client.guilds.size} servers`);
-});
-
 
 client.on("message", async message => {
     if (message.content == "Bonjour") {
@@ -135,45 +122,53 @@ client.on("message", async message => {
         message.channel.bulkDelete(fetched)
             .catch(error => message.reply(`Je n'ai pas pu supprimer les messages car : ${error}`));
     }
-
-    if (command === "huh") {
-        message.channel.send('', {
-            files: [
-                "./huh.png"
-            ]
-        });
+    
+    
+    if (command === "help") {
+        message.channel.send('Voici les commandes disponibles : \n !ping - Commande inutile \n !say - Commande sympa \n !kick - Voyez avec le chef, Swytax \n !ban - Voyez avec le chef, Swytax \n !purge - Commande cool \n\n Voici les emotes : \n !huh - Tête marrante \n !ap - Au plaisir chef \n !yessay - Yessay bonhomme \n !giclette - Ce sont des choses qui arrivent \n !spr - Suprise !');
     }
 
-    if (command === "ap") {
-        message.channel.send('', {
-            files: [
-                "./auplaisir.png"
-            ]
-        });
-    }
+    // Emotes
+    switch (command) {
+        case 'huh':
+            message.channel.send('', {
+                files: [
+                    "./huh.png"
+                ]
+            });
+            break;
 
-    if (command === "yessay") {
-        message.channel.send('', {
-            files: [
-                "./yessay.png"
-            ]
-        });
-    }
+        case 'ap':
+            message.channel.send('', {
+                files: [
+                    "./auplaisir.png"
+                ]
+            });
+            break;
 
-    if (command === "giclette") {
-        message.channel.send('', {
-            files: [
-                "./giclette.png"
-            ]
-        });
-    }
+        case 'yessay':
+            message.channel.send('', {
+                files: [
+                    "./yessay.png"
+                ]
+            });
+            break;
 
-    if (command === "spr") {
-        message.channel.send('', {
-            files: [
-                "./surprised.png"
-            ]
-        });
+        case 'giclette':
+            message.channel.send('', {
+                files: [
+                    "./giclette.png"
+                ]
+            });
+            break;
+            
+        case 'spr':
+            message.channel.send('', {
+                files: [
+                    "./surprised.png"
+                ]
+            });
+            break;
     }
 });
 
