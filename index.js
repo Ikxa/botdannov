@@ -122,6 +122,10 @@ client.on("message", async message => {
         message.channel.bulkDelete(fetched)
             .catch(error => message.reply(`Je n'ai pas pu supprimer les messages car : ${error}`));
     }
+
+    if (command === "dm") {
+        client.user.createDM("Salut");
+    }
     
     
     if (command === "help") {
