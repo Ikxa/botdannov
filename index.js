@@ -16,7 +16,7 @@ client.on("ready", () => {
     console.log(`BotDanNov a démarré, avec ${client.users.size} utilisateurs, dans ${client.channels.size} channels de ${client.guilds.size} guildes.`);
     // Example of changing the bot's playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
-    client.user.setActivity(`Consulte PornHub`);
+    client.user.setActivity('Youtube', { type: 'WATCHING' });
 });
 
 client.on("message", async message => {
