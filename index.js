@@ -80,7 +80,8 @@ client.on("message", async message => {
     if (command === "dm") {
         const dmMessage = args.join(" ");
         message.delete().catch(O_o => { });
-        message.author.send(dmMessage);
+        // message.author.send(dmMessage);
+        message.member.send(dmMessage);
     }
     
     
