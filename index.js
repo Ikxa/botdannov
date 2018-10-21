@@ -78,14 +78,10 @@ client.on("message", async message => {
     }
 
     if (command === "dm") {
-
         let user = message.mentions.users.first();
-        user.send("Yo, ça veut jouer ?");
-
-        /* const dmMessage = args.join(" ");
+        const dmMessage = args.join(" ");
+        user.send(dmMessage);
         message.delete().catch(O_o => { });
-        message.author.send(dmMessage[0]);
-        // message.member.send(dmMessage[0]); */
     }
     
     
