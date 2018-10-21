@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 client.on("ready", () => {
     console.log(`BotDanNov a démarré, avec ${client.users.size} utilisateurs, dans ${client.channels.size} channels de ${client.guilds.size} guildes.`);
-    client.user.setActivity('Lowki le gros baiseur', { type: 'WATCHING' });
+    client.user.setActivity('Lowki car c\'est le big boss', { type: 'WATCHING' });
 });
 
 client.on("message", async message => {
