@@ -124,7 +124,7 @@ client.on("message", async message => {
     }
 
     if (command === "dm") {
-        client.user.createDM("Salut");
+        message.author.send('Yo mec, tu veux jouer ?');
     }
     
     
