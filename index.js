@@ -133,7 +133,7 @@ client.on("message", async message => {
         case 'huh':
             message.channel.send('', {
                 files: [
-                    "./huh.png"
+                    "./emotes/huh.png"
                 ]
             });
             break;
@@ -141,7 +141,7 @@ client.on("message", async message => {
         case 'ap':
             message.channel.send('', {
                 files: [
-                    "./auplaisir.png"
+                    "./emotes/auplaisir.png"
                 ]
             });
             break;
@@ -149,7 +149,7 @@ client.on("message", async message => {
         case 'yessay':
             message.channel.send('', {
                 files: [
-                    "./yessay.png"
+                    "./emotes/yessay.png"
                 ]
             });
             break;
@@ -157,7 +157,7 @@ client.on("message", async message => {
         case 'giclette':
             message.channel.send('', {
                 files: [
-                    "./giclette.png"
+                    "./emotes/giclette.png"
                 ]
             });
             break;
@@ -165,7 +165,7 @@ client.on("message", async message => {
         case 'spr':
             message.channel.send('', {
                 files: [
-                    "./surprised.png"
+                    "./emotes/surprised.png"
                 ]
             });
             break;
