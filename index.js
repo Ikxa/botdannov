@@ -134,6 +134,10 @@ client.on("message", async message => {
                 ]
             });
             break;
+
+        case 'shrug':
+            message.channel.send('¯ _ (ツ) _ / ¯');
+            break;
     }
 });
 
