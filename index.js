@@ -89,6 +89,11 @@ client.on("message", async message => {
         message.channel.send('Yo @everyone, \n\n Voici les commandes disponibles : \n\n **!ping** - Commande inutile \n **!dm @someone myMessage** - Commande pour demander des nudes \n **!say** - Commande sympa \n **!kick** - Voyez avec le chef, Swytax \n **!ban** - Voyez avec le chef, Swytax \n **!purge** - Commande cool \n\n Voici les emotes : \n\n **!huh** - Tête marrante \n **!ap** - Au plaisir chef \n **!yessay** - Yessay bonhomme \n **!giclette** - Ce sont des choses qui arrivent \n **!spr** - Suprise !');
     }
 
+    if (command === "gif") {
+        var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=889N1CZ6fW5qUCwBvdAmqQPVkfiyZgNY&limit=5");
+        xhr.done(function(data) { console.log("success got data", data); });
+    }
+
     switch (command) {
         case 'huh':
             message.channel.send('', {
