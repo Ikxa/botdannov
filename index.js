@@ -69,7 +69,7 @@ client.on("message", async message => {
     if (command === "purge") {
         const deleteCount = parseInt(args[0], 10);
 
-        if (!deleteCount || deleteCount < 0 || deleteCount >= 10)
+        if (!deleteCount || deleteCount < 0 || deleteCount > 10)
             return message.reply("Merci d'indiquer le nombre de messages entre 1 et 10 à supprimer");
 
         const fetched = await message.channel.fetchMessages({ limit: deleteCount });
@@ -84,14 +84,37 @@ client.on("message", async message => {
         message.delete().catch(O_o => { });
     }
     
+    if (command === "chifoumi") {
+        const Userchoice = args.join(" ");
+        let UserchoiceUpp = Userchoice.toUpperCase();
+        let IAChoice = Math.floor((Math.random() * 3) + 1);
+        // 1 = Pierre
+        // 2 = Feuille 
+        // 3 = Ciseaux
+        switch (IAChoice) {
+            case 1:
+                if (UserchoiceUpp == "FEUILLE")
+                    message.channel.send("J'ai choisi **pierre**, tu gagnes !");
+                else 
+                    message.channel.send("J'ai choisi **pierre**, tu perds !");
+                break;
+            case 2:
+                if (UserchoiceUpp == "CISEAUX")
+                    message.channel.send("J'ai choisi **feuille**, tu gagnes !");
+                else 
+                    message.channel.send("J'ai choisi **feuille**, tu perds !");
+                break;
+            case 3:
+                if (UserchoiceUpp == "PIERRE")
+                    message.channel.send("J'ai choisi **ciseaux**, tu gagnes !");
+                else
+                    message.channel.send("J'ai choisi **ciseaux**, tu perds !");
+                break;
+        }
+    }
     
     if (command === "help") {
         message.channel.send('Yo @everyone, \n\n Voici les commandes disponibles : \n\n **!ping** - Commande inutile \n **!dm @someone myMessage** - Commande pour demander des nudes \n **!say** - Commande sympa \n **!kick** - Voyez avec le chef, Swytax \n **!ban** - Voyez avec le chef, Swytax \n **!purge** - Commande cool \n\n Voici les emotes : \n\n **!huh** - Tête marrante \n **!ap** - Au plaisir chef \n **!yessay** - Yessay bonhomme \n **!giclette** - Ce sont des choses qui arrivent \n **!spr** - Suprise !');
-    }
-
-    if (command === "gif") {
-        var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=889N1CZ6fW5qUCwBvdAmqQPVkfiyZgNY&limit=5");
-        xhr.done(function(data) { console.log("success got data", data); });
     }
 
     switch (command) {
