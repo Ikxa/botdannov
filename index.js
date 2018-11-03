@@ -95,18 +95,24 @@ client.on("message", async message => {
             case 1:
                 if (UserchoiceUpp == "FEUILLE")
                     message.channel.send("J'ai choisi **pierre**, tu gagnes !");
+                else if (UserchoiceUpp == "PIERRE") 
+                    message.channel.send("J'ai choisi **pierre** aussi, égalité mon chou !");
                 else 
                     message.channel.send("J'ai choisi **pierre**, tu perds !");
                 break;
             case 2:
                 if (UserchoiceUpp == "CISEAUX")
                     message.channel.send("J'ai choisi **feuille**, tu gagnes !");
+                if (UserchoiceUpp == "FEUILLE")
+                    message.channel.send("J'ai choisi **feuille** aussi, égalité poulette !");
                 else 
                     message.channel.send("J'ai choisi **feuille**, tu perds !");
                 break;
             case 3:
                 if (UserchoiceUpp == "PIERRE")
                     message.channel.send("J'ai choisi **ciseaux**, tu gagnes !");
+                if (UserchoiceUpp == "CISEAUX")
+                    message.channel.send("J'ai choisi **ciseaux** aussi, tout est à refaire !");
                 else
                     message.channel.send("J'ai choisi **ciseaux**, tu perds !");
                 break;
