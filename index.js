@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 client.on("ready", () => {
     console.log(`BotDanNov a démarré, avec ${client.users.size} utilisateurs, dans ${client.channels.size} channels de ${client.guilds.size} guildes.`);
-    client.user.setActivity('pas le serveur de Justin parce qu\'il pue sa mère', { type: 'WATCHING' });
+    client.user.setActivity('pas le serveur de Justin parce qu\'il pue ma mère', { type: 'WATCHING' });
 });
 
 client.on("message", async message => {
@@ -24,7 +24,7 @@ client.on("message", async message => {
         m.edit(`Pong! La latence est de ${m.createdTimestamp - message.createdTimestamp}ms. La latence de l'API est de ${Math.round(client.ping)}ms`);
     }
 
-    if (command === "say") { 
+    if (command === "say") {
         const sayMessage = args.join(" ");
         message.delete().catch(O_o => { });
         message.channel.send(sayMessage);
@@ -83,21 +83,21 @@ client.on("message", async message => {
         user.send(dmMessage);
         message.delete().catch(O_o => { });
     }
-    
+
     if (command === "chifoumi") {
         const Userchoice = args.join(" ");
         let UserchoiceUpp = Userchoice.toUpperCase();
         let IAChoice = Math.floor((Math.random() * 3) + 1);
         // 1 = Pierre
-        // 2 = Feuille 
+        // 2 = Feuille
         // 3 = Ciseaux
         switch (IAChoice) {
             case 1:
                 if (UserchoiceUpp == "FEUILLE")
                     message.channel.send("J'ai choisi **pierre**, tu gagnes !");
-                else if (UserchoiceUpp == "PIERRE") 
+                else if (UserchoiceUpp == "PIERRE")
                     message.channel.send("J'ai choisi **pierre** aussi, égalité mon chou !");
-                else 
+                else
                     message.channel.send("J'ai choisi **pierre**, tu perds !");
                 break;
             case 2:
@@ -105,7 +105,7 @@ client.on("message", async message => {
                     message.channel.send("J'ai choisi **feuille**, tu gagnes !");
                 if (UserchoiceUpp == "FEUILLE")
                     message.channel.send("J'ai choisi **feuille** aussi, égalité poulette !");
-                else 
+                else
                     message.channel.send("J'ai choisi **feuille**, tu perds !");
                 break;
             case 3:
@@ -118,7 +118,7 @@ client.on("message", async message => {
                 break;
         }
     }
-    
+
     if (command === "help") {
         message.channel.send('Yo @everyone, \n\n Voici les commandes disponibles : \n\n **!ping** - Commande inutile \n **!dm @someone myMessage** - Commande pour demander des nudes \n **!say** - Commande sympa \n **!kick** - Voyez avec le chef, Swytax \n **!ban** - Voyez avec le chef, Swytax \n **!purge** - Commande cool \n\n Voici les emotes : \n\n **!huh** - Tête marrante \n **!ap** - Au plaisir chef \n **!yessay** - Yessay bonhomme \n **!giclette** - Ce sont des choses qui arrivent \n **!spr** - Suprise !');
     }
@@ -155,7 +155,7 @@ client.on("message", async message => {
                 ]
             });
             break;
-            
+
         case 'spr':
             message.channel.send('', {
                 files: [
