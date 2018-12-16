@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "opencollective-postinstall"
+  },
+  "collective": {
+    "url": "https://opencollective.com/webpack"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,7 @@
     "config.json": "0.0.4",
     "discord.js": "*",
     "node-cron": "^2.0.3",
+    "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
     "ytdl-core": "^0.25.2"
   }
