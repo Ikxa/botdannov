@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 // const cron = require("node-cron");
 const fs = require("fs");
 
-const config = require('config.json');
+const config = require('config/config');
 
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
@@ -19,6 +19,7 @@ bot.on("ready", () => {
     bot.user.setActivity(".help", { type: "LISTENING" }).catch(err => console.error(err));
     console.log("Bot ready"); // eslint-disable-line
 });
+
 bot.on("disconnected", () => {
     bot.login(process.env.TOKEN).catch(err => console.error(err));
 });
