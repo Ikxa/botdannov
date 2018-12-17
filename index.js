@@ -39,6 +39,4 @@ bot.on("message", message => {
     }
 });
 
-// bot.login(process.env.TOKEN);
-
-bot.login('');
+bot.login(process.env.TOKEN);
