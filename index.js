@@ -23,6 +23,13 @@ bot.on("disconnected", () => {
 
 // Event listener for messages
 bot.on("message", message => {
+    if (message.author.id === '231451354470678528') {
+        if (message.attachments.size > 0) {
+            message.delete();
+            message.channel.send('Interdiction de poster des photos Lowki ! Enfoiré !');
+        }
+    }
+
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
         const commandName = args.shift().toLowerCase();
