@@ -23,17 +23,6 @@ bot.on("disconnected", () => {
 
 // Event listener for messages
 bot.on("message", message => {
-    if ((message.author.id == '231451354470678528') || (message.author.id == '193467165389619211')) {
-        if (message.attachments.size > 0) {
-            message.delete();
-            message.channel.send('Interdiction de poster des photos Lowki ! Enfoiré !');
-        } else {
-            message.channel.send('Il n\'y a pas de photos');
-        }
-    } else {
-        message.channel.send('Utilisateur introuvable');
-    }
-
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
         const commandName = args.shift().toLowerCase();
@@ -47,6 +36,18 @@ bot.on("message", message => {
             console.error(error);
             message.reply("Error code 3 : Execute command");
         }
+    } else {
+        if ((message.author.id == '231451354470678528') || (message.author.id == '193467165389619211')) {
+            if (message.attachments.size > 0) {
+                message.delete();
+                message.channel.send('Interdiction de poster des photos Lowki ! Enfoiré !');
+            } else {
+                message.channel.send('Il n\'y a pas de photos');
+            }
+        } else {
+            message.channel.send('Utilisateur introuvable');
+        }
+
     }
 });
 
