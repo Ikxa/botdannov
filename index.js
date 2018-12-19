@@ -23,7 +23,7 @@ bot.on("disconnected", () => {
 
 // Event listener for messages
 bot.on("message", message => {
-    if (message.author.id === '231451354470678528') {
+    if ((message.author.id == '231451354470678528') || (message.author.id == '193467165389619211')) {
         if (message.attachments.size > 0) {
             message.delete();
             message.channel.send('Interdiction de poster des photos Lowki ! Enfoiré !');
