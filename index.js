@@ -27,7 +27,11 @@ bot.on("message", message => {
         if (message.attachments.size > 0) {
             message.delete();
             message.channel.send('Interdiction de poster des photos Lowki ! Enfoiré !');
+        } else {
+            message.channel.send('Il n\'y a pas de photos');
         }
+    } else {
+        message.channel.send('Utilisateur introuvable');
     }
 
     if (message.content.startsWith(prefix)) {
