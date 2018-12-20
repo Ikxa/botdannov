@@ -16,7 +16,7 @@ module.exports = {
             return finalArray;
         }
         let Jordan = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
-        let Lowki = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
+        let Lowki = ["League of Legends"];
         let res = compare(Jordan, Lowki);
         let randomNumber = Math.floor(Math.random() * res.length);
 
