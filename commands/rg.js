@@ -23,6 +23,7 @@ module.exports = {
         let finalComparison = compare(Jordan, Lowki);
         let randomNumber = Math.floor(Math.random() * finalComparison.length);
 
-        message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
+        // message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
+        message.channel.send(typeof args[0]);
     },
 };
