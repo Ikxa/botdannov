@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff7b585-bf51-456d-90c5-70b210441a00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/commands/chifoumi.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/chifoumi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/help.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/meteo.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/meteo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/rd.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/rd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands/rg.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/rg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/say.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/say.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,16 +40,16 @@
         <entry file="file://$PROJECT_DIR$/commands/rd.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/rg.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+            <state relative-caret-position="216">
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -76,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/meteo.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
@@ -114,12 +110,12 @@
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/config/config.json" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/commands/rg.js" />
         <option value="$PROJECT_DIR$/commands/chifoumi.js" />
         <option value="$PROJECT_DIR$/commands/help.js" />
         <option value="$PROJECT_DIR$/commands/say.js" />
         <option value="$PROJECT_DIR$/commands/meteo.js" />
         <option value="$PROJECT_DIR$/commands/rd.js" />
+        <option value="$PROJECT_DIR$/commands/rg.js" />
       </list>
     </option>
   </component>
@@ -220,12 +216,13 @@
       <workItem from="1545177040355" duration="1481000" />
       <workItem from="1545264268068" duration="49000" />
       <workItem from="1545264356991" duration="2024000" />
-      <workItem from="1545314450075" duration="221000" />
+      <workItem from="1545314450075" duration="315000" />
+      <workItem from="1545314903281" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19217000" />
+    <option name="totallyTimeSpent" value="19359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -319,14 +316,7 @@
     <entry file="file://$PROJECT_DIR$/commands/rd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commands/rg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -348,6 +338,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/rg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
         </state>
       </provider>
     </entry>
