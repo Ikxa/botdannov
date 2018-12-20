@@ -11,7 +11,7 @@ module.exports = {
 
 
 
-        const contentFolder = fs.readFileSync("./files/games.json");
-        message.channel.send(contentFolder);
+        let data = fs.readFileSync('./files/games.json','utf8');
+        message.channel.send(data);
     },
 };
