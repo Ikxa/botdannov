@@ -13,7 +13,9 @@ module.exports = {
 
         let data = fs.readFileSync('./files/games.json','utf8');
         let dataJson = JSON.parse(data);
-
-        message.channel.send(typeof dataJson);
+        dataJson.forEach(function(e) {
+            message.channel.send(e);
+        });
+        // message.channel.send(typeof dataJson);
     },
 };
