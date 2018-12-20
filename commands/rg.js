@@ -4,18 +4,22 @@ module.exports = {
     name: "rg",
     description: "Vous ne savez pas à quoi jouer ? Demandez !",
     execute(message, args) {
-        // const limit = parseInt(args.join(" "));
-        /*let games = ['League of Legends', 'Rocket League', 'Brawlhalla', 'H1Z1', 'PUBG', 'CS:Go', 'Dofus', 'Battlefield V', 'Fifa 18', 'Witch it', 'Business Tour', 'Minecraft', 'Gang Beast'];
-        const number = Math.floor((Math.random() * games.length) + 1);
-        message.channel.send('Vous devez jouer à : **' + games[number] + '**');*/
+        function compare(arr1, arr2) {
+            const finalArray = [];
 
+            arr1.forEach((e1) => arr2.forEach((e2) => {
+                if (e1 === e2) {
+                    finalArray.push(e1);
+                }
+            }));
 
+            return finalArray;
+        }
+        let Jordan = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
+        let Lowki = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
+        let res = compare(Jordan, Lowki);
+        let randomNumber = Math.floor(Math.random() * res.length);
 
-        let data = fs.readFileSync('./files/games.json','utf8');
-        let dataJson = JSON.parse(data);
-        dataJson.forEach(function(e) {
-            message.channel.send(e);
-        });
-        // message.channel.send(typeof dataJson);
+        message.channel.send('Vous devez jouer à : ' + res[randomNumber]);
     },
 };
