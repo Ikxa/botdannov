@@ -15,11 +15,14 @@ module.exports = {
 
             return finalArray;
         }
-        let Jordan = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
-        let Lowki = ["League of Legends"];
-        let res = compare(Jordan, Lowki);
-        let randomNumber = Math.floor(Math.random() * res.length);
 
-        message.channel.send('Vous devez jouer à : ' + res[randomNumber]);
+        let Jordan = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
+        let Lowki = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
+        let Adrien = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
+        let Fiffou = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
+        let finalComparison = compare(args[0], args[1]);
+        let randomNumber = Math.floor(Math.random() * finalComparison.length);
+
+        message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
     },
 };
