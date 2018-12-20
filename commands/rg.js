@@ -57,7 +57,11 @@ module.exports = {
             let finalComparison = compare(arg0, arg1);
             let randomNumber = Math.floor(Math.random() * finalComparison.length);
 
-            message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
+            if (typeof finalComparison[randomNumber] !== 'undefined') {
+                message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
+            } else {
+                message.channel.send("Il n'y a pas de jeu en commun entre ces deux keum...");
+            }
         } else {
             let games = ["League of Legends", "Rocket League", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "Brawlhalla", "Minecraft", "Witch it", "Business Tour"];
             let randomNumber = Math.floor(Math.random() * games.length);
