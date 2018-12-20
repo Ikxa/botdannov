@@ -12,6 +12,7 @@ module.exports = {
 
 
         let data = fs.readFileSync('./files/games.json','utf8');
-        message.channel.send(data);
+
+        message.channel.send(typeof data);
     },
 };
