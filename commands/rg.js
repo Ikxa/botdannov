@@ -20,7 +20,7 @@ module.exports = {
         let Lowki = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
         let Adrien = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
         let Fiffou = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
-        let finalComparison = compare(args[0], args[1]);
+        let finalComparison = compare(Jordan, Lowki);
         let randomNumber = Math.floor(Math.random() * finalComparison.length);
 
         message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
