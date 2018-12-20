@@ -16,42 +16,44 @@ module.exports = {
             return finalArray;
         }
 
-        let Jordan = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa", "Witch it", "Business Tour", "Minecraft", "Gang Beast", "Overcooked"];
-        let Lowki = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa"];
-        let Adrien = ["League of Legends"];
-        let Fiffou = ["Battlefield V"];
+        let arg0 = args[0].toUpperCase();
+        let arg1 = args[1].toUpperCase();
+        let JORDAN = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "Witch it", "Business Tour", "Minecraft", "DayZ"];
+        let LOWKI = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ"];
+        let ADRIEN = ["Rocket League", "League of Legends", "Fifa 18", "Fifa 19", "PUBG", "Minecraft", "CS:Go", "Brawlallah"];
+        let FIFFOU = ["Battlefield V"];
 
-        switch (args[0]) {
-            case 'Jordan':
-                args[0] = Jordan;
+        switch (arg0) {
+            case 'JORDAN':
+                arg0 = JORDAN;
                 break;
-            case 'Lowki':
-                args[0] = Lowki;
+            case 'LOWKI':
+                arg0 = LOWKI;
                 break;
-            case 'Adrien':
-                args[0] = Adrien;
+            case 'ADRIEN':
+                arg0 = ADRIEN;
                 break;
-            case 'Fiffou':
-                args[0] = Fiffou;
+            case 'FIFFOU':
+                arg0 = FIFFOU;
                 break;
         }
 
-        switch (args[1]) {
-            case 'Jordan':
-                args[1] = Jordan;
+        switch (arg1) {
+            case 'JORDAN':
+                arg1 = JORDAN;
                 break;
-            case 'Lowki':
-                args[1] = Lowki;
+            case 'LOWKI':
+                arg1 = LOWKI;
                 break;
-            case 'Adrien':
-                args[1] = Adrien;
+            case 'ADRIEN':
+                arg1 = ADRIEN;
                 break;
-            case 'Fiffou':
-                args[1] = Fiffou;
+            case 'FIFFOU':
+                arg1 = FIFFOU;
                 break;
         }
 
-        let finalComparison = compare(args[0], args[1]);
+        let finalComparison = compare(arg0, arg1);
         let randomNumber = Math.floor(Math.random() * finalComparison.length);
 
         message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
