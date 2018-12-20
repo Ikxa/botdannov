@@ -1,6 +1,6 @@
 module.exports = {
     name: "chifoumi",
-    description: "Play chifoumi with the bot.",
+    description: ".chifoumi choix - une partie de chifoumi avec le bot ?",
     execute(message, args) {
         let userChoice = args.join(" ").toUpperCase();
         let computerChoice = Math.floor((Math.random() * 3) + 1);

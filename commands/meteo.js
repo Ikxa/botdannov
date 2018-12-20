@@ -1,6 +1,6 @@
 module.exports = {
     name: "meteo",
-    description: "Return the weather.",
+    description: ".meteo ville (? demain ?) - pour obtenir la météo dans votre ville !",
     execute(message, args) {
         if (args.length > 0) {
             if (args[1] && args[1] === "demain") {
