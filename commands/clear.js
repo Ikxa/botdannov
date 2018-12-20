@@ -5,7 +5,7 @@ module.exports = {
     name: "clear",
     description: "Supprimer un certain nombre de message",
     execute(message, args) {
-        client.on("message", async => message => {
+        client.on("message", async message => {
             if (args.length > 0) {
                 const deleteCount = parseInt(args[0], 10);
 
