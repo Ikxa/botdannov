@@ -62,12 +62,6 @@ module.exports = {
 
             if (arg0 == null || arg1 == null) {
                 message.channel.send("Je ne connais pas l'un des deux personnes");
-            } else if (arg0 === ADRIEN || arg1 === ADRIEN) {
-                message.channel.send('', {
-                    files: [
-                        "./emotes/adrien.jpg"
-                    ]
-                });
             } else {
                 let finalComparison = compare(arg0, arg1);
 
