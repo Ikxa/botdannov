@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bff7b585-bf51-456d-90c5-70b210441a00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/google.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/clear.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/play.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/play.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/search.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,19 +56,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/commands/search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="61" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="61" />
+            <state relative-caret-position="285">
+              <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -137,12 +125,12 @@
         <option value="$PROJECT_DIR$/commands/say.js" />
         <option value="$PROJECT_DIR$/commands/meteo.js" />
         <option value="$PROJECT_DIR$/commands/rd.js" />
-        <option value="$PROJECT_DIR$/commands/play.js" />
         <option value="$PROJECT_DIR$/files/games.json" />
         <option value="$PROJECT_DIR$/commands/clear.js" />
         <option value="$PROJECT_DIR$/commands/rg.js" />
         <option value="$PROJECT_DIR$/config/google.js" />
         <option value="$PROJECT_DIR$/commands/search.js" />
+        <option value="$PROJECT_DIR$/commands/play.js" />
       </list>
     </option>
   </component>
@@ -174,6 +162,11 @@
               <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
               <item name="botdannov" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="botdannov" type="462c0819:PsiDirectoryNode" />
+              <item name="sounds" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,12 +235,12 @@
       <workItem from="1545328331406" duration="6000" />
       <workItem from="1545328361511" duration="9462000" />
       <workItem from="1545351328628" duration="611000" />
-      <workItem from="1545389078976" duration="285000" />
+      <workItem from="1545389078976" duration="460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30562000" />
+    <option name="totallyTimeSpent" value="30737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="798" extended-state="0" />
@@ -353,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/play.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commands/help.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -388,6 +374,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commands/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/commands/rg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -395,10 +388,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/search.js">
+    <entry file="file://$PROJECT_DIR$/commands/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="285">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
         </state>
       </provider>
     </entry>

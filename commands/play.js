@@ -8,7 +8,7 @@ module.exports = {
         if (voiceChannel !== undefined) {
             // Vérifier si le son existe
             let soundExist = false;
-            const contentFolder = fs.readdirSync("./sounds");
+            const contentFolder = fs.readdir("../sounds");
             contentFolder.forEach(file => {
                 const soundName = file.substring(0, file.length - 4);
                 if (args[0] === soundName) {
@@ -17,7 +17,7 @@ module.exports = {
             });
             if (soundExist) {
                 voiceChannel.join().then(connection => {
-                    const dispatcher = connection.playFile(`./sounds/${args[0]}.mp3`);
+                    const dispatcher = connection.playFile(`../sounds/${args[0]}.mp3`);
                     dispatcher.on("end", () => {
                         voiceChannel.leave();
                     });
