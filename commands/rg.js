@@ -20,7 +20,7 @@ module.exports = {
             let arg0 = args[0].toUpperCase();
             let arg1 = args[1].toUpperCase();
             let JORDAN = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "Witch it", "Business Tour", "Minecraft", "DayZ"];
-            let LOWKI = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ"];
+            let LOWKI = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "PUBG", "Battlefield 1"];
             let ADRIEN = ["Rocket League", "League of Legends", "Fifa 18", "Fifa 19", "PUBG", "Minecraft", "CS:Go", "Brawlallah"];
             let FIFFOU = ["Battlefield V"];
 
@@ -62,6 +62,12 @@ module.exports = {
 
             if (arg0 == null || arg1 == null) {
                 message.channel.send("Je ne connais pas l'un des deux personnes");
+            } else if (arg0 === ADRIEN || arg1 === ADRIEN) {
+                message.channel.send('', {
+                    files: [
+                        "./emotes/adrien.jpg"
+                    ]
+                });
             } else {
                 let finalComparison = compare(arg0, arg1);
 
