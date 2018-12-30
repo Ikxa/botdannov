@@ -20,7 +20,10 @@ module.exports = {
             let arg1 = args[1].toUpperCase();
             fs.readFile('./config/players_games.json', function (err, data) {
                 if (err) throw err;
-                message.channel.send(data.toString());
+                //message.channel.send(data.toString());
+                let content = data.toString();
+                let contentJsoned = JSON.parse(content);
+                message.channel.send(typeof contentJsoned);
             })
         } else {
             let games = ["League of Legends", "Rocket League", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "Brawlhalla", "Minecraft", "Witch it", "Business Tour"];
