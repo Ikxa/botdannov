@@ -4,7 +4,7 @@ module.exports = {
     name: "rg2",
     description: "Vous ne savez pas à quoi jouer ? Demandez !",
     execute(message, args) {
-        /*function compare(arr1, arr2) {
+        function compare(arr1, arr2) {
             const finalArray = [];
             arr1.forEach((e1) => arr2.forEach((e2) => {
                 if (e1 === e2) {
@@ -13,7 +13,7 @@ module.exports = {
             }));
 
             return finalArray;
-        }*/
+        }
 
         if (args.length > 0) {
             let arg0 = args[0].toUpperCase();
@@ -23,7 +23,8 @@ module.exports = {
                 //message.channel.send(data.toString());
                 let content = data.toString();
                 let contentJsoned = JSON.parse(content);
-                message.channel.send(contentJsoned[arg0]);
+                let finalArray = compare(contentJsoned[arg0], contentJsoned[arg1]);
+                message.channel.send(finalArray.toString());
                 //message.channel.send(contentJsoned[arg1]);
             })
         } else {
