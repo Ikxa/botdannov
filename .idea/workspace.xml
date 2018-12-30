@@ -5,7 +5,11 @@
       <change afterPath="$PROJECT_DIR$/commands/rg2.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config/players_games.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/config/google.js" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/commands/rg.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/rg.js" afterDir="false" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/chifoumi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="48">
               <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
             </state>
           </provider>
@@ -41,26 +45,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/rd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="96">
               <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/rg.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="193">
               <caret line="17" lean-forward="true" selection-end-line="88" selection-end-column="2" />
+=======
+            <state relative-caret-position="408">
+              <caret line="22" column="151" selection-start-line="22" selection-start-column="151" selection-end-line="22" selection-end-column="151" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/commands/rg2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/blagoune.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
             </state>
           </provider>
         </entry>
@@ -68,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="456">
               <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
             </state>
           </provider>
@@ -86,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/help.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="48" selection-end-line="10" selection-end-column="2" />
+            <state relative-caret-position="144">
+              <caret line="6" column="41" selection-end-line="10" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -95,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/say.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="48">
               <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
             </state>
           </provider>
@@ -104,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/meteo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="96">
               <caret line="4" column="30" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
@@ -147,18 +164,23 @@
         <option value="$PROJECT_DIR$/commands/rd.js" />
         <option value="$PROJECT_DIR$/files/games.json" />
         <option value="$PROJECT_DIR$/commands/clear.js" />
-        <option value="$PROJECT_DIR$/commands/rg.js" />
         <option value="$PROJECT_DIR$/config/google.js" />
         <option value="$PROJECT_DIR$/commands/search.js" />
         <option value="$PROJECT_DIR$/commands/play.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/config/players_games.json" />
         <option value="$PROJECT_DIR$/commands/rg2.js" />
+=======
+        <option value="$PROJECT_DIR$/commands/blagoune.js" />
+        <option value="$PROJECT_DIR$/commands/rg.js" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="225" />
+    <option name="y" value="-12" />
     <option name="width" value="1440" />
     <option name="height" value="798" />
   </component>
@@ -252,19 +274,34 @@
       <workItem from="1545328331406" duration="6000" />
       <workItem from="1545328361511" duration="9462000" />
       <workItem from="1545351328628" duration="611000" />
+<<<<<<< HEAD
       <workItem from="1545389078976" duration="610000" />
       <workItem from="1546206868508" duration="696000" />
+=======
+      <workItem from="1545389078976" duration="460000" />
+      <workItem from="1545416479400" duration="191000" />
+      <workItem from="1545436921916" duration="791000" />
+      <workItem from="1545496777478" duration="15000" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="31583000" />
+=======
+    <option name="totallyTimeSpent" value="31734000" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="798" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13519314" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.098958336" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -354,39 +391,50 @@
     <entry file="file://$PROJECT_DIR$/commands/search.js" />
     <entry file="file://$PROJECT_DIR$/commands/chifoumi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="48">
           <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/rd.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="96">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/commands/play.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
     <entry file="file://$PROJECT_DIR$/commands/help.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="48" selection-end-line="10" selection-end-column="2" />
+        <state relative-caret-position="144">
+          <caret line="6" column="41" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/say.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="48">
           <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/meteo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="96">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/config/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -401,11 +449,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+=======
+    <entry file="file://$PROJECT_DIR$/commands/blagoune.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/rg.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="193">
           <caret line="17" lean-forward="true" selection-end-line="88" selection-end-column="2" />
         </state>
@@ -415,6 +470,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+=======
+        <state relative-caret-position="408">
+          <caret line="22" column="151" selection-start-line="22" selection-start-column="151" selection-end-line="22" selection-end-column="151" />
+>>>>>>> 1bc71460916583f82bc4d0b4a1b395f2a63cb075
         </state>
       </provider>
     </entry>
