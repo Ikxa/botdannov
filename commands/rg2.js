@@ -23,7 +23,7 @@ module.exports = {
                 //message.channel.send(data.toString());
                 let content = data.toString();
                 let contentJsoned = JSON.parse(content);
-                message.channel.send(typeof contentJsoned);
+                message.channel.send(contentJsoned['JORDAN']);
             })
         } else {
             let games = ["League of Legends", "Rocket League", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "Brawlhalla", "Minecraft", "Witch it", "Business Tour"];
