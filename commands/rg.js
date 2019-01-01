@@ -20,7 +20,7 @@ module.exports = {
             let arg0 = args[0].toUpperCase();
             let arg1 = args[1].toUpperCase();
             let JORDAN = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "Witch it", "Business Tour", "Minecraft", "DayZ"];
-            let LOWKI = ["League of Legends", "Rocket League", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "PUBG", "Battlefield 1", "F1 2017"];
+            let LOWKI = ["League of Legends", "Rocket Lcdeague", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "PUBG", "Battlefield 1", "F1 2017"];
             let ADRIEN = ["Rocket League", "League of Legends", "Fifa 18", "Fifa 19", "PUBG", "Minecraft", "CS:Go", "Brawlallah"];
             let FIFFOU = ["Battlefield V"];
 
