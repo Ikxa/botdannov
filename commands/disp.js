@@ -13,8 +13,9 @@ module.exports = {
                     if (err) throw err;
 
                     let content = data.toString();
-                    if (content !== null) {
-                        message.channel.send('Les jeux que ' + arg0 + ' a de disponible sont : ' + content);;
+                    let contentJsoned = JSON.parse(content);
+                    if (contentJsoned !== null) {
+                        message.channel.send('Les jeux que ' + arg0 + ' a de disponible sont : ' + contentJsoned[arg0]);
                     } else {
                         message.channel.send("Erreur dans l'exécution de la commande");
                     }
