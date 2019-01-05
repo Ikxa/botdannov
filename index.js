@@ -3,7 +3,7 @@ const fs = require("fs");
 const bot = new Discord.Client();
 const maintenance = false;
 
-const { Client } = require('pg');
+const { Client } = requre('pg');i
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
@@ -33,9 +33,7 @@ bot.on("ready", () => {
                 reason text, \
                 is_active integer default 0)', (err, result) => {
             //disconnent from database on error
-            console.log(err);
-            console.log('result');
-            console.log(result);
+            if (err !== null && err !== '') console.log(err);
         });
     });
 });
@@ -44,7 +42,6 @@ bot.on("disconnected", () => {
     bot.login(process.env.TOKEN).catch(err => console.error(err));
 });
 
-// Event listener for messages
 bot.on("message", message => {
     if (maintenance === true) {
         // If maintenance is enabled, tell it and return
