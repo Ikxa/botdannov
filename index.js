@@ -3,7 +3,7 @@ const fs = require("fs");
 const bot = new Discord.Client();
 const maintenance = false;
 
-const { Client } = requre('pg');i
+const { Client } = require('pg');
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
