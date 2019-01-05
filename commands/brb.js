@@ -1,4 +1,4 @@
-import * as client from "../database";
+const database = require("./database");
 
 module.exports = {
     name: "brb",
@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args) {
         if (args.length > 0) {
             let reason = args[0];
-            client.connect((err, client, done) => {
+            database.connect((err, client, done) => {
                 client.query('insert into users_afk (id, nickname, reason, is_active) values ($1, $2, $3, $4)',
                     [message.author.id, message.author.username], (err, result) => {
                         done(err);
