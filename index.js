@@ -50,8 +50,12 @@ bot.on("disconnected", () => {
 bot.on("message", message => {
     if (maintenance === true) {
         // If maintenance is enabled, tell it and return
-        message.channel.send('Désolé, je suis en maintenance pour le moment.');
-        return;
+        let already_said = 0;
+        if (already_said === 0) {
+            message.channel.send('Désolé, je suis en maintenance pour le moment.');
+            already_said = 1;
+        }
+        throw new Error("Mode maintenance activé sur le bot");
     }
 
     if (message.content.startsWith(prefix)) {
