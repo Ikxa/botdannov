@@ -53,9 +53,9 @@ bot.on("message", message => {
         throw new Error("Mode maintenance activé sur le bot");
     }
 
-    const user_mentioned = message.mentions.users.first();
-    if (message.content.startsWith(user_mentioned.toString())) {
-        message.channel.send('Vous venez de mentionner un utilisateur !');
+    const user_mentioned = message.mentions.users.first().toString();
+    if (message.content.startsWith(user_mentioned)) {
+        message.channel.send(user_mentioned);
     }
 
     if (message.content.startsWith(prefix)) {
