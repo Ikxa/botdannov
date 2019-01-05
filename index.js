@@ -6,11 +6,10 @@ const maintenance = false;
 const { Client } = require('pg');
 
 /* TODO : Cannot read property of undefined */
-// Trouver les bons identifiants pour la connexion à la base de données.
-/*const client = new Client({
+const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
-});*/
+});
 
 
 let prefix = '.';
@@ -25,9 +24,9 @@ commandFiles.forEach(file => {
 
 bot.on("ready", () => {
     bot.user.setActivity("Justin à poil", { type: "WATCHING" }).catch(err => console.error(err));
-    console.log("Bot ready"); // eslint-disable-line
+    console.log("Bot ready");
     // Database connection
-    /*client.connect( (err, client, done) => {
+    client.connect( (err, client, done) => {
         client.query('create table if not exists users_afk( \
                 id text primary key, \
                 nickname text, \
@@ -39,7 +38,7 @@ bot.on("ready", () => {
             console.log('result');
             console.log(result);
         });
-    });*/
+    });
 });
 
 bot.on("disconnected", () => {
