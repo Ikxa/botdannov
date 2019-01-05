@@ -53,12 +53,12 @@ bot.on("message", message => {
         throw new Error("Mode maintenance activé sur le bot");
     }
 
-    const user_mentioned = message.mentions.users.first().toString();
-    const userid_mentioned = message.mentions.users.first().id.toString();
-    if (message.content.startsWith(user_mentioned)) {
+    const user_mentioned = message.mentions.users.first();
+    const userid_mentioned = message.mentions.users.first().id;
+    if (message.content.startsWith(user_mentioned.toString())) {
         message.channel.send('Vous venez de mentionner un utilisateur !');
-        console.log(user_mentioned);
-        console.log(userid_mentioned);
+        console.log(user_mentioned.toString());
+        console.log(userid_mentioned.toString());
         /*client.connect( (err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1', (err, result) => {
