@@ -53,8 +53,8 @@ bot.on("message", message => {
         throw new Error("Mode maintenance activé sur le bot");
     }
 
-    const user_mentioned = message.mentions.users.first();
-    if (message.content.startsWith(user_mentioned.toString())) {
+    // const user_mentioned = message.mentions.users.first();
+    /*if (message.content.startsWith(user_mentioned.toString())) {
         message.channel.send('Vous venez de mentionner un utilisateur !');
         console.log(user_mentioned.toString());
         /*client.connect( (err, client) => {
@@ -63,8 +63,8 @@ bot.on("message", message => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
             });
-        });*/
-    }
+        });*
+    }*/
 
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
