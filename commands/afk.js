@@ -18,6 +18,7 @@ module.exports = {
                         console.log(err);
                         console.log('result');
                         console.log(result.rowCount);
+                        message.channel.send(result.toString());
                     });
             });
         }
