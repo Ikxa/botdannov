@@ -26,14 +26,13 @@ bot.on("ready", () => {
     bot.user.setActivity("Justin à poil", { type: "WATCHING" }).catch(err => console.error(err));
     console.log("Bot ready");
     // Database connection
-    client.connect( (err, client, done) => {
+    client.connect( (err, client) => {
         client.query('create table if not exists users_afk( \
                 id text primary key, \
                 nickname text, \
                 reason text, \
                 is_active integer default 0)', (err, result) => {
             //disconnent from database on error
-            done(err);
             console.log(err);
             console.log('result');
             console.log(result);
