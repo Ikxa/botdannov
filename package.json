@@ -21,6 +21,7 @@
     "discord.js": "*",
     "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
+    "pg": "^7.7.1",
     "snekfetch": "latest",
     "xmldom": "^0.1.27",
     "xpath": "0.0.27",

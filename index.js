@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
+const client = require("../config/database.js");
+const maintenance = true;
 
 let prefix = '.';
 
@@ -15,6 +17,17 @@ commandFiles.forEach(file => {
 bot.on("ready", () => {
     bot.user.setActivity("Justin à poil", { type: "WATCHING" }).catch(err => console.error(err));
     console.log("Bot ready"); // eslint-disable-line
+    // Database connection
+    client.connect( (err, client, done) => {
+        client.query('create table if not exists users_afk( \
+                id text primary key, \
+                nickname text, \
+                name text, \
+                count integer default 0)', (err, result) => {
+            //disconnent from database on error
+            done(err);
+        });
+    });
 });
 
 bot.on("disconnected", () => {
@@ -23,6 +36,12 @@ bot.on("disconnected", () => {
 
 // Event listener for messages
 bot.on("message", message => {
+    if (maintenance === true) {
+        // If maintenance is enabled, tell it and return
+        message.channel.send('Désolé, je suis en maintenance pour le moment.');
+        return;
+    }
+
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
         const commandName = args.shift().toLowerCase();
