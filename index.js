@@ -54,8 +54,18 @@ bot.on("message", message => {
     }
 
     const user_mentioned = message.mentions.users.first().toString();
+    const userid_mentioned = message.mentions.users.first().id.toString();
     if (message.content.startsWith(user_mentioned)) {
-        message.channel.send(user_mentioned);
+        message.channel.send('Vous venez de mentionner un utilisateur !');
+        console.log(user_mentioned);
+        console.log(userid_mentioned);
+        /*client.connect( (err, client) => {
+            client.query('select reason from users_afk \
+                where is_active = 1', (err, result) => {
+                //disconnent from database on error
+                if (err !== null && err !== '') console.log(err);
+            });
+        });*/
     }
 
     if (message.content.startsWith(prefix)) {
