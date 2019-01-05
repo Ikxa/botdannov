@@ -4,3 +4,5 @@ const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
 });
+
+return client;

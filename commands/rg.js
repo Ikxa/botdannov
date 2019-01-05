@@ -6,7 +6,6 @@ module.exports = {
     execute(message, args) {
         function compare(arr1, arr2) {
             const finalArray = [];
-
             arr1.forEach((e1) => arr2.forEach((e2) => {
                 if (e1 === e2) {
                     finalArray.push(e1);
@@ -17,61 +16,25 @@ module.exports = {
         }
 
         if (args.length > 0) {
-            let arg0 = args[0].toUpperCase();
-            let arg1 = args[1].toUpperCase();
-            let JORDAN = ["League of Legends", "Rocket League", "Brawlhalla", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "Witch it", "Business Tour", "Minecraft", "DayZ"];
-            let LOWKI = ["League of Legends", "Rocket Lcdeague", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "PUBG", "Battlefield 1", "F1 2017"];
-            let ADRIEN = ["Rocket League", "League of Legends", "Fifa 18", "Fifa 19", "PUBG", "Minecraft", "CS:Go", "Brawlallah"];
-            let FIFFOU = ["Battlefield V"];
-
-            switch (arg0) {
-                case 'JORDAN':
-                    arg0 = JORDAN;
-                    break;
-                case 'LOWKI':
-                    arg0 = LOWKI;
-                    break;
-                case 'ADRIEN':
-                    arg0 = ADRIEN;
-                    break;
-                case 'FIFFOU':
-                    arg0 = FIFFOU;
-                    break;
-                default:
-                    arg0 = null;
-                    break;
-            }
-
-            switch (arg1) {
-                case 'JORDAN':
-                    arg1 = JORDAN;
-                    break;
-                case 'LOWKI':
-                    arg1 = LOWKI;
-                    break;
-                case 'ADRIEN':
-                    arg1 = ADRIEN;
-                    break;
-                case 'FIFFOU':
-                    arg1 = FIFFOU;
-                    break;
-                default:
-                    arg1 = null;
-                    break;
-            }
-
-            if (arg0 == null || arg1 == null) {
+            if (args[0] == null || args[1] == null) {
                 message.channel.send("Je ne connais pas l'un des deux personnes");
             } else {
-                let finalComparison = compare(arg0, arg1);
-
-                let randomNumber = Math.floor(Math.random() * finalComparison.length);
-
-                if (typeof finalComparison[randomNumber] !== 'undefined') {
-                    message.channel.send('Vous devez jouer à : ' + finalComparison[randomNumber]);
-                } else {
-                    message.channel.send("Il n'y a pas de jeu en commun entre ces deux keum...");
-                }
+                let arg0 = args[0].toUpperCase();
+                let arg1 = args[1].toUpperCase();
+                let finalArray = null;
+                fs.readFile('./config/players_games.json', function (err, data) {
+                    if (err) throw err;
+                    //message.channel.send(data.toString());
+                    let content = data.toString();
+                    let contentJsoned = JSON.parse(content);
+                    finalArray = compare(contentJsoned[arg0], contentJsoned[arg1]);
+                    let randomNumber = Math.floor(Math.random() * finalArray.length);
+                    if (typeof finalArray[randomNumber] !== 'undefined') {
+                        message.channel.send('Vous devez jouer à : ' + finalArray[randomNumber]);
+                    } else {
+                        message.channel.send("Il n'y a pas de jeu en commun entre ces deux keum...");
+                    }
+                });
             }
         } else {
             let games = ["League of Legends", "Rocket League", "H1Z1", "PUBG", "CS:Go", "Dofus", "Battlefield V", "Fifa 18", "DayZ", "Brawlhalla", "Minecraft", "Witch it", "Business Tour"];

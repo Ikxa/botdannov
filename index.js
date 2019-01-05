@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
-const client = require("../config/database.js");
+const database = require("./database");
 const maintenance = true;
 
 let prefix = '.';
@@ -18,12 +18,12 @@ bot.on("ready", () => {
     bot.user.setActivity("Justin à poil", { type: "WATCHING" }).catch(err => console.error(err));
     console.log("Bot ready"); // eslint-disable-line
     // Database connection
-    client.connect( (err, client, done) => {
+    database.connect( (err, client, done) => {
         client.query('create table if not exists users_afk( \
                 id text primary key, \
                 nickname text, \
-                name text, \
-                count integer default 0)', (err, result) => {
+                reason text, \
+                is_active integer default 0)', (err, result) => {
             //disconnent from database on error
             done(err);
         });
