@@ -56,14 +56,15 @@ bot.on("message", message => {
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
-        /*console.log(user_mentioned.toString());
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1', (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
+                message.channel.send(result);
             });
-        });*/
+        });
+        message.channel.send('Query terminée...');
     }
 
     if (message.content.startsWith(prefix)) {
