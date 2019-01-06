@@ -54,7 +54,6 @@ bot.on("message", message => {
     }
 
     const user_mentioned = message.mentions.users.first();
-    message.channel.send(user_mentioned.toString());
     /*if (message.content.startsWith(user_mentioned.toString())) {
         message.channel.send('Vous venez de mentionner un utilisateur !');
         console.log(user_mentioned.toString());
