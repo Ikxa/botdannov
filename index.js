@@ -55,7 +55,7 @@ bot.on("message", message => {
 
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
-        // message.channel.send(user_mentioned.toString());
+        message.channel.send(user_mentioned.id);
         /*console.log(user_mentioned.toString());
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
