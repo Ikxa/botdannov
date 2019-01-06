@@ -43,6 +43,9 @@ bot.on("disconnected", () => {
 });
 
 bot.on("message", message => {
+    // If message's author is a bot, just return and do nothing
+    if (message.author.bot) return;
+
     if (maintenance === true) {
         // If maintenance is enabled, tell it and return
         let already_said = 0;
@@ -60,7 +63,6 @@ bot.on("message", message => {
     // raison de l'afk : rows[0].reason
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
-        message.channel.send(user_mentioned.id);
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true,
@@ -78,9 +80,9 @@ bot.on("message", message => {
                 }
             });
         });
-        message.channel.send('Query terminée...');
     }
 
+    // Command execution
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
         const commandName = args.shift().toLowerCase();
