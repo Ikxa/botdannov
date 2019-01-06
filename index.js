@@ -74,7 +74,6 @@ bot.on("message", message => {
                     console.log(rows);
                     console.log(rows.reason);
                     console.log(rows['reason']);
-                    console.log(rows.reason['']);
                     console.log(rows.valueOf());
                     console.log(rows.get('reason'));
                     message.channel.send(rows.toString());
