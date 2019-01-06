@@ -56,6 +56,10 @@ bot.on("message", message => {
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: true,
+        });
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1', (err, result) => {
