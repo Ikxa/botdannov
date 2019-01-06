@@ -56,6 +56,7 @@ bot.on("message", message => {
     // TODO: Fonctionne correctement !
     // id de l'utilisateur mentionné : **user_mentioned.id**
     // résultat de la requête : **result.rows**
+    // rows = [ { reason: 'PauseCaca' } ]
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
@@ -71,6 +72,7 @@ bot.on("message", message => {
                 if (result.rows !== null) {
                     const rows = result.rows;
                     console.log(rows);
+                    message.channel.send(rows.toString());
                 } else {
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
