@@ -54,17 +54,21 @@ bot.on("message", message => {
     }
 
     const user_mentioned = message.mentions.users.first();
-    /*if (message.content.startsWith(user_mentioned.toString())) {
+    if (typeof user_mentioned !== 'undefined') {
         message.channel.send('Vous venez de mentionner un utilisateur !');
-        console.log(user_mentioned.toString());
+        /*console.log(user_mentioned.toString());
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1', (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
             });
-        });
-    }*/
+        });*/
+        throw new Error('Exit1!');
+    } else {
+        message.channel.send('Vous ne venez pas de mentionner un utilisateur !');
+        throw new Error('Exit2!');
+    }
 
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
