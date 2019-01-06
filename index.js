@@ -72,7 +72,7 @@ bot.on("message", message => {
                 if (result.rows !== null) {
                     const rows = result.rows;
                     console.log(rows);
-                    console.log(rows.reason);
+                    console.log(rows.reason.valueOf());
                     console.log(rows['reason']);
                     console.log(rows.valueOf());
                     console.log(rows.get('reason'));
