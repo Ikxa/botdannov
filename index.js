@@ -54,6 +54,8 @@ bot.on("message", message => {
     }
 
     // TODO: Fonctionne correctement !
+    // id de l'utilisateur mentionné : **user_mentioned.id**
+    // résultat de la requête : **result.rows**
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
@@ -68,7 +70,9 @@ bot.on("message", message => {
                 if (err !== null && err !== '') console.log(err);
                 if (result.rows !== null) {
                     const rows = result.rows;
-                    message.channel.send(rows['reason']);
+                    console.log(typeof rows);
+                } else {
+                    message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
             });
         });
