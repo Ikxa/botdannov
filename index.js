@@ -57,6 +57,7 @@ bot.on("message", message => {
     // id de l'utilisateur mentionné : **user_mentioned.id**
     // résultat de la requête : **result.rows**
     // rows = [ { reason: 'PauseCaca' } ]
+    // raison de l'afk : rows[0].reason
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
@@ -71,8 +72,7 @@ bot.on("message", message => {
                 if (err !== null && err !== '') console.log(err);
                 if (result.rows !== null) {
                     const rows = result.rows;
-                    console.log(rows);
-                    console.log(rows[0].reason);
+                    message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
                 } else {
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
