@@ -66,8 +66,10 @@ bot.on("message", message => {
                 where is_active = 1', (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
-                // message.channel.send(typeof result);
-                console.log(result.rows);
+                if (result.rows !== null) {
+                    const rows = result.rows;
+                    message.channel.send(rows['reason']);
+                }
             });
         });
         message.channel.send('Query terminée...');
