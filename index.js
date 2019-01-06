@@ -66,7 +66,7 @@ bot.on("message", message => {
         });
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
-                where is_active = 1 and id like "%$1%"', [user_mentioned.id], (err, result) => {
+                where is_active = 1 and id like "%user_mentioned.id%"', (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 if (result.rows !== null) {
