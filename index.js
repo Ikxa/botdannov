@@ -64,8 +64,6 @@ bot.on("message", message => {
                 if (err !== null && err !== '') console.log(err);
             });
         });*/
-    } else {
-        message.channel.send('Vous ne venez pas de mentionner un utilisateur !');
     }
 
     if (message.content.startsWith(prefix)) {
