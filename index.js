@@ -53,6 +53,7 @@ bot.on("message", message => {
         throw new Error("Mode maintenance activé sur le bot");
     }
 
+    // TODO: Fonctionne correctement !
     const user_mentioned = message.mentions.users.first();
     if (typeof user_mentioned != "undefined") {
         message.channel.send(user_mentioned.id);
@@ -65,8 +66,8 @@ bot.on("message", message => {
                 where is_active = 1', (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
-                message.channel.send(result);
-                console.log(result);
+                message.channel.send(typeof result);
+                console.log(typeof result);
             });
         });
         message.channel.send('Query terminée...');
