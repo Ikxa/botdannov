@@ -66,6 +66,7 @@ bot.on("message", message => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 message.channel.send(result);
+                console.log(result);
             });
         });
         message.channel.send('Query terminée...');
