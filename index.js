@@ -70,7 +70,7 @@ bot.on("message", message => {
                 if (err !== null && err !== '') console.log(err);
                 if (result.rows !== null) {
                     const rows = result.rows;
-                    console.log(rows.reason);
+                    console.log(rows['reason']);
                 } else {
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
