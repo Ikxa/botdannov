@@ -19,10 +19,9 @@ module.exports = {
                         message.channel.send('Vous avez déjà une raison d\'afk de préciser, merci de faire un .stopafk avant !');
                     } else {
                         client.query('insert into users_afk (id, nickname, reason, is_active) values ($1, $2, $3, 1)',
-                            [message.author.id, message.author.username, args[0]], (err, result) => {
+                            [message.author.id, message.author.username, args[0]], (err) => {
                                 if (err !== null && err !== '') console.log(err);
                                 message.channel.send('La raison de votre afk a bien été prise en compte');
-                                console.log(result);
                             });
                     }
                 });
