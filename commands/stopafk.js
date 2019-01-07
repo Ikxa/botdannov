@@ -1,23 +1,21 @@
-const { Client } = require('pg');
+const {Client} = require('pg');
 
 module.exports = {
     name: "stopafk",
     description: "Tu es revenu ? Dis-le nous!",
-    execute(message, args) {
-        if (args.length > 0) {
-            const client = new Client({
-                connectionString: process.env.DATABASE_URL,
-                ssl: true,
-            });
+    execute(message) {
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: true,
+        });
 
-            client.connect( (err, client) => {
-                client.query('delete from users_afk where nickname = $1 and is_active = 1', [message.author.username], (err, result) => {
-                        message.channel.send('La raison de votre afk a été annulée.');
-                        console.log(err);
-                        console.log('---');
-                        console.log(result);
-                    });
+        client.connect((err, client) => {
+            client.query('delete from users_afk where nickname = $1 and is_active = 1', [message.author.username], (err, result) => {
+                message.channel.send('La raison de votre afk a été annulée.');
+                console.log(err);
+                console.log('---');
+                console.log(result);
             });
-        }
+        });
     },
 };
