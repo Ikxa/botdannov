@@ -74,7 +74,7 @@ bot.on("message", message => {
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
                 console.log(typeof rows);
-                if (typeof rows !== 'undefined') {
+                if (typeof rows[0] !== 'undefined') {
                     console.log('Je suis passé quand même');
                     message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
                 } else {
