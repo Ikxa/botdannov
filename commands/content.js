@@ -11,7 +11,8 @@ module.exports = {
                 let content = data.toString();
                 let contentJsoned = JSON.parse(content);
                 message.channel.send(contentJsoned.toString());
-                // let contentToChange = contentJsoned[args[0]];
+                let contentToChange = contentJsoned[args[0]];
+                console.log(contentToChange);
                 // message.channel.send(contentToChange);
             });
         }
