@@ -73,9 +73,12 @@ bot.on("message", message => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
+                console.log(typeof rows);
                 if (typeof rows !== 'undefined') {
+                    console.log('Je suis passé quand même');
                     message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
                 } else {
+                    console.log('J\'aimerai passer !');
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
             });
