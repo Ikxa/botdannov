@@ -11,7 +11,7 @@ module.exports = {
             });
 
             client.connect( (err, client) => {
-                client.query('delete from users_afk where username = $1 and is_active = 1', [message.author.username], (err, result) => {
+                client.query('delete from users_afk where nickname = $1 and is_active = 1', [message.author.username], (err, result) => {
                         message.channel.send('La raison de votre afk a été annulée.');
                     });
             });
