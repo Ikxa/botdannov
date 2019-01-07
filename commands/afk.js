@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const {Client} = require('pg');
 
 module.exports = {
     name: "afk",
@@ -10,13 +10,22 @@ module.exports = {
                 ssl: true,
             });
 
-            client.connect( (err, client) => {
-                client.query('insert into users_afk (id, nickname, reason, is_active) values ($1, $2, $3, 1)',
-                    [message.author.id, message.author.username, args[0]], (err, result) => {
-                        if (err !== null && err !== '') console.log(err);
-                        message.channel.send('La raison de votre afk a bien été prise en compte');
-                        console.log(result);
-                    });
+            client.connect((err, client) => {
+                client.query('select reason from users_afk \
+                where is_active = 1 and id = $1', [message.author.id], (err, result) => {
+                    if (err !== null && err !== '') console.log(err);
+                    const rows = result.rows;
+                    if (typeof rows[0] !== 'undefined') {
+                        message.channel.send('Vous avez déjà une raison d\'afk de préciser, merci de faire un .stopafk avant !');
+                    } else {
+                        client.query('insert into users_afk (id, nickname, reason, is_active) values ($1, $2, $3, 1)',
+                            [message.author.id, message.author.username, args[0]], (err, result) => {
+                                if (err !== null && err !== '') console.log(err);
+                                message.channel.send('La raison de votre afk a bien été prise en compte');
+                                console.log(result);
+                            });
+                    }
+                });
             });
         }
     },
