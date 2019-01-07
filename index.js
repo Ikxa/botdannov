@@ -74,8 +74,6 @@ bot.on("message", message => {
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
                     message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
-                } else {
-                    message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
             });
         });
