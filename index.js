@@ -72,8 +72,8 @@ bot.on("message", message => {
                 where is_active = 1 and id = $1', [user_mentioned.id], (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
-                if (result.rows !== null) {
-                    const rows = result.rows;
+                const rows = result.rows;
+                if (rows !== null && (rows[0].reason != null || rows[0].reason !== '')) {
                     message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
                 } else {
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
