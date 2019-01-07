@@ -14,5 +14,7 @@ module.exports = {
                 message.channel.send('La raison de votre afk a été annulée.');
             });
         });
+
+        message.delete().catch(O_o=>{});
     },
 };
