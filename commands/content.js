@@ -10,7 +10,7 @@ module.exports = {
                 //message.channel.send(data.toString());
                 let content = data.toString();
                 let contentJsoned = JSON.parse(content);
-                message.channel.send(contentJsoned);
+                message.channel.send(contentJsoned["JORDAN"]);
                 message.channel.send(typeof contentJsoned);
                 // let contentToChange = contentJsoned[args[0]];
                 // message.channel.send(contentToChange);
