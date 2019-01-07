@@ -28,7 +28,7 @@ module.exports = {
                 });
             });
 
-            message.delete();
+            message.delete().catch(O_o=>{});
         }
     },
 };
