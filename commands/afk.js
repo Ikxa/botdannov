@@ -13,9 +13,9 @@ module.exports = {
             client.connect( (err, client) => {
                 client.query('insert into users_afk (id, nickname, reason, is_active) values ($1, $2, $3, 1)',
                     [message.author.id, message.author.username, args[0]], (err, result) => {
-                        message.channel.send(err.toString());
-                        message.channel.send('Résultat de la query');
-                        message.channel.send(result.toString());
+                        if (err !== null && err !== '') console.log(err);
+                        message.channel.send('La raison de votre afk a bien été prise en compte');
+                        console.log(result);
                     });
             });
         }

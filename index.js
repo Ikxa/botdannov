@@ -70,15 +70,11 @@ bot.on("message", message => {
         client.connect( (err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1 and id = $1', [user_mentioned.id], (err, result) => {
-                //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
-                console.log(typeof rows);
                 if (typeof rows[0] !== 'undefined') {
-                    console.log('Je suis passé quand même');
                     message.channel.send('Désolé, ' + user_mentioned + ' s\'est absenté pour la raison suivante : ' + rows[0].reason);
                 } else {
-                    console.log('J\'aimerai passer !');
                     message.channel.send('L\'utilisateur n\'a pas précisé de raison d\'afk, pas cool !');
                 }
             });
