@@ -27,6 +27,8 @@ module.exports = {
                     }
                 });
             });
+
+            message.delete();
         }
     },
 };
