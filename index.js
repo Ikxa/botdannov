@@ -3,7 +3,7 @@ const fs = require("fs");
 const bot = new Discord.Client();
 const maintenance = false;
 
-const { Client } = require('pg');
+const {Client} = require('pg');
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
@@ -23,15 +23,25 @@ commandFiles.forEach(file => {
 });
 
 bot.on("ready", () => {
-    bot.user.setActivity("Justin à poil", { type: "WATCHING" }).catch(err => console.error(err));
+    bot.user.setActivity("Justin à poil", {type: "WATCHING"}).catch(err => console.error(err));
     console.log("Bot ready");
     // Database connection
-    client.connect( (err, client) => {
+    client.connect((err, client) => {
+        // Create table for users_afk
         client.query('create table if not exists users_afk( \
                 id text primary key, \
                 nickname text, \
                 reason text, \
-                is_active integer default 0)', (err, result) => {
+                is_active integer default 1)', (err, result) => {
+            //disconnent from database on error
+            if (err !== null && err !== '') console.log(err);
+        });
+
+        // Create table for list_games
+        client.query('create table if not exists players_games( \
+                id text primary key, \
+                nickname text, \
+                list_of_games text)', (err, result) => {
             //disconnent from database on error
             if (err !== null && err !== '') console.log(err);
         });
@@ -67,7 +77,7 @@ bot.on("message", message => {
             connectionString: process.env.DATABASE_URL,
             ssl: true,
         });
-        client.connect( (err, client) => {
+        client.connect((err, client) => {
             client.query('select reason from users_afk \
                 where is_active = 1 and id = $1', [user_mentioned.id], (err, result) => {
                 if (err !== null && err !== '') console.log(err);
