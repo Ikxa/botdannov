@@ -15,7 +15,7 @@ module.exports = {
                 let newContent = "Battlefield V";
                 fs.writeFile(filename, JSON.stringify(newContent), function (err) {
                     if (err) return console.log(err);
-                    message.channel.send(contentJsoned[arg0]);
+                    message.channel.send('Contenu modifié');
                 });
             });
         }
