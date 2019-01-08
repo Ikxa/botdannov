@@ -36,15 +36,6 @@ bot.on("ready", () => {
             //disconnent from database on error
             if (err !== null && err !== '') console.log(err);
         });
-
-        // Create table for list_games
-        client.query('create table if not exists players_games( \
-                id text primary key, \
-                nickname text, \
-                list_of_games text)', (err, result) => {
-            //disconnent from database on error
-            if (err !== null && err !== '') console.log(err);
-        });
     });
 });
 
