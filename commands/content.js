@@ -12,11 +12,11 @@ module.exports = {
                 let content = data.toString();
                 let arg0 = args[0].toUpperCase();
                 let contentJsoned = JSON.parse(content);
-                contentJsoned[arg0] = "Battlefield V";
-                fs.writeFile(filename, JSON.stringify(content, null, 2), function (err) {
+                let newContent = "Battlefield V";
+                fs.writeFile(filename, JSON.stringify(newContent), function (err) {
                     if (err) return console.log(err);
                     message.channel.send(contentJsoned[arg0]);
-                })
+                });
             });
         }
     },
