@@ -22,8 +22,7 @@ module.exports = {
             });
 
             client.connect((err, client) => {
-                client.query('select list_of_games from players_games \
-                where nickname = $1', [args[0]], (err, result) => {
+                client.query('select * from players_games', (err, result) => {
                     if (err !== null && err !== '') console.log(err);
                     console.log(result);
                 });
