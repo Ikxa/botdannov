@@ -6,6 +6,8 @@ module.exports = {
             let str = message.toString();
             let args_array = str.split('|', args.length);
             console.log(args_array);
+            console.log('Args');
+            console.log(args);
         }
     },
 };
