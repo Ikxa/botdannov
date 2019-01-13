@@ -3,7 +3,8 @@ module.exports = {
     description: "Lancez un sondage !",
     execute(message, args) {
         if (args.length > 0) {
-            let args_array = message.split('|', args.length);
+            let str = message.toString();
+            let args_array = str.split('|', args.length);
             console.log(args_array);
         }
     },
