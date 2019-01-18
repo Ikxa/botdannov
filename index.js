@@ -80,6 +80,10 @@ bot.on("message", message => {
         });
     }
 
+    if (message.attachments.size > 0) {
+        message.channel.send('Vous avez envoyé une photo');
+    }
+
     // Command execution
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(" ");
