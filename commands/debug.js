@@ -3,8 +3,7 @@ module.exports = {
     description: "Vérifier les types",
     execute(message, args) {
         if (args.length > 0) {
-            let member = message.mentions.users.first();
-            message.channel.send(typeof member);
+            message.member.send('Essai');
         }
     },
 };
