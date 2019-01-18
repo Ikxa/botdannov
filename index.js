@@ -80,9 +80,11 @@ bot.on("message", message => {
         });
     }
 
-    if (message.attachments.size > 0) {
+    /*if (message.attachments.size > 0) {
         message.channel.send('Vous avez envoyé une photo');
-    }
+        let member = ;
+        member.send(message.attachment)
+    }*/
 
     // Command execution
     if (message.content.startsWith(prefix)) {
