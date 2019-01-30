@@ -63,6 +63,9 @@ bot.on("message", message => {
     // rows = [ { reason: 'PauseCaca' } ]
     // raison de l'afk : rows[0].reason
     const user_mentioned = message.mentions.users.first();
+    let regex = "^@([\\w\\-]+)";
+    let regexedOrNot = regex.exec(user_mentioned);
+    console.log(regexedOrNot);
     if (typeof user_mentioned != "undefined") {
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
