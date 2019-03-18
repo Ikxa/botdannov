@@ -57,7 +57,8 @@ bot.on('message', (message) => {
 	}
 
 	if (message.attachments.size > 0) {
-		message.delete();
+		message.channel.send("Vous venez d'envoyer une photo");
+		//  message.delete();
 	}
 
 	if (maintenance === true) {
