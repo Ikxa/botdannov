@@ -57,13 +57,6 @@ bot.on('message', (message) => {
 		return;
 	}
 
-	if (message.attachments.size > 0) {
-		message.channel.send("Vous venez d'envoyer une photo");
-		const numberToDelete = 2;
-		const fetched = message.channel.fetchMessages({ limit: numberToDelete });
-		message.channel.bulkDelete(fetched).catch((error) => message.reply("Je n'ai pas pu supprimer la photo"));
-	}
-
 	if (maintenance === true) {
 		// If maintenance is enabled, tell it and return
 		let already_said = 0;
