@@ -52,8 +52,9 @@ bot.on('message', (message) => {
 	}
 
 	if (message.author.bot) {
-		message.delete();
-		message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");
+		/*message.delete();
+        message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");*/
+		return;
 	}
 
 	if (message.attachments.size > 0) {
