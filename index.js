@@ -7,8 +7,8 @@ const { Client } = require('pg');
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
-	connectionString: process.env.DATABASE_URL,
-	ssl: true
+	connectionString : process.env.DATABASE_URL,
+	ssl              : true
 });
 
 let prefix = '.';
@@ -53,19 +53,14 @@ bot.on('message', (message) => {
 
 	if (message.author.bot) {
 		/*message.delete();
-        message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");*/
+      message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");*/
 		return;
 	}
 
-	if (maintenance === true) {
-		// If maintenance is enabled, tell it and return
-		let already_said = 0;
-		if (already_said === 0) {
-			message.channel.send('Désolé, je suis en maintenance pour le moment.');
-			already_said = 1;
-		}
-		throw new Error('Mode maintenance activé sur le bot');
-	}
+	let censor = '[Sorry, I Swear]'; /* Replace this with what you want */
+	let edit = message.content.replace(/fart/gi, censor);
+	message.delete();
+	message.channel.send(`${message.author.username}: ${edit}`);
 
 	// TODO: Fonctionne correctement !
 	// id de l'utilisateur mentionné : **user_mentioned.id**
@@ -75,8 +70,8 @@ bot.on('message', (message) => {
 	const user_mentioned = message.mentions.users.first();
 	if (typeof user_mentioned != 'undefined') {
 		const client = new Client({
-			connectionString: process.env.DATABASE_URL,
-			ssl: true
+			connectionString : process.env.DATABASE_URL,
+			ssl              : true
 		});
 		client.connect((err, client) => {
 			client.query(
@@ -95,12 +90,6 @@ bot.on('message', (message) => {
 			);
 		});
 	}
-
-	/*if (message.attachments.size > 0) {
-        message.channel.send('Vous avez envoyé une photo');
-        let member = ;
-        member.send(message.attachment)
-    }*/
 
 	// Command execution
 	if (message.content.startsWith(prefix)) {
