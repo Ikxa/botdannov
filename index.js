@@ -46,6 +46,13 @@ bot.on('disconnected', () => {
 });
 
 bot.on('message', (message) => {
+	const thisWord = 'fart';
+	if (message.content.includes(thisWord)) {
+		message.delete();
+		message.channel.sendMessage('**@&#$%!**');
+		message.author.send('Le mot **FART** est interdit!');
+	}
+
 	// If message's author is a bot, just return and do nothing
 	if (message.author.id == 453121034988683265) {
 		return;
@@ -55,17 +62,6 @@ bot.on('message', (message) => {
 		/*message.delete();
       message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");*/
 		return;
-	}
-
-	let censor = '[Sorry, I Swear]'; /* Replace this with what you want */
-	let edit = message.content.replace(/fart/gi, censor);
-	message.delete();
-	message.channel.send(`${message.author.username}: ${edit}`);
-
-	const thisWord = 'fart';
-	if (message.content.includes(thisWord)) {
-		message.delete();
-		message.channel.send(`No fart there`);
 	}
 
 	// TODO: Fonctionne correctement !
