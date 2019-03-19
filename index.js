@@ -48,7 +48,7 @@ bot.on('disconnected', () => {
 bot.on('message', (message) => {
 	const thisWord = 'fart';
 	if (message.content.includes(thisWord)) {
-		message.delete();
+		message.delete(1000);
 		message.channel.sendMessage('**@&#$%!**');
 		message.author.send('Le mot **FART** est interdit!');
 	}
