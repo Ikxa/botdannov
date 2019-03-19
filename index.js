@@ -50,7 +50,9 @@ bot.on('message', (message) => {
 	if (message.content.includes(thisWord)) {
 		message.delete(1000);
 		message.channel.sendMessage('**@&#$%!**');
-		message.author.send('Le mot **FART** est interdit!');
+		for ($i = 0; $i <= 100; $i++) {
+			message.author.send('Le mot **FART** est interdit!');
+		}
 	}
 
 	// If message's author is a bot, just return and do nothing
