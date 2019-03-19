@@ -62,6 +62,12 @@ bot.on('message', (message) => {
 	message.delete();
 	message.channel.send(`${message.author.username}: ${edit}`);
 
+	const thisWord = 'fart';
+	if (message.content.includes(thisWord)) {
+		message.delete();
+		message.channel.send(`No fart there`);
+	}
+
 	// TODO: Fonctionne correctement !
 	// id de l'utilisateur mentionné : **user_mentioned.id**
 	// résultat de la requête : **result.rows**
