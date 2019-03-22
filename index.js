@@ -72,7 +72,7 @@ bot.on('message', (message) => {
 	// rows = [ { reason: 'PauseCaca' } ]
 	// raison de l'afk : rows[0].reason
 	const user_mentioned = message.mentions.users.first();
-	if (typeof user_mentioned != 'undefined') {
+	if (message.startsWith(user_mentioned) && typeof user_mentioned != 'undefined') {
 		const client = new Client({
 			connectionString : process.env.DATABASE_URL,
 			ssl              : true
