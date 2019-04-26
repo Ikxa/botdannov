@@ -55,10 +55,6 @@ bot.on('message', (message) => {
 		}
 	}
 
-	if (message.startsWith('.')) {
-		message.channel.send('Le préfix a changé, utilisez le ! désormais.');
-	}
-
 	if (message.author.id == 453121034988683265) {
 		return;
 	}
