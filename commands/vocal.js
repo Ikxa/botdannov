@@ -19,7 +19,7 @@ module.exports = {
 
 			if (args[0] === 'pause') dispatcher.pause();
 			if (args[0] === 'resume') dispatcher.resume();
-			if (args[0] === 'stop') voiceChannel.leave();
+			if (args[0] === 'stop') dispatcher.end();
 			dispatcher.on('end', (end) => {
 				voiceChannel.leave();
 			});
