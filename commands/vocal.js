@@ -1,4 +1,5 @@
 const fs = require('fs');
+const ytdl = require('ytdl-core');
 
 module.exports = {
 	name        : 'vocal',
@@ -11,12 +12,16 @@ module.exports = {
 			.last();
 
 		voiceChannel.join().then((connection) => {
-			const dispatcher = connection.playFile('./sounds/louane.mp3');
+			//const dispatcher = connection.playFile('./sounds/louane.mp3');
+
+			const stream = ytdl('https://www.youtube.com/watch?v=D57Y1PruTlw', { filter: 'audioonly' });
+			const dispatcher = connection.playStream(stream);
+
 			if (args[0] === 'pause') dispatcher.pause();
 			if (args[0] === 'resume') dispatcher.resume();
-			/*dispatcher.on('end', (end) => {
+			dispatcher.on('end', (end) => {
 				voiceChannel.leave();
-			});*/
+			});
 		});
 	}
 };
