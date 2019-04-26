@@ -15,8 +15,8 @@ module.exports = {
 				.join()
 				.then((connection) => {
 					const dispatcher = connection.playFile('./sounds/louane.mp3');
-					dispatcher.pause();
-
+					if (args[0] === 'pause') dispatcher.pause();
+					if (args[0] === 'resume') dispatcher.resume();
 					dispatcher.on('end', (end) => {
 						voiceChannel.leave();
 					});
