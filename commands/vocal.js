@@ -15,10 +15,7 @@ module.exports = {
 			voiceChannel
 				.join()
 				.then((connection) => {
-					const dispatcher = connection.playFile('../sounds/lacoupe.mp3');
-					/*dispatcher.on('end', (end) => {
-						voiceChannel.leave();
-					});*/
+					const dispatcher = connection.playFile('./sounds/lacoupe.mp3');
 				})
 				.catch(console.error);
 		} else {
