@@ -12,11 +12,19 @@ module.exports = {
 
 		voiceChannel.join().then((connection) => {
 			const dispatcher = connection.playFile('./sounds/louane.mp3');
-			if (args[0] === 'pause') dispatcher.pause();
-			if (args[0] === 'resume') dispatcher.resume();
-			dispatcher.on('end', (end) => {
-				voiceChannel.leave();
-			});
+			switch (args[0]) {
+				case 'pause':
+					dispatcher.pause();
+					break;
+				case 'resume':
+					dispatcher.resume();
+					break;
+				case 'fuckoff':
+					dispatcher.on('end', (end) => {
+						voiceChannel.leave();
+					});
+					break;
+			}
 		});
 	}
 };
