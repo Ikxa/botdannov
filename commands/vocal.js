@@ -11,13 +11,13 @@ module.exports = {
 				})
 				.last();
 
+			/** !! Cannot read property of undefined ! **/
 			voiceChannel
 				.join()
-				.then(function(connection) {
-					fs.readdir('../sounds/', function(err, items) {
-						for (let i = 0; i < items.length; i++) {
-							const dispatcher = connection.playFile('../sounds/' + items[i]);
-						}
+				.then((connection) => {
+					const dispatcher = connection.playFile('../sounds/lacoupe.mp3');
+					dispatcher.on('end', (end) => {
+						voiceChannel.leave();
 					});
 				})
 				.catch(console.error);
