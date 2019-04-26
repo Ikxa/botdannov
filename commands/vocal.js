@@ -20,6 +20,10 @@ module.exports = {
 			if (args[0] === 'pause') dispatcher.pause();
 
 			if (args[0] === 'stop') {
+				console.log('Args');
+				console.log(args);
+				console.log('Dispatcher');
+				console.log(dispatcher);
 				dispatcher.end();
 			} else {
 				message.channel.send("Arg0 n'est pas stop");
