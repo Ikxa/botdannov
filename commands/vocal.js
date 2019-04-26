@@ -25,7 +25,7 @@ module.exports = {
 				dispatcher.pause();
 			}
 		} else {
-			message.send('CA MARCHE PAS!');
+			message.channel.send('CA MARCHE PAS!');
 		}
 	}
 };
