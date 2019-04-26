@@ -13,7 +13,7 @@ module.exports = {
 
 		voiceChannel.join().then((connection) => {
 			//const dispatcher = connection.playFile('./sounds/louane.mp3');
-			const stream = ytdl(args[0], { filter: 'audioonly' });
+			const stream = ytdl(args[0], { filter: 'audioonly', bitrate: 192000 });
 			const dispatcher = connection.playStream(stream);
 
 			if (args[0] === 'pause') dispatcher.pause();
