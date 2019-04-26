@@ -11,7 +11,7 @@ module.exports = {
 		voiceChannel
 			.join()
 			.then(function(connection) {
-				fs.readdir('./music', function(err, items) {
+				fs.readdir('../sounds/', function(err, items) {
 					for (let i = 0; i < items.length; i++) {
 						const dispatcher = connection.playFile('../sounds/' + items[i]);
 					}
