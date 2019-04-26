@@ -3,8 +3,8 @@ const fs = require('fs');
 module.exports = {
 	name        : 'vocal',
 	description : 'Un max de barre !',
-	execute(message) {
-		if (message.content == '.vocal') {
+	execute(message, args) {
+		if (message.content == '!vocal') {
 			let voiceChannel = message.guild.channels
 				.filter(function(channel) {
 					return channel.type === 'voice';
@@ -20,6 +20,10 @@ module.exports = {
 					});
 				})
 				.catch(console.error);
+
+			if (args[0] === 'stop') {
+				dispatcher.pause();
+			}
 		} else {
 			message.send('CA MARCHE PAS!');
 		}
