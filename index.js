@@ -55,14 +55,15 @@ bot.on('message', (message) => {
 		}
 	}
 
-	// If message's author is a bot, just return and do nothing
+	if (message.startsWith('.')) {
+		message.channel.send('Le préfix a changé, utilisez le ! désormais.');
+	}
+
 	if (message.author.id == 453121034988683265) {
 		return;
 	}
 
 	if (message.author.bot) {
-		/*message.delete();
-      message.channel.send("Le Chef des Bots ne t'autorise pas à parler !");*/
 		return;
 	}
 
