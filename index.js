@@ -11,7 +11,7 @@ const client = new Client({
 	ssl              : true
 });
 
-let prefix = '.';
+let prefix = '!';
 
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
