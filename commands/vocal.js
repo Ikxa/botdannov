@@ -11,11 +11,13 @@ module.exports = {
 				})
 				.last();
 
-			/** !! Cannot read property of undefined ! **/
 			voiceChannel
 				.join()
 				.then((connection) => {
 					const dispatcher = connection.playFile('./sounds/lacoupe.mp3');
+					dispatcher.on('end', (end) => {
+						voiceChannel.leave();
+					});
 				})
 				.catch(console.error);
 		} else {
