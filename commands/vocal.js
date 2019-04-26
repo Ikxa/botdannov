@@ -20,10 +20,6 @@ module.exports = {
 					});
 				})
 				.catch(console.error);
-
-			if (args[0] === 'stop') {
-				dispatcher.pause();
-			}
 		} else {
 			message.channel.send('CA MARCHE PAS!');
 		}
