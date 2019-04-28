@@ -7,6 +7,7 @@ module.exports = {
 	execute(message, args) {
 		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
 		console.log(args[0]);
+		console.log(typeof args[0]);
 		let voiceChannel = message.guild.channels
 			.filter(function(channel) {
 				return channel.type === 'voice';
@@ -16,13 +17,12 @@ module.exports = {
 		voiceChannel
 			.join()
 			.then((connection) => {
-				//const dispatcher = connection.playFile('./sounds/louane.mp3');
 				const stream = ytdl(args[0], { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, playingOptions);
 
-				if (args[0] === 'pause') dispatcher.pause();
+				if (args[0] == 'pause') dispatcher.pause();
 
-				if (args[0] === 'stop') {
+				if (args[0] == 'stop') {
 					dispatcher.stream.end();
 				} else {
 					message.channel.send("Arg0 n'est pas stop");
