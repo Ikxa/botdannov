@@ -6,6 +6,7 @@ module.exports = {
 	description: 'Un max de barre !',
 	execute(message, args) {
 		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
+		console.log(args[0]);
 		let voiceChannel = message.guild.channels
 			.filter(function(channel) {
 				return channel.type === 'voice';

@@ -7,8 +7,8 @@ const { Client } = require('pg');
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
-	connectionString : process.env.DATABASE_URL,
-	ssl              : true
+	connectionString: process.env.DATABASE_URL,
+	ssl: true
 });
 
 let prefix = '!';
@@ -22,7 +22,6 @@ commandFiles.forEach((file) => {
 });
 
 bot.on('ready', () => {
-	bot.user.setActivity('Justin à poil', { type: 'WATCHING' }).catch((err) => console.error(err));
 	console.log('Bot ready');
 	// Database connection
 	client.connect((err, client) => {
@@ -71,8 +70,8 @@ bot.on('message', (message) => {
 	const user_mentioned = message.mentions.users.first();
 	if (message.isMentioned(user_mentioned) && typeof user_mentioned != 'undefined') {
 		const client = new Client({
-			connectionString : process.env.DATABASE_URL,
-			ssl              : true
+			connectionString: process.env.DATABASE_URL,
+			ssl: true
 		});
 		client.connect((err, client) => {
 			client.query(
