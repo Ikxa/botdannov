@@ -21,8 +21,9 @@ module.exports = {
 					const stream = ytdl(args[0], { filter: 'audioonly' });
 					const dispatcher = connection.playStream(stream, playingOptions);
 				} else {
-					dispatcher.pause();
-					dispatcher.end();
+					const receiver = connection.createReceiver();
+					const audioStream = receiver.createStream();
+					audioStream.end();
 					// dispatcher.stream.end();
 				}
 
