@@ -2,8 +2,8 @@ const fs = require('fs');
 const ytdl = require('ytdl-core');
 
 module.exports = {
-	name        : 'vocal',
-	description : 'Un max de barre !',
+	name: 'vocal',
+	description: 'Un max de barre !',
 	execute(message, args) {
 		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
 		let voiceChannel = message.guild.channels
@@ -20,14 +20,14 @@ module.exports = {
 			if (args[0] === 'pause') dispatcher.pause();
 
 			if (args[0] === 'stop') {
-				console.log('Args');
-				console.log(args);
-				console.log('Dispatcher');
-				console.log(dispatcher);
-				dispatcher.end();
+				dispatcher.stream.end();
 			} else {
 				message.channel.send("Arg0 n'est pas stop");
 			}
+
+			dispatcher.on('error', (err) => {
+				message.channel.send(err);
+			});
 
 			dispatcher.on('end', (end) => {
 				voiceChannel.leave();
