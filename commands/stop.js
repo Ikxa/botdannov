@@ -1,6 +1,8 @@
-export const name = 'stop';
-export const description = 'Stopper la musique !';
-export function execute(message, args) {
-	message.guild.me.voiceChannel.leave();
-	message.channel.send("J'ai dead ça!");
-}
+module.exports = {
+	name        : 'stop',
+	description : 'Stopper la musique !',
+	execute(message, args) {
+		message.guild.me.voiceChannel.leave();
+		message.channel.send("J'ai dead ça!");
+	}
+};
