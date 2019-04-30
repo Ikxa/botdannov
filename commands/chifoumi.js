@@ -4,6 +4,10 @@ module.exports = {
 	name        : 'chifoumi',
 	description : '!chifoumi choix - une partie de chifoumi avec le bot ?',
 	execute(message, args) {
+		const client = new Client({
+			connectionString : process.env.DATABASE_URL,
+			ssl              : true
+		});
 		let userChoice = args.join(' ').toUpperCase();
 		let computerChoice = Math.floor(Math.random() * 3 + 1);
 		let win = false;
