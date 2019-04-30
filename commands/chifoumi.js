@@ -77,10 +77,7 @@ module.exports = {
 					const rows = result.rows;
 					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
-						for (const [ key, value ] of rows) {
-							console.log(key);
-							console.log(value);
-						}
+						console.log(Object.entries(rows[0])[1]);
 						/*console.log(rows[0]);
 						console.log(rows[0]['']['scoreUser']);
 						console.log(rows['scoreUser']);*/
