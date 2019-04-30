@@ -85,7 +85,12 @@ module.exports = {
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
 								message.channel.send(
-									message.author.username + ' - ' + resultChif + ':' + computer + ' - Ordinateur'
+									message.author.username +
+										' - ' +
+										rows['scoreUser'] +
+										' : ' +
+										rows['scoreComputer'] +
+										' - Ordinateur'
 								);
 							}
 						);
