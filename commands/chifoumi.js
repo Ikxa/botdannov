@@ -62,6 +62,9 @@ module.exports = {
 		} else if (win === false && draw === true) {
 			resultChif = 1;
 			computer = 1;
+		} else if (win === false && draw === false) {
+			resultChif = 0;
+			computer = 1;
 		}
 
 		client.connect((err, client) => {
