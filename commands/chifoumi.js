@@ -75,7 +75,6 @@ module.exports = {
 				(err, result) => {
 					if (err !== null && err !== '') console.log(err);
 					const rows = result.rows;
-					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
 						const userScore = Object.entries(rows[0])[1];
 						const computerScore = Object.entries(rows[0])[2];
