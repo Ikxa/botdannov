@@ -1,3 +1,5 @@
+const { Client } = require('pg');
+
 module.exports = {
 	name        : 'chifoumi',
 	description : '!chifoumi choix - une partie de chifoumi avec le bot ?',
