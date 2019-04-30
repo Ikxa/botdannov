@@ -7,8 +7,8 @@ const { Client } = require('pg');
 
 /* TODO : Cannot read property of undefined */
 const client = new Client({
-	connectionString: process.env.DATABASE_URL,
-	ssl: true
+	connectionString : process.env.DATABASE_URL,
+	ssl              : true
 });
 
 let prefix = '!';
@@ -32,6 +32,18 @@ bot.on('ready', () => {
                 nickname text, \
                 reason text, \
                 is_active integer default 1)',
+			(err, result) => {
+				//disconnent from database on error
+				if (err !== null && err !== '') console.log(err);
+			}
+		);
+
+		client.query(
+			'create table if not exists chifoumi( \
+                id text primary key, \
+                nickname text, \
+                scoreUser integer default 0, \
+                scoreComputer integer default 0)',
 			(err, result) => {
 				//disconnent from database on error
 				if (err !== null && err !== '') console.log(err);
@@ -70,8 +82,8 @@ bot.on('message', (message) => {
 	const user_mentioned = message.mentions.users.first();
 	if (message.isMentioned(user_mentioned) && typeof user_mentioned != 'undefined') {
 		const client = new Client({
-			connectionString: process.env.DATABASE_URL,
-			ssl: true
+			connectionString : process.env.DATABASE_URL,
+			ssl              : true
 		});
 		client.connect((err, client) => {
 			client.query(
