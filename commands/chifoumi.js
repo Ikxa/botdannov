@@ -85,9 +85,9 @@ module.exports = {
 								message.channel.send(
 									message.author.username +
 										' - ' +
-										rows['scoreUser'] +
+										rows[scoreUser] +
 										' : ' +
-										rows['scoreComputer'] +
+										rows[scoreComputer] +
 										' - Ordinateur'
 								);
 							}
