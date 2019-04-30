@@ -79,18 +79,15 @@ module.exports = {
 					if (typeof rows[0] !== 'undefined') {
 						const userScore = Object.entries(rows[0])[1];
 						const computerScore = Object.entries(rows[0])[2];
+						resultChif = resultChif + userScore[1];
+						computer = computer + computerScore[1];
 						client.query(
 							'update chifoumi set scoreUser = $1, scoreComputer = $2 where id = $3',
 							[ resultChif, computer, message.author.id ],
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
 								message.channel.send(
-									message.author.username +
-										' - ' +
-										userScore[1] +
-										' : ' +
-										computerScore[1] +
-										' - Ordinateur'
+									message.author.username + ' - ' + resultChif + ' : ' + computer + ' - Ordinateur'
 								);
 							}
 						);
