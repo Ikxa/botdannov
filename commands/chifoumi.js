@@ -77,7 +77,7 @@ module.exports = {
 					const rows = result.rows;
 					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
-						for (const [ key, value ] of rows[0]) {
+						for (const [ key, value ] of rows) {
 							console.log(key);
 							console.log(value);
 						}
