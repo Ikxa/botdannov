@@ -12,7 +12,7 @@ module.exports = {
 		let computerChoice = Math.floor(Math.random() * 3 + 1);
 		let win = false;
 		let draw = false;
-		let result = 0;
+		let resultChif = 0;
 		let computer = 0;
 		switch (computerChoice) {
 			case 1:
@@ -57,10 +57,10 @@ module.exports = {
 		}
 
 		if (win === true && draw === false) {
-			result = 1;
+			resultChif = 1;
 			computer = 0;
 		} else if (win === false && draw === true) {
-			result = 1;
+			resultChif = 1;
 			computer = 1;
 		}
 
@@ -73,14 +73,16 @@ module.exports = {
 					if (err !== null && err !== '') console.log(err);
 					const rows = result.rows;
 					if (typeof rows[0] !== 'undefined') {
+						console.log(typeof rows[0]);
+						console.log(rows[0]);
 						// Score existant > Update + message pour afficher les scores
 						client.query(
 							'update chifoumi set scoreUser = $1, scoreComputer = $2 where id = $3',
-							[ result, computer, message.author.id ],
+							[ resultChif, computer, message.author.id ],
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
 								message.channel.send(
-									message.author.username + ' - ' + result + ':' + computer + ' - Ordinateur'
+									message.author.username + ' - ' + resultChif + ':' + computer + ' - Ordinateur'
 								);
 							}
 						);
@@ -88,11 +90,11 @@ module.exports = {
 						// Score inexistant > Insert + message pour afficher les scores
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
-							[ message.author.id, message.author.username, result, computer ],
+							[ message.author.id, message.author.username, resultChif, computer ],
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
 								message.channel.send(
-									message.author.username + ' - ' + result + ':' + computer + ' - Ordinateur'
+									message.author.username + ' - ' + resultChif + ':' + computer + ' - Ordinateur'
 								);
 							}
 						);
