@@ -75,8 +75,12 @@ module.exports = {
 				(err, result) => {
 					if (err !== null && err !== '') console.log(err);
 					const rows = result.rows;
+					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
-						console.log(rows[0]['scoreUser']);
+						console.log(rows[0]);
+						console.log(rows[0]['']['scoreUser']);
+						console.log(rows['scoreUser']);
+
 						// Score existant > Update + message pour afficher les scores
 						client.query(
 							'update chifoumi set scoreUser = $1, scoreComputer = $2 where id = $3',
@@ -93,7 +97,7 @@ module.exports = {
 								);
 							}
 						);
-					} else {
+					} /*else {
 						// Score inexistant > Insert + message pour afficher les scores
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
@@ -105,7 +109,7 @@ module.exports = {
 								);
 							}
 						);
-					}
+					}*/
 				}
 			);
 		});
