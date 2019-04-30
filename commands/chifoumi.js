@@ -76,7 +76,7 @@ module.exports = {
 					if (err !== null && err !== '') console.log(err);
 					const rows = result.rows;
 					if (typeof rows[0] !== 'undefined') {
-						console.log(rows[0]);
+						console.log(rows[0]['scoreUser']);
 						// Score existant > Update + message pour afficher les scores
 						client.query(
 							'update chifoumi set scoreUser = $1, scoreComputer = $2 where id = $3',
