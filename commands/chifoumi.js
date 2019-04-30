@@ -91,7 +91,7 @@ module.exports = {
 								);
 							}
 						);
-					} /*else {
+					} else {
 						// Score inexistant > Insert + message pour afficher les scores
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
@@ -99,11 +99,11 @@ module.exports = {
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
 								message.channel.send(
-									message.author.username + ' - ' + resultChif + ':' + computer + ' - Ordinateur'
+									message.author.username + ' - ' + resultChif + ' : ' + computer + ' - Ordinateur'
 								);
 							}
 						);
-					}*/
+					}
 				}
 			);
 		});
