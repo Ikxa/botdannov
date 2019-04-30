@@ -77,12 +77,8 @@ module.exports = {
 					const rows = result.rows;
 					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
-						console.log(Object.entries(rows[0])[1]);
-						/*console.log(rows[0]);
-						console.log(rows[0]['']['scoreUser']);
-						console.log(rows['scoreUser']);*/
-
-						// Score existant > Update + message pour afficher les scores
+						const userScore = Object.entries(rows[0])[1];
+						const computerScore = Object.entries(rows[0])[2];
 						client.query(
 							'update chifoumi set scoreUser = $1, scoreComputer = $2 where id = $3',
 							[ resultChif, computer, message.author.id ],
@@ -91,9 +87,9 @@ module.exports = {
 								message.channel.send(
 									message.author.username +
 										' - ' +
-										rows['scoreUser'] +
+										userScore[1] +
 										' : ' +
-										rows['scoreComputer'] +
+										computerScore[1] +
 										' - Ordinateur'
 								);
 							}
