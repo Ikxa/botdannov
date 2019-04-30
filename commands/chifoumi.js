@@ -77,9 +77,12 @@ module.exports = {
 					const rows = result.rows;
 					console.log(typeof rows[0]);
 					if (typeof rows[0] !== 'undefined') {
-						console.log(rows[0]);
+						for (properties in rows[0]) {
+							console.log(properties);
+						}
+						/*console.log(rows[0]);
 						console.log(rows[0]['']['scoreUser']);
-						console.log(rows['scoreUser']);
+						console.log(rows['scoreUser']);*/
 
 						// Score existant > Update + message pour afficher les scores
 						client.query(
