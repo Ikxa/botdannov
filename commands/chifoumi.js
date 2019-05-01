@@ -14,46 +14,52 @@ module.exports = {
 		let draw = false;
 		let resultChif = 0;
 		let computer = 0;
-		switch (computerChoice) {
-			case 1:
-				// Pierre
-				if (userChoice === 'PIERRE') {
-					draw = true;
-					message.channel.send('Égalité');
-				} else if (userChoice === 'CISEAUX') {
-					win = false;
-					message.channel.send('Perdu !');
-				} else if (userChoice === 'FEUILLE') {
-					win = true;
-					message.channel.send('Gagné !');
-				}
-				break;
-			case 2:
-				// Feuille
-				if (userChoice === 'FEUILLE') {
-					draw = true;
-					message.channel.send('Égalité');
-				} else if (userChoice === 'CISEAUX') {
-					win = true;
-					message.channel.send('Gagné !');
-				} else if (userChoice === 'PIERRE') {
-					win = false;
-					message.channel.send('Perdu !');
-				}
-				break;
-			case 3:
-				// Ciseaux
-				if (userChoice === 'CISEAUX') {
-					draw = true;
-					message.channel.send('Égalité');
-				} else if (userChoice === 'FEUILLE') {
-					win = false;
-					message.channel.send('Perdu !');
-				} else if (userChoice === 'PIERRE') {
-					win = true;
-					message.channel.send('Gagné !');
-				}
-				break;
+
+		if (userChoice !== 'PIERRE' || userChoice !== 'CISEAUX' || userChoice !== 'FEUILLE') {
+			message.channel.send('NTM ADRIEN');
+			return;
+		} else {
+			switch (computerChoice) {
+				case 1:
+					// Pierre
+					if (userChoice === 'PIERRE') {
+						draw = true;
+						message.channel.send('Égalité');
+					} else if (userChoice === 'CISEAUX') {
+						win = false;
+						message.channel.send('Perdu !');
+					} else if (userChoice === 'FEUILLE') {
+						win = true;
+						message.channel.send('Gagné !');
+					}
+					break;
+				case 2:
+					// Feuille
+					if (userChoice === 'FEUILLE') {
+						draw = true;
+						message.channel.send('Égalité');
+					} else if (userChoice === 'CISEAUX') {
+						win = true;
+						message.channel.send('Gagné !');
+					} else if (userChoice === 'PIERRE') {
+						win = false;
+						message.channel.send('Perdu !');
+					}
+					break;
+				case 3:
+					// Ciseaux
+					if (userChoice === 'CISEAUX') {
+						draw = true;
+						message.channel.send('Égalité');
+					} else if (userChoice === 'FEUILLE') {
+						win = false;
+						message.channel.send('Perdu !');
+					} else if (userChoice === 'PIERRE') {
+						win = true;
+						message.channel.send('Gagné !');
+					}
+					break;
+			}
 		}
 
 		if (win === true && draw === false) {
