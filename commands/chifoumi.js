@@ -15,18 +15,20 @@ module.exports = {
 		let resultChif = 0;
 		let computer = 0;
 
+		console.log(userChoice);
+
+		if (userChoice == 'RESET') {
+			client.query('delete from chifoumi where id = $1', [ message.author.id ], (err) => {
+				message.channel.send(err);
+				if (err !== null && err !== '') console.log(err);
+			});
+			message.channel.send('Score réinitialisé !');
+			return;
+		}
+
 		if (userChoice != 'PIERRE' && userChoice != 'CISEAUX' && userChoice != 'FEUILLE') {
-			if (userChoice == 'RESET') {
-				client.query('delete from chifoumi where id = $1', [ message.author.id ], (err) => {
-					message.channel.send(err);
-					if (err !== null && err !== '') console.log(err);
-				});
-				message.channel.send('Score réinitialisé !');
-				return;
-			} else {
-				message.channel.send('NTM ADRIEN');
-				return;
-			}
+			message.channel.send('NTM ADRIEN');
+			return;
 		} else {
 			switch (computerChoice) {
 				case 1:
