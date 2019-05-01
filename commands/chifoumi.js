@@ -22,9 +22,9 @@ module.exports = {
 					[ message.author.id ],
 					(err) => {
 						if (err !== null && err !== '') console.log(err);
-						message.channel.send('Score réinitialisé !');
 					}
 				);
+				message.channel.send('Score réinitialisé !');
 				return;
 			} else {
 				message.channel.send('NTM ADRIEN');
