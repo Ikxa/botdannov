@@ -15,7 +15,7 @@ module.exports = {
 		let resultChif = 0;
 		let computer = 0;
 
-		if (userChoice !== 'PIERRE' || userChoice !== 'CISEAUX' || userChoice !== 'FEUILLE') {
+		if (userChoice != 'PIERRE' && userChoice != 'CISEAUX' && userChoice != 'FEUILLE') {
 			message.channel.send('NTM ADRIEN');
 			return;
 		} else {
