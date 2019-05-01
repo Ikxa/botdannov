@@ -18,7 +18,7 @@ module.exports = {
 		if (userChoice != 'PIERRE' && userChoice != 'CISEAUX' && userChoice != 'FEUILLE') {
 			if (userChoice == 'RESET') {
 				client.query(
-					'update chifoumi set scoreUser = 0, scoreComputer = 0 where id = $1',
+					'update chifoumi set scoreUser = 0, scoreComputer = 0 where id = $0',
 					[ message.author.id ],
 					(err) => {
 						if (err !== null && err !== '') console.log(err);
