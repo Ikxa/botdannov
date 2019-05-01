@@ -16,8 +16,20 @@ module.exports = {
 		let computer = 0;
 
 		if (userChoice != 'PIERRE' && userChoice != 'CISEAUX' && userChoice != 'FEUILLE') {
-			message.channel.send('NTM ADRIEN');
-			return;
+			if (userChoice == 'RESET') {
+				client.query(
+					'update chifoumi set scoreUser = 0, scoreComputer = 0 where id = $1',
+					[ message.author.id ],
+					(err) => {
+						if (err !== null && err !== '') console.log(err);
+						message.channel.send('Score réinitialisé !');
+					}
+				);
+				return;
+			} else {
+				message.channel.send('NTM ADRIEN');
+				return;
+			}
 		} else {
 			switch (computerChoice) {
 				case 1:
