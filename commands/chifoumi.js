@@ -18,6 +18,7 @@ module.exports = {
 		if (userChoice != 'PIERRE' && userChoice != 'CISEAUX' && userChoice != 'FEUILLE') {
 			if (userChoice == 'RESET') {
 				client.query('delete from chifoumi where id = $1', [ message.author.id ], (err) => {
+					message.channel.send(err);
 					if (err !== null && err !== '') console.log(err);
 				});
 				message.channel.send('Score réinitialisé !');
