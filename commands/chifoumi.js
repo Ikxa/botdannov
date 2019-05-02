@@ -102,18 +102,19 @@ module.exports = {
 							[ resultChif, computer, message.author.id ],
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
+								message.channel.send('Sauvegarde dans base de données mise à jour');
 								message.channel.send(
 									message.author.username + ' - ' + resultChif + ' : ' + computer + ' - Ordinateur'
 								);
 							}
 						);
 					} else {
-						// Score inexistant > Insert + message pour afficher les scores
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
 							[ message.author.id, message.author.username, resultChif, computer ],
 							(err) => {
 								if (err !== null && err !== '') console.log(err);
+								message.channel.send('Sauvegarde dans base de données faite');
 								message.channel.send(
 									message.author.username + ' - ' + resultChif + ' : ' + computer + ' - Ordinateur'
 								);
