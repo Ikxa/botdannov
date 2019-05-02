@@ -85,6 +85,7 @@ module.exports = {
 		}
 
 		client.connect((err, client) => {
+			console.log('début');
 			client.query(
 				'select id, scoreUser, scoreComputer from chifoumi \
                 where id = $1',
@@ -93,6 +94,7 @@ module.exports = {
 					if (err !== null && err !== '') console.log(err);
 					const rows = result.rows;
 					if (typeof rows[0] !== 'undefined') {
+						console.log('début 2');
 						const userScore = Object.entries(rows[0])[1];
 						const computerScore = Object.entries(rows[0])[2];
 						resultChif = resultChif + userScore[1];
@@ -109,6 +111,7 @@ module.exports = {
 							}
 						);
 					} else {
+						console.log('début 3');
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
 							[ message.author.id, message.author.username, resultChif, computer ],
