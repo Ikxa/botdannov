@@ -27,6 +27,7 @@ module.exports = {
 				);
 			});
 			message.channel.send('Score réinitialisé !');
+			client.disconnect();
 			return;
 		}
 
