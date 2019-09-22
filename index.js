@@ -39,6 +39,17 @@ bot.on('ready', () => {
 		);
 
 		client.query(
+			'create table if not exists counter_msg( \
+                id text primary key, \
+                nickname text, \
+                nb integer)',
+			(err, result) => {
+				//disconnent from database on error
+				if (err !== null && err !== '') console.log(err);
+			}
+		);
+
+		client.query(
 			'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
@@ -57,6 +68,8 @@ bot.on('disconnected', () => {
 });
 
 bot.on('message', (message) => {
+	message.channel.sendMessage(message.author);
+
 	const thisWord = 'fart';
 	if (message.content.includes(thisWord)) {
 		message.delete(1000);
