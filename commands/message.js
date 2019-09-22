@@ -9,7 +9,7 @@ module.exports = {
                 connectionString : process.env.DATABASE_URL,
                 ssl              : true
             });
-
+            message.channel.send('Je calcule combien de messages vous avez envoyé');
             client.query(
                 'select id, nickname, nb from counter_msg \
                 where nickname = $1',
