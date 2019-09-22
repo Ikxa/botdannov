@@ -71,6 +71,38 @@ bot.on('message', (message) => {
 	if (!message.author.bot) {
 		message.reply(message.author);
 		message.reply(typeof message.author.toString());
+
+		client.query(
+			'select id, nickname, nb from counter_msg \
+            where nickname = $1',
+			[ message.author.toString() ],
+			(err, result) => {
+				if (err !== null && err !== '') console.log(err);
+				const rows = result.rows;
+				console.log(rows);
+				if (typeof rows[0] !== 'undefined') {
+					/** UPDATE **/
+					client.query(
+						'update counter_msg set nb = $1 where nickname = $2',
+						[ nb + 1, message.author.username.toString() ],
+						(err) => {
+							if (err !== null && err !== '') console.log(err);
+							message.channel.send('Sauvegarde dans base de données mise à jour');
+						}
+					);
+				} else {
+					client.query(
+						'insert into counter_msg (id, nickname, nb) values ($1, $2, $3)',
+						[ message.author.id, message.author.username.toString(), 1 ],
+						(err) => {
+							if (err !== null && err !== '') console.log(err);
+							message.channel.send('Sauvegarde dans base de données faite');
+						}
+					);
+				}
+			}
+		);
+
 	}
 
 	const thisWord = 'fart';

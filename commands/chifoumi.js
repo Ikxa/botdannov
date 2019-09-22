@@ -115,7 +115,6 @@ module.exports = {
 							}
 						);
 					} else {
-						console.log('début 3');
 						client.query(
 							'insert into chifoumi (id, nickname, scoreUser, scoreComputer) values ($1, $2, $3, $4)',
 							[ message.author.id, message.author.username, resultChif, computer ],
