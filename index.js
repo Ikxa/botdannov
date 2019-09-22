@@ -83,7 +83,6 @@ bot.on('message', (message) => {
                         [rows[0]['nb'] + 1, message.author.username.toString()],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
-                            message.channel.send('Sauvegarde dans base de données mise à jour');
                         }
                     );
                 } else {
@@ -92,7 +91,6 @@ bot.on('message', (message) => {
                         [message.author.id, message.author.username.toString(), 1],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
-                            message.channel.send('Sauvegarde dans base de données faite');
                         }
                     );
                 }
