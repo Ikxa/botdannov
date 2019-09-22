@@ -15,7 +15,7 @@ module.exports = {
                 where nickname = $1',
                 [message.author.username.toString()],
                 (err, result) => {
-                    if (err !== null && err !== '') console.log(err);
+                    if (err !== null && err !== '') message.channel.send(err);
                     const rows = result.rows;
                     message.channel.send('Vous avez envoyé ' + rows[0]['nb'] + ' message(s) sur le serveur.');
                 }
