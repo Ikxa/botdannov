@@ -68,7 +68,9 @@ bot.on('disconnected', () => {
 });
 
 bot.on('message', (message) => {
-	// message.reply(message.author);
+	if (!message.author.bot) {
+		message.reply(message.author);
+	}
 
 	const thisWord = 'fart';
 	if (message.content.includes(thisWord)) {
