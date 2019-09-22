@@ -9,7 +9,6 @@ module.exports = {
                 connectionString: process.env.DATABASE_URL,
                 ssl: true
             });
-            message.channel.send('Je calcule combien de messages vous avez envoyé');
             client.connect((err, client) => {
                 client.query(
                     'select id, nickname, nb from counter_msg \
@@ -18,8 +17,11 @@ module.exports = {
                     (err, result) => {
                         if (err !== null && err !== '') console.log(err);
                         const rows = result.rows;
-                        console.log(result);
-                        message.channel.send('Vous avez envoyé ' + rows[0]['nb'] + ' message(s) sur le serveur.');
+                        if (rows[0]['nb'] > 1)
+                            message.channel.send('Vous avez envoyé ' + rows[0]['nb'] + ' messages sur le serveur.');
+                        else
+                            message.channel.send('Vous avez envoyé ' + rows[0]['nb'] + ' message sur le serveur.');
+
                     }
                 );
             });
