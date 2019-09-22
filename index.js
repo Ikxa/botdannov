@@ -68,7 +68,7 @@ bot.on('disconnected', () => {
 });
 
 bot.on('message', (message) => {
-	message.channel.sendMessage(message.author);
+	message.reply(message.author);
 
 	const thisWord = 'fart';
 	if (message.content.includes(thisWord)) {
