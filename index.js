@@ -76,12 +76,12 @@ bot.on('message', (message) => {
             (err, result) => {
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
-                console.log(rows);
+                console.log(rows[0]['nb']);
                 if (typeof rows[0] !== 'undefined') {
                     /** UPDATE **/
                     client.query(
                         'update counter_msg set nb = $1 where nickname = $2',
-                        [nb + 1, message.author.username.toString()],
+                        [1, message.author.username.toString()],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
                             message.channel.send('Sauvegarde dans base de données mise à jour');
