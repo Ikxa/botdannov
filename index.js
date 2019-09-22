@@ -111,6 +111,7 @@ bot.on('message', (message) => {
     }
 
     if (message.author.id == 453121034988683265 || message.author.id == 231451354470678528) {
+        message.delete(1000);
         return;
     }
 
