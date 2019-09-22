@@ -70,6 +70,7 @@ bot.on('disconnected', () => {
 bot.on('message', (message) => {
 	if (!message.author.bot) {
 		message.reply(message.author);
+		message.reply(typeof message.author.toString());
 	}
 
 	const thisWord = 'fart';
