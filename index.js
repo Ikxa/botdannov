@@ -69,34 +69,36 @@ bot.on('disconnected', () => {
 
 bot.on('message', (message) => {
     if (!message.author.bot) {
-        client.query(
-            'select id, nickname, nb from counter_msg \
-            where nickname = $1',
-            [message.author.username.toString()],
-            (err, result) => {
-                if (err !== null && err !== '') console.log(err);
-                const rows = result.rows;
-                if (typeof rows[0] !== 'undefined') {
-                    /** UPDATE **/
-                    client.query(
-                        'update counter_msg set nb = $1 where nickname = $2',
-                        [rows[0]['nb'] + 1, message.author.username.toString()],
-                        (err) => {
-                            if (err !== null && err !== '') console.log(err);
-                        }
-                    );
-                } else {
-                    client.query(
-                        'insert into counter_msg (id, nickname, nb) values ($1, $2, $3)',
-                        [message.author.id, message.author.username.toString(), 1],
-                        (err) => {
-                            if (err !== null && err !== '') console.log(err);
-                        }
-                    );
+        const excludeMessage = '!message';
+        if (!message.content.includes(excludeMessage)) {
+            client.query(
+                'select id, nickname, nb from counter_msg \
+                where nickname = $1',
+                [message.author.username.toString()],
+                (err, result) => {
+                    if (err !== null && err !== '') console.log(err);
+                    const rows = result.rows;
+                    if (typeof rows[0] !== 'undefined') {
+                        /** UPDATE **/
+                        client.query(
+                            'update counter_msg set nb = $1 where nickname = $2',
+                            [rows[0]['nb'] + 1, message.author.username.toString()],
+                            (err) => {
+                                if (err !== null && err !== '') console.log(err);
+                            }
+                        );
+                    } else {
+                        client.query(
+                            'insert into counter_msg (id, nickname, nb) values ($1, $2, $3)',
+                            [message.author.id, message.author.username.toString(), 1],
+                            (err) => {
+                                if (err !== null && err !== '') console.log(err);
+                            }
+                        );
+                    }
                 }
-            }
-        );
-
+            );
+        }
     }
 
     const thisWord = 'fart';
