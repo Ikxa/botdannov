@@ -101,6 +101,11 @@ bot.on('message', (message) => {
         }
     }
 
+
+    if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
+        message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
+    }
+
     const thisWord = 'fart';
     if (message.content.includes(thisWord)) {
         message.delete(1000);
