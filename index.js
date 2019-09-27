@@ -101,10 +101,12 @@ bot.on('message', (message) => {
         }
     }
 
+    if (!message.author.bot) {
+        if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
+            message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
+        }
+    }
 
-    /*if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
-        message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
-    }*/
 
     const thisWord = 'fart';
     if (message.content.includes(thisWord)) {
