@@ -101,6 +101,17 @@ bot.on('message', (message) => {
         }
     }
 
+    /**
+     * Commande mute pour 5 min d'un membre
+     */
+    if (message.author.id == 193467165389619211) {
+        const args = message.content.slice(prefix.length).split(' ');
+        console.log(args);
+        if (message.content.startsWith('!mute') && args > 0) {
+            console.log('Tout va bien!');
+        }
+    }
+
     if (!message.author.bot) {
         if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
             message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
