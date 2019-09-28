@@ -105,11 +105,9 @@ bot.on('message', (message) => {
      * Commande mute pour 5 min d'un membre
      */
     if (message.author.id == 193467165389619211) {
-        const args = message.content.slice(prefix.length).split(' ');
-        console.log(args);
-        if (message.content.startsWith('!mute') && args > 0) {
-            console.log('Tout va bien!');
-        }
+        var interval = setInterval(function () {
+            message.delete();
+        }, 60000 * 5);
     }
 
     if (!message.author.bot) {
