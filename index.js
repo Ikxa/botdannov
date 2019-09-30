@@ -101,15 +101,6 @@ bot.on('message', (message) => {
         }
     }
 
-    /**
-     * Commande mute pour 5 min d'un membre
-     */
-    if (message.author.id == 193467165389619211) {
-        var interval = setInterval(function () {
-            message.delete();
-        }, 60000 * 5);
-    }
-
     if (!message.author.bot) {
         if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
             message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
