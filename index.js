@@ -99,9 +99,15 @@ bot.on('message', (message) => {
                 }
             );
         }
+    }
 
-        if (message.content.startsWith('bonjour') || message.content.startsWith('Bonjour')) {
-            message.channel.send('Bonjour ' + message.author.username + ', comment ça va ?');
+    if (!message.author.bot && message.author.id !== 453121034988683265)
+    {
+        if (message.content.startsWith('Bonjour')) {
+            if (message.author.username == 'EidorianP')
+                message.channel.send('Bonjour Adrien, comment tu vas ?');
+            else
+                message.channel.send('Bonjour ' + message.author.username + ', comment tu vas ?');
         }
     }
 
