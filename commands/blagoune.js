@@ -4,11 +4,20 @@ module.exports = {
     name: "blagoune",
     description: "Un max de barre !",
     execute(message, args) {
-        console.log("J'essaye de faire la requête axios");
-        axios.get("http://api.yomomma.info/").then(response => {
-            console.log(response);
-            message.channel.send(response.joke);
-        });
-        console.log("Je suis censé l'avoir réussi !");
+        axios.get('http://api.yomomma.info/')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function (response) {
+                // always executed
+                console.log(response);
+            });
+
+        message.channel.send("J'ai envoyé la blague!");
     },
 };
