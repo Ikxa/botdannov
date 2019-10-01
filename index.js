@@ -101,7 +101,7 @@ bot.on('message', (message) => {
         }
     }
 
-    if (!message.author.bot && message.author.id !== 453121034988683265)
+    if (!message.author.bot && message.author.id != 453121034988683265)
     {
         if (message.content.startsWith('Bonjour')) {
             if (message.author.username == 'EidorianP')
