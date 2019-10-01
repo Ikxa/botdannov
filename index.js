@@ -67,6 +67,11 @@ bot.on('disconnected', () => {
 });
 
 bot.on('message', (message) => {
+    if (message.author.bot) {
+        return;
+    }
+
+    // Compter les messages
     if (!message.author.bot) {
         const excludeMessage = '!message';
         if (!message.content.includes(excludeMessage)) {
@@ -100,24 +105,14 @@ bot.on('message', (message) => {
         }
     }
 
-    if (!message.author.bot && message.author.id != 453121034988683265)
-    {
-        if (message.content.startsWith('Bonjour')) {
-            if (message.author.username == 'EidorianP')
-                message.channel.send('Bonjour Adrien, comment tu vas ?');
-            else
-                message.channel.send('Bonjour ' + message.author.username + ', comment tu vas ?');
-        }
+    if (message.content.startsWith("Bonjour")) {
+        /*if (message.author.username == 'EidorianP')
+            message.channel.send('Bonjour Adrien, comment tu vas ?');
+        else*/
+        message.channel.send('Bonjour ' + message.author.username + ', comment tu vas ?');
     }
 
-    if (message.author.id == 453121034988683265) {
-        return;
-    }
-
-    if (message.author.bot) {
-        return;
-    }
-
+    // Gestion de l'AFK
     const user_mentioned = message.mentions.users.first();
     if (message.isMentioned(user_mentioned) && typeof user_mentioned != 'undefined') {
         const client = new Client({
@@ -142,6 +137,7 @@ bot.on('message', (message) => {
         });
     }
 
+    // Commande à exécuter
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
