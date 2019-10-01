@@ -107,11 +107,9 @@ bot.on('message', (message) => {
 
     if (message.content.startsWith("Bonjour")) {
         if (message.author.username === 'EidorianP')
-            message.channel.send('Bonjour Adrien, comment tu vas ?');
+            message.reply('Bonjour Adrien, comment tu vas ?');
         else
-            message.channel.send('Bonjour ' + message.author.username + ', comment tu vas ?');
-
-        return;
+            message.reply('Bonjour ' + message.author.username + ', comment tu vas ?');
     }
 
     // Gestion de l'AFK
