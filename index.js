@@ -5,7 +5,6 @@ const maintenance = false;
 
 const {Client} = require('pg');
 
-/* TODO : Cannot read property of undefined */
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
@@ -111,15 +110,6 @@ bot.on('message', (message) => {
         }
     }
 
-    const thisWord = 'fart';
-    if (message.content.includes(thisWord)) {
-        message.delete(1000);
-        message.channel.sendMessage('**@&#$%!**');
-        for ($i = 0; $i <= 100; $i++) {
-            message.author.send('Le mot **FART** est interdit!');
-        }
-    }
-
     if (message.author.id == 453121034988683265) {
         return;
     }
@@ -128,11 +118,6 @@ bot.on('message', (message) => {
         return;
     }
 
-    // TODO: Fonctionne correctement !
-    // id de l'utilisateur mentionné : **user_mentioned.id**
-    // résultat de la requête : **result.rows**
-    // rows = [ { reason: 'PauseCaca' } ]
-    // raison de l'afk : rows[0].reason
     const user_mentioned = message.mentions.users.first();
     if (message.isMentioned(user_mentioned) && typeof user_mentioned != 'undefined') {
         const client = new Client({
@@ -157,7 +142,6 @@ bot.on('message', (message) => {
         });
     }
 
-    // Command execution
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
