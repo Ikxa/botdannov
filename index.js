@@ -105,7 +105,7 @@ bot.on('message', (message) => {
         }
     }
 
-    if (message.content.startsWith("Bonjour")) {
+    if (message.content.startsWith("Bonjour") || message.content.startsWith("bonjour")) {
         if (message.author.username === 'EidorianP')
             message.channel.send('Bonjour Adrien, comment tu vas ?');
         else
