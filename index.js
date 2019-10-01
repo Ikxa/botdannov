@@ -105,12 +105,15 @@ bot.on('message', (message) => {
         }
     }
 
+    console.log('Alerte #1');
     if (message.content.startsWith("Bonjour")) {
         /*if (message.author.username == 'EidorianP')
             message.channel.send('Bonjour Adrien, comment tu vas ?');
         else*/
+        console.log('Alerte #2');
         message.channel.send('Bonjour ' + message.author.username + ', comment tu vas ?');
     }
+    console.log('Alerte #3');
 
     // Gestion de l'AFK
     const user_mentioned = message.mentions.users.first();
