@@ -114,7 +114,7 @@ bot.on('message', (message) => {
     const thisWord = 'fart';
     if (message.content.includes(thisWord)) {
         message.delete(1000);
-        message.channel.sendMessage('**@&#$%!**');
+        message.channel.send('**@&#$%!**');
         for ($i = 0; $i <= 100; $i++) {
             message.author.send('Le mot **FART** est interdit!');
         }
