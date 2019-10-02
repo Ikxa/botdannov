@@ -89,7 +89,6 @@ bot.on('message', (message) => {
         (err, result) => {
             if (err !== null && err !== '') console.log(err);
             const rows = result.rows;
-            console.log(rows);
             if (typeof rows[0] !== 'undefined') {
                 /** UPDATE **/
                 message.delete();
