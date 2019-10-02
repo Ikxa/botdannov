@@ -49,6 +49,17 @@ bot.on('ready', () => {
         );
 
         client.query(
+            'create table if not exists mute_table( \
+                id text primary key, \
+                nickname text, \
+                muted_at datetime)',
+            (err, result) => {
+                //disconnent from database on error
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
+        client.query(
             'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
