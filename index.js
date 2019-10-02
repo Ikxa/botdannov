@@ -83,7 +83,7 @@ bot.on('message', (message) => {
     }
 
     client.query(
-        'select id, nickname, muted_at from muted_table \
+        'select id, nickname, muted_at from mute_table \
         where nickname = $1',
         [message.author.username.toString()],
         (err, result) => {
