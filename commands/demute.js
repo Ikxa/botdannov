@@ -12,7 +12,7 @@ module.exports = {
 
             client.connect((err, client) => {
                 client.query(
-                    'delete * from mute_table',
+                    'delete from mute_table',
                     (err) => {
                         if (err !== null && err !== '') console.log(err);
                     }
