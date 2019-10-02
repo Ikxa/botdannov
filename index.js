@@ -92,9 +92,8 @@ bot.on('message', (message) => {
             console.log(rows);
             if (typeof rows[0] !== 'undefined') {
                 /** UPDATE **/
+                message.delete();
                 message.channel.send("Ce mec est mute !");
-            } else {
-                message.channel.send("Ce mec est pas mute !");
             }
         }
     );
