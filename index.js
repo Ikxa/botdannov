@@ -82,6 +82,24 @@ bot.on('message', (message) => {
         return;
     }
 
+    client.query(
+        'select id, nickname, muted_at from muted_table \
+        where nickname = $1',
+        [message.author.username.toString()],
+        (err, result) => {
+            if (err !== null && err !== '') console.log(err);
+            const rows = result.rows;
+            console.log(rows);
+            if (typeof rows[0] !== 'undefined') {
+                /** UPDATE **/
+                message.channel.send("Ce mec est mute !");
+            } else {
+                message.channel.send("Ce mec est pas mute !");
+            }
+        }
+    );
+
+
     // Compter les messages
     if (!message.author.bot) {
         const excludeMessage = '!message';
@@ -116,6 +134,7 @@ bot.on('message', (message) => {
         }
     }
 
+    // Réponse aux bonjours
     if (message.content.startsWith("Bonjour") || message.content.startsWith("bonjour")) {
         if (message.author.username === 'EidorianP')
             message.channel.send('Bonjour Adrien, comment tu vas ?');
