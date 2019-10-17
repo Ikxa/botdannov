@@ -5,34 +5,18 @@ module.exports = {
     name: 'vocal',
     description: 'Un max de barre !',
     execute(message, args) {
-        const playingOptions = {filter: 'audioonly', bitrate: 192000};
-
-        console.log(args[0]);
-
-        let voiceChannel = message.member.voiceChannel;
-        let connection = voiceChannel.join();
-
-        const dispatcher = connection.playStream(ytdl(args[0], {filter: 'audioonly'}), playingOptions);
-
-        dispatcher.on('error', (err) => {
-            message.channel.send(err);
-        });
-
-        dispatcher.on('end', (end) => {
-            voiceChannel.leave();
-        });
-
-        /*voiceChannel
+        const streamOptions = {seek: 0, volume: 1};
+        const voiceChannel = message.member.voiceChannel;
+        voiceChannel
             .join()
-            .then((connection) => {
-                console.log("Je commence !!");
-
-
-
-                console.log("J'ai fini, je quitte !");
-            })
-            .catch((e) => {
-                console.log(e);
-            });*/
+            .then(connection => {
+                console.log("joined channel");
+                const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', {filter: 'audioonly'});
+                const dispatcher = connection.playStream(stream, streamOptions);
+                dispatcher.on("end", end => {
+                    console.log("left channel");
+                    voiceChannel.leave();
+                });
+            }).catch(err => console.log(err));
     }
-};
+}
