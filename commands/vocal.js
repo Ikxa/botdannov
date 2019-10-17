@@ -12,6 +12,10 @@ module.exports = {
             .then(connection => {
                 console.log("joined channel");
                 const stream = ytdl(args[0], {filter: 'audioonly'});
+
+				console.log("Stream:");
+				console.log(stream);
+
                 const dispatcher = connection.playStream(stream, streamOptions);
                 dispatcher.on("end", end => {
                     console.log("left channel");
