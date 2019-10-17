@@ -20,6 +20,7 @@
     "config": "^3.0.0",
     "config.json": "0.0.4",
     "discord.js": "*",
+    "ffmpeg": "0.0.4",
     "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
     "pg": "^7.7.1",
