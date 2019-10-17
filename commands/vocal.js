@@ -11,7 +11,7 @@ module.exports = {
             .join()
             .then(connection => {
                 console.log("joined channel");
-                const stream = ytdl('https://www.youtube.com/watch?v=gOMhN-hfMtY', {filter: 'audioonly'});
+                const stream = ytdl(args[0], {filter: 'audioonly'});
                 const dispatcher = connection.playStream(stream, streamOptions);
                 dispatcher.on("end", end => {
                     console.log("left channel");
