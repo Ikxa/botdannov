@@ -5,4 +5,7 @@
     <option name="nameOverrideEnabled" value="true" />
     <option name="nameOverrideText" value="Chef Bot" />
   </component>
+  <component name="ProjectNotificationSettings">
+    <option name="askShowProject" value="false" />
+  </component>
 </project>
