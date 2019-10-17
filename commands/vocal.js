@@ -6,15 +6,20 @@ module.exports = {
 	description : 'Un max de barre !',
 	execute(message, args) {
 		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
-		console.log(args[0]);
-		console.log(typeof args[0]);
+
 		let voiceChannel = message.guild.channels
 			.filter(function(channel) {
 				return channel.type === 'voice';
 			})
 			.last();
 
-		voiceChannel
+		if (message.member.voice.channel) {
+			const connection = message.member.voice.channel.join();
+		} else {
+			message.reply('You need to join a voice channel first!');
+		}
+
+		/*voiceChannel
 			.join()
 			.then((connection) => {
 				const stream = ytdl(args[0], { filter: 'audioonly' });
@@ -30,6 +35,6 @@ module.exports = {
 			})
 			.catch((e) => {
 				console.log(e);
-			});
+			});*/
 	}
 };
