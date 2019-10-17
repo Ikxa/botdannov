@@ -5,19 +5,25 @@ module.exports = {
 	name        : 'vocal',
 	description : 'Un max de barre !',
 	execute(message, args) {
-		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
+		/*const playingOptions = { filter: 'audioonly', bitrate: 192000 };
 
 		let voiceChannel = message.guild.channels
 			.filter(function(channel) {
 				return channel.type === 'voice';
 			})
-			.last();
+			.last();*/
 
+		let connection;
 		if (message.member.voice.channel) {
-			const connection = message.member.voice.channel.join();
+			connection = message.member.voice.channel.join();
 		} else {
 			message.reply('You need to join a voice channel first!');
 		}
+
+		const ytdl = require('ytdl-core');
+		connection.play(ytdl(
+			'https://www.youtube.com/watch?v=ZlAU_w7-Xp8',
+			{ filter: 'audioonly' }));
 
 		/*voiceChannel
 			.join()
