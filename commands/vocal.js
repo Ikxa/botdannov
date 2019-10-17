@@ -7,6 +7,8 @@ module.exports = {
 	execute(message, args) {
 		const playingOptions = { filter: 'audioonly', bitrate: 192000 };
 
+		console.log(args[0]);
+
 		let voiceChannel = message.guild.channels
 			.filter(function(channel) {
 				return channel.type === 'voice';
@@ -16,6 +18,8 @@ module.exports = {
 		voiceChannel
 			.join()
 			.then((connection) => {
+				console.log("Je commence !!");
+
 				const stream = ytdl(args[0], { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, playingOptions);
 
@@ -26,6 +30,8 @@ module.exports = {
 				dispatcher.on('end', (end) => {
 					voiceChannel.leave();
 				});
+
+				console.log("J'ai fini, je quitte !");
 			})
 			.catch((e) => {
 				console.log(e);
