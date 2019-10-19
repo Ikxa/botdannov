@@ -2,25 +2,34 @@ const fs = require('fs');
 const ytdl = require('ytdl-core');
 
 module.exports = {
-    name: 'vocal',
-    description: 'Un max de barre !',
+    name        : 'vocal',
+    description : 'Un max de barre !',
     execute(message, args) {
-        const streamOptions = {seek: 0, volume: 1};
-        const voiceChannel = message.member.voiceChannel;
+        const playingOptions = { filter: 'audioonly', bitrate: 192000 };
+        console.log(args[0]);
+        console.log(typeof args[0]);
+        let voiceChannel = message.guild.channels
+            .filter(function(channel) {
+                return channel.type === 'voice';
+            })
+            .last();
+
         voiceChannel
             .join()
-            .then(connection => {
-                console.log("joined channel");
-                const stream = ytdl(args[0], {filter: 'audioonly'});
+            .then((connection) => {
+                const stream = ytdl(args[0], { filter: 'audioonly' });
+                const dispatcher = connection.playStream(stream, playingOptions);
 
-				console.log("Stream:");
-				console.log(stream);
+                dispatcher.on('error', (err) => {
+                    message.channel.send(err);
+                });
 
-                const dispatcher = connection.playStream(stream, streamOptions);
-                dispatcher.on("end", end => {
-                    console.log("left channel");
+                dispatcher.on('end', (end) => {
                     voiceChannel.leave();
                 });
-            }).catch(err => console.log(err));
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     }
-}
+};
