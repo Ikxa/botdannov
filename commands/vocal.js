@@ -10,8 +10,7 @@ module.exports = {
         let voiceChannel = message.guild.channels
             .filter(function(channel) {
                 return channel.type === 'voice';
-            })
-            .first();
+            });
 
         voiceChannel
             .join()
