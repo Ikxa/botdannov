@@ -21,11 +21,11 @@ commandFiles.forEach((file) => {
 bot.on('ready', () => {
     console.log('Bot ready');
 
-    function consoleLog() {
-        console.log("Message 123");
+    function verifyMuted() {
+        // console.log("Message 123");
     }
 
-    let interval = setInterval(function () { consoleLog(); }, 1000);
+    let interval = setInterval(function () { verifyMuted(); }, 1000);
 
     // Database connection
     client.connect((err, client) => {
