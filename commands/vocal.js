@@ -5,7 +5,7 @@ module.exports = {
     name        : 'vocal',
     description : 'Un max de barre !',
     execute(message, args) {
-        if (args[0] == "stop") {
+        if (args[0] === "stop") {
             message.guild.me.voiceChannel.leave();
             message.channel.send("J'ai dead ça chacal !");
 
