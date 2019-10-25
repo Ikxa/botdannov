@@ -77,7 +77,8 @@ bot.on('ready', () => {
             (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
-                console.log(result);
+                const rows = result.rows;
+                console.log(rows[0]);
             }
         );
     });
