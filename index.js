@@ -20,7 +20,6 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', () => {
     console.log('Bot ready');
-
     let is_muted = false;
 
     // Database connection
@@ -78,19 +77,36 @@ bot.on('ready', () => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
-                console.log(rows[0]);
+                if (rows[0] !== "undefined") {
+                    is_muted = true;
+                }
             }
         );
     });
 
     // verify if the muted guy is muted for 5 min
     function verifyMuted() {
-        // console.log("Message 123");
+        // TODO : Récupérer les datetime du mute et comparer au datetime actuel
+        // TODO : Si > 5 min, supprimer la ligne et le demute
+
+        client.connect((err, client) => {
+            client.query(
+                'select * from mute_table',
+                (err, result) => {
+                    //disconnent from database on error
+                    if (err !== null && err !== '') console.log(err);
+                    const rows = result.rows;
+                    console.log("J'ai fais la requête !");
+                }
+            );
+        });
     }
 
-    let interval = setInterval(function () {
-        verifyMuted();
-    }, 1000);
+    if (is_muted === true) {
+        let interval = setInterval(function () {
+            verifyMuted();
+        }, 1000);
+    }
 });
 
 bot.on('message', (message) => {
