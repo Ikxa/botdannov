@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 module.exports = {
-    name: 'demute',
-    description: "Demute tout le monde!",
+    name: 'momma',
+    description: "Ta mère est tellement... ",
     execute(message, args) {
         axios.get('https://yomomma.info/')
             .then(function (response) {
