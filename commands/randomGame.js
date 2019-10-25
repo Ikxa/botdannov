@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 module.exports = {
-    name: "rg",
+    name: "randomGame",
     description: "Vous ne savez pas à quoi jouer ? Demandez !",
     execute(message, args) {
         function compare(arr1, arr2) {
