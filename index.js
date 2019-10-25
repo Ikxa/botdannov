@@ -20,6 +20,11 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', () => {
     console.log('Bot ready');
+
+    setInterval (function () {
+        console.log("Message !");
+    }, 10);
+
     // Database connection
     client.connect((err, client) => {
         // Create table for users_afk
@@ -79,10 +84,6 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    setInterval (function () {
-        console.log("Message !");
-    }, 10);
 
     client.query(
         'select id, nickname, muted_at from mute_table \
