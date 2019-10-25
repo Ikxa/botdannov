@@ -21,9 +21,11 @@ commandFiles.forEach((file) => {
 bot.on('ready', () => {
     console.log('Bot ready');
 
-    setInterval (function () {
-        console.log("Message !");
-    }, 10);
+    function consoleLog() {
+        console.log("Message 123");
+    }
+
+    let interval = setInterval(function () { consoleLog(); }, 1000);
 
     // Database connection
     client.connect((err, client) => {
@@ -74,10 +76,6 @@ bot.on('ready', () => {
             }
         );
     });
-});
-
-bot.on('disconnected', () => {
-    bot.login(process.env.TOKEN).catch((err) => console.error(err));
 });
 
 bot.on('message', (message) => {
