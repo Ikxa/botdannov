@@ -80,6 +80,10 @@ bot.on('message', (message) => {
         return;
     }
 
+    let interval = setInterval (function () {
+        console.log("Message !");
+    }, 1000);
+
     client.query(
         'select id, nickname, muted_at from mute_table \
         where nickname = $1',
@@ -94,7 +98,6 @@ bot.on('message', (message) => {
             }
         }
     );
-
 
     // Compter les messages
     if (!message.author.bot) {
