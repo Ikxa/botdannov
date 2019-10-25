@@ -80,9 +80,9 @@ bot.on('message', (message) => {
         return;
     }
 
-    let interval = setInterval (function () {
+    setInterval (function () {
         console.log("Message !");
-    }, 1000);
+    }, 10);
 
     client.query(
         'select id, nickname, muted_at from mute_table \
