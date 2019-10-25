@@ -90,22 +90,19 @@ function verifyMuted() {
                 const rows = result.rows;
                 if (rows[0] !== "undefined") {
                     is_muted = true;
-                    console.log("Des gens sont mute");
+                    console.log(rows[0]);
                 } else {
                     is_muted = false;
-                    console.log("Personne est mute");
+                    console.log(rows[0]);
                 }
             }
         );
-
-
     });
 }
 
 if (is_muted === false) {
     bot.setInterval(verifyMuted, 1000);
 }
-
 
 bot.on('message', (message) => {
     if (message.author.bot) {
