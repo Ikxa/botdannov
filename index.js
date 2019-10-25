@@ -9,6 +9,7 @@ const client = new Client({
 });
 
 let prefix = '!';
+let is_muted = false;
 
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
@@ -18,10 +19,9 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
+
 bot.on('ready', () => {
     console.log('Bot ready');
-    let is_muted = false;
-
     // Database connection
     client.connect((err, client) => {
         // Create table for users_afk
@@ -70,7 +70,12 @@ bot.on('ready', () => {
                 if (err !== null && err !== '') console.log(err);
             }
         );
+    });
+});
 
+// verify if the muted guy is muted for 5 min
+function verifyMuted() {
+    client.connect((err, client) => {
         client.query(
             'select * from mute_table',
             (err, result) => {
@@ -79,35 +84,22 @@ bot.on('ready', () => {
                 const rows = result.rows;
                 if (rows[0] !== "undefined") {
                     is_muted = true;
+                    console.log("Des gens sont mute");
+                } else {
+                    is_muted = false;
+                    console.log("Personne est mute");
                 }
             }
         );
+
+
     });
+}
 
-    // verify if the muted guy is muted for 5 min
-    function verifyMuted() {
-        // TODO : Récupérer les datetime du mute et comparer au datetime actuel
-        // TODO : Si > 5 min, supprimer la ligne et le demute
+if (is_muted === false) {
+    bot.setInterval(verifyMuted, 1000);
+}
 
-        client.connect((err, client) => {
-            client.query(
-                'select * from mute_table',
-                (err, result) => {
-                    //disconnent from database on error
-                    if (err !== null && err !== '') console.log(err);
-                    const rows = result.rows;
-                    console.log("J'ai fais la requête !");
-                }
-            );
-        });
-    }
-
-    if (is_muted === true) {
-        let interval = setInterval(function () {
-            verifyMuted();
-        }, 1000);
-    }
-});
 
 bot.on('message', (message) => {
     if (message.author.bot) {
