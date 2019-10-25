@@ -5,8 +5,14 @@ module.exports = {
     name        : 'vocal',
     description : 'Un max de barre !',
     execute(message, args) {
-        const playingOptions = { filter: 'audioonly', bitrate: 192000 };
+        if (args[0] == "stop") {
+            message.guild.me.voiceChannel.leave();
+            message.channel.send("J'ai dead ça chacal !");
 
+            return;
+        }
+
+        const playingOptions = { filter: 'audioonly', bitrate: 192000 };
         let voiceChannel = message.guild.channels
             .filter(function(channel) {
                 return channel.type === 'voice';
