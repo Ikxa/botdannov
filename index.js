@@ -21,6 +21,8 @@ commandFiles.forEach((file) => {
 bot.on('ready', () => {
     console.log('Bot ready');
 
+    let is_muted = false;
+
     // Database connection
     client.connect((err, client) => {
         // Create table for users_afk
@@ -69,15 +71,7 @@ bot.on('ready', () => {
                 if (err !== null && err !== '') console.log(err);
             }
         );
-    });
 
-    // verify if the muted guy is muted for 5 min
-    function verifyMuted() {
-        // console.log("Message 123");
-    }
-
-    // Verify if there are some muted guys
-    client.connect((err, client) => {
         client.query(
             'select * from mute_table',
             (err, result) => {
@@ -87,6 +81,11 @@ bot.on('ready', () => {
             }
         );
     });
+
+    // verify if the muted guy is muted for 5 min
+    function verifyMuted() {
+        // console.log("Message 123");
+    }
 
     let interval = setInterval(function () {
         verifyMuted();
