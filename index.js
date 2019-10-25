@@ -74,7 +74,7 @@ bot.on('ready', () => {
 });
 
 // verify if the muted guy is muted for 5 min
-function verifyMuted() {
+/*function verifyMuted() {
     const {Client} = require('pg');
     const client = new Client({
         connectionString: process.env.DATABASE_URL,
@@ -102,7 +102,7 @@ function verifyMuted() {
 
 if (is_muted === false) {
     bot.setInterval(verifyMuted, 1000);
-}
+}*/
 
 bot.on('message', (message) => {
     if (message.author.bot) {
