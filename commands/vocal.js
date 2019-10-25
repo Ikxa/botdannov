@@ -5,13 +5,6 @@ module.exports = {
     name        : 'vocal',
     description : 'Un max de barre !',
     execute(message, args) {
-        if (args[0] === "stop") {
-            message.guild.me.voiceChannel.leave();
-            message.channel.send("J'ai dead ça chacal !");
-
-            return;
-        }
-
         const playingOptions = { filter: 'audioonly', bitrate: 192000 };
         let voiceChannel = message.guild.channels
             .filter(function(channel) {
@@ -27,10 +20,6 @@ module.exports = {
 
                 dispatcher.on('error', (err) => {
                     message.channel.send(err);
-                });
-
-                dispatcher.on('end', (end) => {
-                    voiceChannel.leave();
                 });
             })
             .catch((e) => {
