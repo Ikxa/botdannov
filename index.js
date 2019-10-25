@@ -75,6 +75,12 @@ bot.on('ready', () => {
 
 // verify if the muted guy is muted for 5 min
 function verifyMuted() {
+    const {Client} = require('pg');
+    const client = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
+    });
+
     client.connect((err, client) => {
         client.query(
             'select * from mute_table',
