@@ -9,7 +9,7 @@ module.exports = {
                 connectionString: process.env.DATABASE_URL,
                 ssl: true
             });
-            let today = new Date().toUTCString();
+            let today = new Date().getTime();
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
