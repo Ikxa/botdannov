@@ -52,7 +52,7 @@ bot.on('ready', () => {
             'create table if not exists mute_table( \
                 id text primary key, \
                 nickname text, \
-                muted_at timestamp)',
+                muted_at date)',
             (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
@@ -88,18 +88,17 @@ function verifyMuted() {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
-                console.log(rows[0]);
                 if (typeof rows[0] != "undefined") {
                     is_muted = true;
-                    console.log("Quelqu'un est mute");
+                    // console.log("Quelqu'un est mute");
                     let mutedTime = rows[0]['muted_at'];
-                    let currentTime = new Date().getUTCMinutes();
+                    // let currentTime = new Date().getUTCMinutes();
                     console.log(mutedTime);
-                    console.log(currentTime);
+                    // console.log(currentTime);
                 } else {
                     is_muted = false;
                     console.log("Personne est mute");
-                    console.log(rows[0]);
+                    // console.log(rows[0]);
                 }
             }
         );
