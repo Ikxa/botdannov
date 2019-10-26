@@ -92,7 +92,7 @@ function verifyMuted() {
                     is_muted = true;
                     console.log("Quelqu'un est mute");
                     let mutedTime = rows[0]['muted_at'];
-                    let currentTime = new Date();
+                    let currentTime = new Date().toUTCString();
                     console.log(mutedTime);
                     console.log(currentTime);
                 } else {
