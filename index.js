@@ -106,7 +106,7 @@ function verifyMuted() {
 }
 
 if (is_muted === false) {
-    bot.setInterval(verifyMuted, 1000);
+    bot.setInterval(verifyMuted, 3000);
 }
 
 bot.on('message', (message) => {
