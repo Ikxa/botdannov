@@ -52,7 +52,7 @@ bot.on('ready', () => {
             'create table if not exists mute_table( \
                 id text primary key, \
                 nickname text, \
-                muted_at integer)',
+                muted_at timestamp)',
             (err, result) => {
                 //disconnent from database on error
                 if (err !== null && err !== '') console.log(err);
