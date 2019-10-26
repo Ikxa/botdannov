@@ -89,7 +89,7 @@ function verifyMuted() {
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
                 console.log(rows[0]);
-                if (rows[0] != "undefined") {
+                if (typeof rows[0] != "undefined") {
                     is_muted = true;
                     console.log("Quelqu'un est mute");
                     let mutedTime = rows[0]['muted_at'];
