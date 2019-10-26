@@ -74,7 +74,7 @@ bot.on('ready', () => {
 });
 
 // verify if the muted guy is muted for 5 min
-/*function verifyMuted() {
+function verifyMuted() {
     const {Client} = require('pg');
     const client = new Client({
         connectionString: process.env.DATABASE_URL,
@@ -90,9 +90,14 @@ bot.on('ready', () => {
                 const rows = result.rows;
                 if (rows[0] !== "undefined") {
                     is_muted = true;
-                    console.log(rows[0]);
+                    console.log("Quelqu'un est mute");
+                    let mutedTime = rows[0]['muted_at'];
+                    let currentTime = Date.now();
+                    console.log(mutedTime);
+                    console.log(currentTime);
                 } else {
                     is_muted = false;
+                    console.log("Personne est mute");
                     console.log(rows[0]);
                 }
             }
@@ -102,7 +107,7 @@ bot.on('ready', () => {
 
 if (is_muted === false) {
     bot.setInterval(verifyMuted, 1000);
-}*/
+}
 
 bot.on('message', (message) => {
     if (message.author.bot) {
