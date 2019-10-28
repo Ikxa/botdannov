@@ -21,6 +21,7 @@
     "config.json": "0.0.4",
     "discord.js": "*",
     "ffmpeg": "0.0.4",
+    "moment": "^2.24.0",
     "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
     "pg": "^7.7.1",
