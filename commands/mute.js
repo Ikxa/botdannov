@@ -10,7 +10,7 @@ module.exports = {
                 connectionString: process.env.DATABASE_URL,
                 ssl: true
             });
-            let today = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+            let today = Date.parse(moment().format('YYYY-MM-DD HH:mm:ss'));
             console.log('today : ' + today);
             console.log('today type : ' + typeof today);
             client.connect((err, client) => {
