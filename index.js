@@ -90,9 +90,7 @@ function verifyMuted() {
                 const rows = result.rows;
                 if (typeof rows[0] != "undefined") {
                     is_muted = true;
-                    // console.log("Quelqu'un est mute");
-                    let mutedTime = moment(rows[0]['muted_at']).format('YYYY-MM-DD HH:mm:ss');
-                    // let currentTime = new Date().getUTCMinutes();
+                    let mutedTime = rows[0]['muted_at'];
                     console.log('mutedTime');
                     console.log(mutedTime);
                 } else {
