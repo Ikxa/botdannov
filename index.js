@@ -93,6 +93,7 @@ function verifyMuted() {
                     // console.log("Quelqu'un est mute");
                     let mutedTime = moment(rows[0]['muted_at']).format('YYYY-MM-DD HH:mm:ss');
                     // let currentTime = new Date().getUTCMinutes();
+                    console.log('mutedTime');
                     console.log(mutedTime);
                 } else {
                     is_muted = false;

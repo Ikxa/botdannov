@@ -11,8 +11,8 @@ module.exports = {
                 ssl: true
             });
             let today = moment().format('YYYY-MM-DD HH:mm:ss');
-            console.log('today : ' + today);
-            console.log('today type : ' + typeof today);
+            console.log('today');
+            console.log(today);
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
