@@ -11,14 +11,11 @@ module.exports = {
                 ssl: true
             });
             let today = moment().format('YYYY-MM-DD HH:mm:ss');
-            console.log('today');
-            console.log(typeof today);
-            console.log('today parseDate');
-            console.log(typeof moment(today));
+            let todayParsed = moment(today);
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
-                    [message.author.id, args[0], today],
+                    [message.author.id, args[0], todayParsed],
                     (err) => {
                         if (err !== null && err !== '') console.log(err);
                     }
