@@ -13,7 +13,8 @@ module.exports = {
             let today = moment().format('YYYY-MM-DD HH:mm:ss');
             let todayParsed = moment(today);
             console.log('todayParsed');
-            console.log(todayParsed);
+            /* TODO : Possible solution <-> todayParsed = object <-> Voir si on ne peut pas l'exploiter */
+            console.log(todayParsed['_i']);
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
