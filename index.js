@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client();
 const {Client} = require('pg');
-
+const moment = require('moment');
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true

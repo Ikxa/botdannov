@@ -1,4 +1,5 @@
 const {Client} = require('pg');
+const moment = require('moment');
 
 module.exports = {
     name: 'mute',
@@ -9,7 +10,7 @@ module.exports = {
                 connectionString: process.env.DATABASE_URL,
                 ssl: true
             });
-            let today = new Date();
+            let today = moment().format('YYYY/MM/DD HH:mm:ss');
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
