@@ -13,6 +13,7 @@ module.exports = {
             let today = moment().format('YYYY-MM-DD HH:mm:ss');
             let todayParsed = moment(today);
             console.log('todayParsed');
+            console.log('typeof todayParsed' + typeof todayParsed['_i']);
             console.log(todayParsed['_i']);
             client.connect((err, client) => {
                 client.query(
