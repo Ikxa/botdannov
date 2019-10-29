@@ -14,7 +14,7 @@ module.exports = {
             let todayParsed = moment(today);
             let todayDate = moment(todayParsed['_i']).format('YYYY-MM-DD HH:mm:ss');
             console.log('todayDate');
-            console.log('typeof todayDate ' + typeof todayDate;
+            console.log('typeof todayDate ' + typeof todayDate);
             console.log(todayDate);
             client.connect((err, client) => {
                 client.query(
