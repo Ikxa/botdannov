@@ -20,7 +20,7 @@ module.exports = {
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
-                    [message.author.id, args[0], todayParsed['_i']],
+                    [message.author.id, args[0], today],
                     (err) => {
                         if (err !== null && err !== '') console.log(err);
                     }
