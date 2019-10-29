@@ -12,9 +12,10 @@ module.exports = {
             });
             let today = moment().format('YYYY-MM-DD HH:mm:ss');
             let todayParsed = moment(today);
-            console.log('todayParsed');
-            console.log('typeof todayParsed' + typeof moment(todayParsed['_i'])).format('YYYY-MM-DD HH:mm:ss');
-            console.log(todayParsed['_i']);
+            let todayDate = moment(todayParsed['_i']).format('YYYY-MM-DD HH:mm:ss');
+            console.log('todayDate');
+            console.log('typeof todayDate ' + typeof todayDate;
+            console.log(todayDate);
             client.connect((err, client) => {
                 client.query(
                     'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
