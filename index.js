@@ -92,7 +92,7 @@ function verifyMuted() {
                     /* TODO: forearch rows[0]['nickname'] vérifier le muted_at et voir si ça fait plus de 5 min */
                     /* TODO: Si ça te fait plus de 5 min, supprimer la ligne, sinon revérifier après */
                     is_muted = true;
-                    let mutedTime = moment(rows[0]['muted_at']).format('YYYY-MM-DD HH:mm:ss');
+                    let mutedTime = rows[0]['muted_at'];
                     console.log('mutedTime');
                     console.log('typeof mutedTime' + typeof mutedTime);
                     console.log(mutedTime);
