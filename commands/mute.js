@@ -11,9 +11,9 @@ module.exports = {
                 ssl: true
             });
 
-            // TODO : Besoin de récupérer un datetime JavaScript et de l'insert dans la database
-            const currentTime = "<?php echo new \Datetime(); ?>";
-            console.log(currentTime);
+            /* today : format ISO (?) */
+            const today = moment.utc().format();
+            console.log(today);
 
             client.connect((err, client) => {
                 client.query(
