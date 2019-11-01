@@ -2,15 +2,12 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client();
 const {Client} = require('pg');
-const moment = require('moment');
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
 });
 
 let prefix = '!';
-let is_muted = false;
-
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
 
@@ -72,43 +69,6 @@ bot.on('ready', () => {
         );
     });
 });
-
-// verify if the muted guy is muted for 5 min
-function verifyMuted() {
-    const {Client} = require('pg');
-    const client = new Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: true
-    });
-
-    client.connect((err, client) => {
-        client.query(
-            'select * from mute_table',
-            (err, result) => {
-                //disconnent from database on error
-                if (err !== null && err !== '') console.log(err);
-                const rows = result.rows;
-                if (typeof rows[0] != "undefined") {
-                    /* TODO: forearch rows[0]['nickname'] vérifier le muted_at et voir si ça fait plus de 5 min */
-                    /* TODO: Si ça te fait plus de 5 min, supprimer la ligne, sinon revérifier après */
-                    is_muted = true;
-                    let mutedTime = rows[0]['muted_at'];
-                    console.log('mutedTime');
-                    console.log('typeof mutedTime' + typeof mutedTime);
-                    console.log(mutedTime);
-                } else {
-                    is_muted = false;
-                    console.log("Personne est mute");
-                    // console.log(rows[0]);
-                }
-            }
-        );
-    });
-}
-
-if (is_muted === false) {
-    bot.setInterval(verifyMuted, 3000);
-}
 
 bot.on('message', (message) => {
     if (message.author.bot) {
@@ -201,10 +161,9 @@ bot.on('message', (message) => {
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
-
         if (!bot.commands.has(commandName)) return;
-
         const command = bot.commands.get(commandName);
+
         try {
             command.execute(message, args, bot);
         } catch (error) {

@@ -11,11 +11,7 @@ module.exports = {
                 ssl: true
             });
 
-            let today = moment().toDate();
-            console.log("today's date");
-            console.log(today);
-            console.log("today's typeof");
-            console.log(typeof today);
+            // TODO : Besoin de récupérer un datetime JavaScript et de l'insert dans la database
 
             client.connect((err, client) => {
                 client.query(
