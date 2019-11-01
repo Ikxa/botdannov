@@ -64,8 +64,11 @@ bot.on('message', (message) => {
         return;
     }
 
-    let mutedGuys = JSON.parse(localStorage.getItem("muted_params"));
-    console.log(mutedGuys);
+    if (window.localStorage) {
+        let myStorage = window.localStorage;
+        let mutedGuys = JSON.parse(myStorage.getItem("muted_params"));
+        console.log(mutedGuys);
+    }
 
     // Compter les messages
     if (!message.author.bot) {
