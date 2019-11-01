@@ -67,7 +67,7 @@ bot.on('message', (message) => {
     let Storage = require('dom-storage');
     let sessionStorage = new Storage(null, { strict: true });
     let values = JSON.parse(sessionStorage.getItem('values'));
-    console.log(values);
+    // console.log(values);
 
     // Compter les messages
     if (!message.author.bot) {
