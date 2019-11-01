@@ -46,17 +46,6 @@ bot.on('ready', () => {
         );
 
         client.query(
-            'create table if not exists mute_table( \
-                id text primary key, \
-                nickname text, \
-                muted_at text)',
-            (err, result) => {
-                //disconnent from database on error
-                if (err !== null && err !== '') console.log(err);
-            }
-        );
-
-        client.query(
             'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
@@ -75,21 +64,8 @@ bot.on('message', (message) => {
         return;
     }
 
-    client.query(
-        'select id, nickname, muted_at from mute_table \
-        where nickname = $1',
-        [message.author.username.toString()],
-        (err, result) => {
-            if (err !== null && err !== '') console.log(err);
-            const rows = result.rows;
-            if (typeof rows[0] !== 'undefined') {
-                console.log(rows[0]['muted_at']);
-                /** UPDATE **/
-                message.delete();
-                message.channel.send(rows[0]['nickname'] + ' est mute, il ne peut pas parler !');
-            }
-        }
-    );
+    let mutedGuys = JSON.parse(localStorage.getItem("muted_params"));
+    console.log(mutedGuys);
 
     // Compter les messages
     if (!message.author.bot) {

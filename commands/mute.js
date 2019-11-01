@@ -6,24 +6,13 @@ module.exports = {
     description: "Mute quelqu'un pour 5 min, ça fait du bien!",
     execute(message, args) {
         if (!message.author.bot) {
-            const client = new Client({
-                connectionString: process.env.DATABASE_URL,
-                ssl: true
-            });
-
-            /* today : good format, good minutes but wrong hours (London?) - But it's not really necessary */
-            const today = moment().utc().format("YYYY-MM-DD HH:mm");
-
-            client.connect((err, client) => {
-                client.query(
-                    'insert into mute_table (id, nickname, muted_at) values ($1, $2, $3)',
-                    [message.author.id, args[0], today],
-                    (err) => {
-                        if (err !== null && err !== '') console.log(err);
-                    }
-                );
-                message.channel.send("Le mute est pris en compte pour 5 min !");
-            });
+            // localStorage with many keys ? Nickname, and timer for 5 min ?
+            // Dynamic timer ? In args ?
+            const muted_params = [];
+            let nickname = args[0];
+            let timer = args[1];
+            muted_params.push(nickname, timer);
+            localStorage.setItem("muted_params", JSON.stringify(muted_params));
         }
     }
 };
