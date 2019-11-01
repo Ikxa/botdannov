@@ -12,6 +12,8 @@ module.exports = {
             });
 
             // TODO : Besoin de récupérer un datetime JavaScript et de l'insert dans la database
+            const currentTime = "<?php echo new \Datetime(); ?>";
+            console.log(currentTime);
 
             client.connect((err, client) => {
                 client.query(
