@@ -12,7 +12,13 @@ module.exports = {
             let nickname = args[0];
             let timer = args[1];
             muted_params.push(nickname, timer);
-            localStorage.setItem("muted_params", JSON.stringify(muted_params));
+
+            const windowGlobal = typeof window !== 'undefined' && window
+            if (windowGlobal.localStorage) {
+                let myStorage = windowGlobal.localStorage;
+                myStorage.setItem("muted_params", JSON.stringify(muted_params));
+            }
+
         }
     }
 };
