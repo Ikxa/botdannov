@@ -10,8 +10,6 @@ module.exports = {
             let Storage = require('dom-storage');
             let sessionStorage = new Storage(null, { strict: true });
             let values = { nickname: args[0], timer: args[1] };
-            console.log(values);
-            console.log(JSON.stringify(values));
             sessionStorage.setItem('values', JSON.stringify(values));
         }
     }
