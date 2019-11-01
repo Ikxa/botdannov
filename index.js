@@ -68,6 +68,12 @@ bot.on('ready', (message) => {
             }
         );
     });
+});
+
+bot.on('message', (message) => {
+    if (message.author.bot) {
+        return;
+    }
 
     // TODO : Réduire le timer chaque minute, quand = 0
     function verifyMuting (params) {
@@ -114,12 +120,6 @@ bot.on('ready', (message) => {
             }
         );
     });
-});
-
-bot.on('message', (message) => {
-    if (message.author.bot) {
-        return;
-    }
 
     // Compter les messages
     if (!message.author.bot) {
