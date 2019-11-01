@@ -64,8 +64,9 @@ bot.on('message', (message) => {
         return;
     }
 
-    if (window.localStorage) {
-        let myStorage = window.localStorage;
+    const windowGlobal = typeof window !== 'undefined' && window
+    if (windowGlobal.localStorage) {
+        let myStorage = windowGlobal.localStorage;
         let mutedGuys = JSON.parse(myStorage.getItem("muted_params"));
         console.log(mutedGuys);
     }
