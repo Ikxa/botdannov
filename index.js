@@ -68,11 +68,30 @@ bot.on('ready', () => {
             }
         );
     });
-});
 
-bot.on('message', (message) => {
-    if (message.author.bot) {
-        return;
+    // TODO : Réduire le timer chaque minute, quand = 0
+    function verifyMuting (params) {
+        console.log(params);
+        /*const db = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: true
+        });
+        db.connect((err, client) => {
+            db.query(
+                'update mute set params = $1 \
+                where nickname = $2',
+                [nickname],
+                (err, result) => {
+                    if (err !== null && err !== '') console.log(err);
+                    const rows = result.rows;
+                    if (typeof rows[0] !== 'undefined') {
+                        // UPDATE
+                    }
+                }
+            );
+        });*/
+
+        return 'true';
     }
 
     // Vérifier si l'auteur du message est mute
@@ -89,13 +108,18 @@ bot.on('message', (message) => {
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
-                    console.log(rows[0]);
-                    console.log(rows[0]['params'].timer);
-                    let datas = JSON.parse(rows[0]['params']);
+                    // console.log(rows[0]['params'].timer);
+                    let intervalID = setInterval(verifyMuting(rows[0]["params"]), rows[0]['params'].timer * 1000);
                 }
             }
         );
     });
+});
+
+bot.on('message', (message) => {
+    if (message.author.bot) {
+        return;
+    }
 
     // Compter les messages
     if (!message.author.bot) {
