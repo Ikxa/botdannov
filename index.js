@@ -65,7 +65,7 @@ bot.on('message', (message) => {
     }
 
     let Storage = require('dom-storage');
-    // let sessionStorage = new Storage(null, { strict: true });
+    let sessionStorage = new Storage(null, { strict: true });
     let values = sessionStorage.getItem('values');
     console.log(values);
 
