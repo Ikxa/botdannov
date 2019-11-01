@@ -12,7 +12,7 @@ module.exports = {
             });
 
             /* today : format ISO (?) */
-            const today = moment.utc().format();
+            const today = moment().utc().format("YYYY-MM-DD HH:mm");
             console.log(today);
 
             client.connect((err, client) => {
