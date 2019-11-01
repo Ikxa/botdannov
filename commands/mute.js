@@ -11,9 +11,8 @@ module.exports = {
                 ssl: true
             });
 
-            /* today : format ISO (?) */
+            /* today : good format, good minutes but wrong hours (London?) - But it's not really necessary */
             const today = moment().utc().format("YYYY-MM-DD HH:mm");
-            console.log(today);
 
             client.connect((err, client) => {
                 client.query(

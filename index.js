@@ -83,9 +83,10 @@ bot.on('message', (message) => {
             if (err !== null && err !== '') console.log(err);
             const rows = result.rows;
             if (typeof rows[0] !== 'undefined') {
+                console.log(rows[0]['muted_at']);
                 /** UPDATE **/
                 message.delete();
-                message.channel.send("Ce mec est mute !");
+                message.channel.send(rows[0]['nickname'] + ' est mute, il ne peut pas parler !');
             }
         }
     );
