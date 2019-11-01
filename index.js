@@ -76,7 +76,11 @@ bot.on('message', (message) => {
     }
 
     // Vérifier si l'auteur du message est mute
-    client.connect((err, client) => {
+    const db = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
+    });
+    db.connect((err, client) => {
         client.query(
             'select id, nickname, params from mute \
             where nickname = $1',
