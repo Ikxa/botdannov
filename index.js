@@ -81,7 +81,7 @@ bot.on('message', (message) => {
         ssl: true
     });
     db.connect((err, client) => {
-        client.query(
+        db.query(
             'select id, nickname, params from mute \
             where nickname = $1',
             [message.author.username.toString()],
