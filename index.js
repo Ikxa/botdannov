@@ -17,7 +17,7 @@ commandFiles.forEach((file) => {
 });
 
 
-bot.on('ready', () => {
+bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
     client.connect((err, client) => {
