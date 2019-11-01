@@ -75,6 +75,22 @@ bot.on('message', (message) => {
         return;
     }
 
+    // Vérifier si l'auteur du message est mute
+    client.connect((err, client) => {
+        client.query(
+            'select id, nickname, params from mute \
+            where nickname = $1',
+            [message.author.username.toString()],
+            (err, result) => {
+                if (err !== null && err !== '') console.log(err);
+                const rows = result.rows;
+                if (typeof rows[0] !== 'undefined') {
+                    console.log(rows[0]);
+                }
+            }
+        );
+    });
+
     // Compter les messages
     if (!message.author.bot) {
         const excludeMessage = '!message';
