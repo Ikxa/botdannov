@@ -46,6 +46,17 @@ bot.on('ready', () => {
         );
 
         client.query(
+            'create table if not exists mute( \
+                id text primary key, \
+                nickname text, \
+                params json)',
+            (err, result) => {
+                //disconnent from database on error
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
+        client.query(
             'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
@@ -63,11 +74,6 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    let Storage = require('dom-storage');
-    let sessionStorage = new Storage(null, { strict: true });
-    let values = sessionStorage.getItem('values');
-    console.log(values);
 
     // Compter les messages
     if (!message.author.bot) {
