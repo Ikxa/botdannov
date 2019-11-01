@@ -20,6 +20,7 @@
     "config": "^3.0.0",
     "config.json": "0.0.4",
     "discord.js": "*",
+    "dom-storage": "^2.1.0",
     "ffmpeg": "0.0.4",
     "moment": "^2.24.0",
     "opencollective-postinstall": "^2.0.1",

@@ -64,12 +64,10 @@ bot.on('message', (message) => {
         return;
     }
 
-    const windowGlobal = typeof window !== 'undefined' && window
-    if (windowGlobal.localStorage) {
-        let myStorage = windowGlobal.localStorage;
-        let mutedGuys = JSON.parse(myStorage.getItem("muted_params"));
-        console.log(mutedGuys);
-    }
+    let Storage = require('dom-storage');
+    let sessionStorage = new Storage(null, { strict: true });
+    let values = JSON.parse(sessionStorage.getItem('values'));
+    console.log(values);
 
     // Compter les messages
     if (!message.author.bot) {
