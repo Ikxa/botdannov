@@ -90,9 +90,10 @@ bot.on('message', (message) => {
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
                     console.log(rows[0]);
+                    console.log(rows[0]['params']);
                     console.log(JSON.parse(rows[0]['params']));
                     let datas = JSON.parse(rows[0]['params']);
-                    console.log(datas.timer);
+                    console.log(datas["timer"]);
                 }
             }
         );
