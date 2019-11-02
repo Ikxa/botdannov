@@ -98,7 +98,7 @@ bot.on('message', (message) => {
                         db.query(
                             'update mute set params = $1 \
                             where nickname = $2',
-                            [params, parseInt(rows[0]["params"].nickname]),
+                            [params, rows[0]["params"].nickname],
                             (err, result) => {
                                 if (err !== null && err !== '') console.log(err);
                             }
