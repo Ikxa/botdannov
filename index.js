@@ -90,7 +90,9 @@ bot.on('message', (message) => {
                     if (err !== null && err !== '') console.log(err);
                     const rows = result.rows;
                     if (typeof rows[0] !== 'undefined') {
+                        console.log("Je réduis le timer de l'utilisateur");
                         if (rows[0]["params"].timer === 0) {
+                            console.log("Le timer est égal à 0");
                             message.channel.send('Temps de mute écoulé');
                             return;
                         }
@@ -109,6 +111,7 @@ bot.on('message', (message) => {
         });
     }
 
+    console.log("Je vérifie si l'utilisateur est mute");
     // Vérifier si l'auteur du message est mute
     const db = new Client({
         connectionString: process.env.DATABASE_URL,
@@ -123,6 +126,7 @@ bot.on('message', (message) => {
                 if (err !== null && err !== '') console.log(err);
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
+                    console.log("L'utilisateur est mute donc je vais lancer le décompte du timer");
                     // console.log(rows[0]['params'].timer);
                     let intervalID = setInterval(verifyMuting, (parseInt(rows[0]['params'].timer) * 1000));
                 }
