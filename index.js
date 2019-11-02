@@ -76,28 +76,37 @@ bot.on('message', (message) => {
     }
 
     // TODO : Réduire le timer chaque minute, quand = 0
-    function verifyMuting (params) {
-        console.log(params);
-        /*const db = new Client({
+    function verifyMuting() {
+        const db = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true
         });
         db.connect((err, client) => {
             db.query(
-                'update mute set params = $1 \
-                where nickname = $2',
-                [nickname],
+                'select id, nickname, params from mute \
+                where nickname = $1',
+                [message.author.username.toString()],
                 (err, result) => {
                     if (err !== null && err !== '') console.log(err);
                     const rows = result.rows;
                     if (typeof rows[0] !== 'undefined') {
-                        // UPDATE
+                        if (rows[0]["params"].timer === 0) {
+                            message.channel.send('Temps de mute écoulé');
+                            return;
+                        }
+                        let params = {"nickname": rows[0]["params"].nickname, "timer": rows[0]["params"].timer - 1}
+                        db.query(
+                            'update mute set params = $1 \
+                            where nickname = $2',
+                            [params, parseInt(rows[0]["params"].nickname]),
+                            (err, result) => {
+                                if (err !== null && err !== '') console.log(err);
+                            }
+                        );
                     }
                 }
             );
-        });*/
-
-        return 'true';
+        });
     }
 
     // Vérifier si l'auteur du message est mute
@@ -115,7 +124,7 @@ bot.on('message', (message) => {
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
                     // console.log(rows[0]['params'].timer);
-                    let intervalID = setInterval(verifyMuting(rows[0]["params"]), rows[0]['params'].timer * 1000);
+                    let intervalID = setInterval(verifyMuting, (parseInt(rows[0]['params'].timer) * 1000));
                 }
             }
         );
