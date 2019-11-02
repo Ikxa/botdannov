@@ -81,7 +81,7 @@ bot.on('message', (message) => {
             connectionString: process.env.DATABASE_URL,
             ssl: true
         });
-        db.connect((err, client) => {
+        db.connect((err, db) => {
             db.query(
                 'select id, nickname, params from mute \
                 where nickname = $1',
@@ -94,7 +94,7 @@ bot.on('message', (message) => {
                         if (rows[0]["params"].timer === 0) {
                             console.log("Le timer est égal à 0");
                             message.channel.send('Temps de mute écoulé');
-                            return;
+                            return true;
                         }
                         let params = {"nickname": rows[0]["params"].nickname, "timer": rows[0]["params"].timer - 1}
                         db.query(
@@ -105,6 +105,7 @@ bot.on('message', (message) => {
                                 if (err !== null && err !== '') console.log(err);
                             }
                         );
+                        return false;
                     }
                 }
             );
@@ -112,12 +113,11 @@ bot.on('message', (message) => {
     }
 
     console.log("Je vérifie si l'utilisateur est mute");
-    // Vérifier si l'auteur du message est mute
     const db = new Client({
         connectionString: process.env.DATABASE_URL,
         ssl: true
     });
-    db.connect((err, client) => {
+    db.connect((err, db) => {
         db.query(
             'select id, nickname, params from mute \
             where nickname = $1',
@@ -127,8 +127,11 @@ bot.on('message', (message) => {
                 const rows = result.rows;
                 if (typeof rows[0] !== 'undefined') {
                     console.log("L'utilisateur est mute donc je vais lancer le décompte du timer");
-                    // console.log(rows[0]['params'].timer);
+                    message.delete();
                     let intervalID = setInterval(verifyMuting, (parseInt(rows[0]['params'].timer) * 1000));
+                    if (intervalID === true) {
+                        clearInterval(intervalID);
+                    }
                 }
             }
         );
