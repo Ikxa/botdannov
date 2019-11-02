@@ -46,17 +46,6 @@ bot.on('ready', (message) => {
         );
 
         client.query(
-            'create table if not exists mute( \
-                id text primary key, \
-                nickname text, \
-                params json)',
-            (err, result) => {
-                //disconnent from database on error
-                if (err !== null && err !== '') console.log(err);
-            }
-        );
-
-        client.query(
             'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
@@ -74,69 +63,6 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    // TODO : Réduire le timer chaque minute, quand = 0
-    function verifyMuting() {
-        const db = new Client({
-            connectionString: process.env.DATABASE_URL,
-            ssl: true
-        });
-        db.connect((err, db) => {
-            db.query(
-                'select id, nickname, params from mute \
-                where nickname = $1',
-                [message.author.username.toString()],
-                (err, result) => {
-                    if (err !== null && err !== '') console.log(err);
-                    const rows = result.rows;
-                    if (typeof rows[0] !== 'undefined') {
-                        console.log("Je réduis le timer de l'utilisateur");
-                        if (parseInt(rows[0]["params"].timer) == 0) {
-                            console.log("Le timer est égal à 0");
-                            console.log('Temps de mute écoulé');
-                            return true;
-                        }
-                        let params = {"nickname": rows[0]["params"].nickname, "timer": parseInt(rows[0]["params"].timer) - 1}
-                        db.query(
-                            'update mute set params = $1 \
-                            where nickname = $2',
-                            [params, rows[0]["params"].nickname],
-                            (err, result) => {
-                                if (err !== null && err !== '') console.log(err);
-                            }
-                        );
-                        return false;
-                    }
-                }
-            );
-        });
-    }
-
-    console.log("Je vérifie si l'utilisateur est mute");
-    const db = new Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: true
-    });
-    db.connect((err, db) => {
-        db.query(
-            'select id, nickname, params from mute \
-            where nickname = $1',
-            [message.author.username.toString()],
-            (err, result) => {
-                if (err !== null && err !== '') console.log(err);
-                const rows = result.rows;
-                if (typeof rows[0] !== 'undefined') {
-                    console.log("L'utilisateur est mute donc je vais lancer le décompte du timer");
-                    message.delete();
-                    let intervalID = setInterval(verifyMuting, (parseInt(rows[0]['params'].timer) * 1000));
-                    if (intervalID === true) {
-                        console.log("J'ai clear l'interval car le timer était à 0");
-                        clearInterval(intervalID);
-                    }
-                }
-            }
-        );
-    });
 
     // Compter les messages
     if (!message.author.bot) {
