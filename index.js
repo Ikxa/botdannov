@@ -91,12 +91,12 @@ bot.on('message', (message) => {
                     const rows = result.rows;
                     if (typeof rows[0] !== 'undefined') {
                         console.log("Je réduis le timer de l'utilisateur");
-                        if (rows[0]["params"].timer === 0) {
+                        if (parseInt(rows[0]["params"].timer) == 0) {
                             console.log("Le timer est égal à 0");
-                            message.channel.send('Temps de mute écoulé');
+                            console.log('Temps de mute écoulé');
                             return true;
                         }
-                        let params = {"nickname": rows[0]["params"].nickname, "timer": rows[0]["params"].timer - 1}
+                        let params = {"nickname": rows[0]["params"].nickname, "timer": parseInt(rows[0]["params"].timer) - 1}
                         db.query(
                             'update mute set params = $1 \
                             where nickname = $2',
@@ -130,6 +130,7 @@ bot.on('message', (message) => {
                     message.delete();
                     let intervalID = setInterval(verifyMuting, (parseInt(rows[0]['params'].timer) * 1000));
                     if (intervalID === true) {
+                        console.log("J'ai clear l'interval car le timer était à 0");
                         clearInterval(intervalID);
                     }
                 }
