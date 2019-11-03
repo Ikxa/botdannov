@@ -10,7 +10,7 @@ module.exports = {
         let fullPoll = args.join(' ');
         let question = fullPoll.split("/")[0];
         let split = fullPoll.split("/");
-        for (let i = 1; i <= split.length; i++) {
+        for (let i = 1; i <= (split.length - 1); i++) {
             choices.push(split[i]);
         }
         console.log("question :");
