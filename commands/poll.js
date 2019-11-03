@@ -13,16 +13,16 @@ module.exports = {
             choices.push(split[i].replace( /\s/g, ''));
         }
 
-        message.channel.send(question);
+        message.channel.send(question + '\n ' +
         choices.forEach(function (c) {
             message.channel.send(c.toString());
-        });
+        }));
 
         for (let i = 0; i <= (choices.length - 1); i++) {
             for (let key in reactions) {
                 if (key == i) {
                     console.log("key " + i + " has value " + reactions[i]);
-                    const emoji = message.guild.emojis.find(emoji => emoji.name === reactions[i]);
+                    const emoji = message.emojis.get('305818615712579584');
                     message.react(emoji);
                 }
             }
