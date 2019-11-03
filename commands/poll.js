@@ -23,8 +23,8 @@ module.exports = {
             for (let key in reactions) {
                 if (key == i) {
                     console.log("key " + i + " has value " + reactions[i]);
-                    const emoji = bot.emojis.find(emoji => emoji.name === reactions[i].toString());
-                    message.react(emoji);
+                    // const emoji = bot.emojis.find(emoji => emoji.name === reactions[i].toString());
+                    message.react("640414254423605267");
                 }
             }
         }
