@@ -11,7 +11,7 @@ module.exports = {
         let question = fullPoll.split("/")[0];
         let split = fullPoll.split("/");
         for (let i = 1; i <= (split.length - 1); i++) {
-            choices.push(split[i]);
+            choices.push(split[i].replace( /\s/g, ''));
         }
         console.log("question :");
         console.log(question);
