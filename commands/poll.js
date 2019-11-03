@@ -17,9 +17,10 @@ module.exports = {
         message.channel.send(question)
         choices.forEach(function (c) {
             message.channel.send(c.toString());
+            message.react("👍");
         });
 
-        for (let i = 0; i <= (choices.length - 1); i++) {
+        /*for (let i = 0; i <= (choices.length - 1); i++) {
             for (let key in reactions) {
                 if (key == i) {
                     console.log("key " + i + " has value " + reactions[i]);
@@ -27,6 +28,6 @@ module.exports = {
                     message.react("640414254423605267");
                 }
             }
-        }
+        }*/
     },
 };
