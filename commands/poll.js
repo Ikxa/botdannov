@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const bot = new Discord.Client();
 
 module.exports = {
     name: "poll",
@@ -22,7 +23,7 @@ module.exports = {
             for (let key in reactions) {
                 if (key == i) {
                     console.log("key " + i + " has value " + reactions[i]);
-                    const emoji = message.emojis.get('305818615712579584');
+                    const emoji = bot.emojis.find(emoji => emoji.name === "ayy");
                     message.react(emoji);
                 }
             }
