@@ -4,9 +4,15 @@ module.exports = {
     execute(message, args) {
         // const emoji = message.guild.emojis.find(emoji => emoji.name === 'ayy');
         // message.react(emoji);
-        const argsJoined = args.join(" ");
-        console.log(argsJoined);
-        let argsSplitted = argsJoined.split("?");
-        console.log(argsSplitted);
+        let question = [];
+        args.forEach(function (a) {
+            while (a !== '?') {
+                question.push(a);
+            }
+
+            question.push('?');
+        });
+
+        console.log(question);
     },
 };
