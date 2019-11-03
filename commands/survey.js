@@ -6,5 +6,7 @@ module.exports = {
         // message.react(emoji);
         const argsJoined = args.join(" ");
         console.log(argsJoined);
+        let argsSplitted = argsJoined.split("?");
+        console.log(argsSplitted);
     },
 };
