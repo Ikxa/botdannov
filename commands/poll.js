@@ -18,8 +18,7 @@ module.exports = {
             .setTitle("Sondage :")
             .setAuthor(message.author.username.toString(), message.author.avatarURL)
             .setColor(0x00AE86)
-            .setDescription(question)
-            .addBlankField(true);
+            .setDescription(question);
 
         let cpt = 0;
         choices.forEach(function (c) {
@@ -27,6 +26,8 @@ module.exports = {
             embed.addField('Choix ' + cpt + ' :', c.toString())
         });
 
-        message.channel.send({embed});
+        message.channel.send({embed}).then(embedMessage => {
+            embedMessage.react("👍");
+        });
     },
 };
