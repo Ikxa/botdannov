@@ -16,7 +16,7 @@ module.exports = {
 
         const embed = new Discord.RichEmbed()
             .setTitle("Sondage :")
-            .setAuthor(message.author.username.toString())
+            .setAuthor(message.author.username.toString(), message.author.avatarURL)
             /*
              * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
              */
@@ -27,7 +27,7 @@ module.exports = {
             // .setThumbnail("http://i.imgur.com/p2qNFag.png")
             // .setTimestamp()
             // .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-            .addField('choices', choices.forEach(function (c) {message.channel.send(c.toString())}))
+            .addField('Choix :', choices.forEach(function (c) {message.channel.send(c)}))
             // .addField("Inline Field", "They can also be inline.", true)
             .addBlankField(true)
             // .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
