@@ -14,6 +14,11 @@ module.exports = {
             choices.push(split[i].replace(/\s/g, ''));
         }
 
+        if (choices.length > 4) {
+            message.channel.send('Vous ne pouvez pas mettre plus de 4 choix.');
+            return;
+        }
+
         const embed = new Discord.RichEmbed()
             .setTitle("Sondage :")
             .setAuthor(message.author.username.toString(), message.author.avatarURL)
@@ -27,7 +32,7 @@ module.exports = {
         });
 
         message.channel.send({embed}).then(embedMessage => {
-            for (let i = 0; i <= choices.length; i++)
+            for (let i = 1; i <= choices.length; i++)
             {
                 for (let n in reactions)
                 {
