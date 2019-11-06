@@ -27,7 +27,9 @@ module.exports = {
             // .setThumbnail("http://i.imgur.com/p2qNFag.png")
             // .setTimestamp()
             // .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-            .addField('Choix :', choices.forEach(function (c) {message.channel.send(c)}))
+            choices.forEach(function (c) {
+                .addField('Choix :', message.channel.send(c))
+            }
             // .addField("Inline Field", "They can also be inline.", true)
             .addBlankField(true)
             // .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
