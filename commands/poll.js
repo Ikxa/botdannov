@@ -35,8 +35,6 @@ module.exports = {
             for (let i = 1; i <= choices.length; i++) {
                 for (let n in reactions) {
                     if (i == n) {
-                        console.log(i);
-                        console.log(n);
                         embedMessage.react(reactions[n]);
                     }
                 }
