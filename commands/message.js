@@ -13,7 +13,7 @@ module.exports = {
             {
                 client.connect((err, client) => {
                     client.query(
-                        'select id, nickname, nb from counter_msg ORDER BY nb ASC LIMIT 3',
+                        'SELECT id, nickname, nb FROM counter_msg ORDER BY nb DESC LIMIT 3',
                         (err, result) => {
                             if (err !== null && err !== '') console.log(err);
                             const rows = result.rows;
