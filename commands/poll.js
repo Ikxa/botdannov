@@ -33,7 +33,7 @@ module.exports = {
             // .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
 
         choices.forEach(function (c) {
-            embed.addField(c.toString(), c.toString())
+            embed.addField(c.toString(), c.toString(), true)
         });
 
         message.channel.send({embed});
