@@ -31,11 +31,11 @@ module.exports = {
             embed.addField('Choix ' + cpt + ' :', c.toString())
         });
 
-        message.channel.send({embed}).then(embedMessage => {
+        message.channel.send({embed}).then(async embedMessage => {
             for (let i = 1; i <= choices.length; i++) {
                 for (let n in reactions) {
                     if (i == n) {
-                        embedMessage.react(reactions[n]);
+                        await embedMessage.react(reactions[n]);
                     }
                 }
             }
