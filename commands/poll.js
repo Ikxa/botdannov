@@ -9,7 +9,7 @@ module.exports = {
         let fullPoll = args.join(' ');
         let question = fullPoll.split("/")[0];
         let split = fullPoll.split("/");
-        let reactions = {1: "one", 2: "two", 3: "three", 4: "four"};
+        let reactions = {1: "1⃣", 2: "2⃣", 3: "3⃣", 4: "4⃣"};
         for (let i = 1; i <= (split.length - 1); i++) {
             choices.push(split[i].replace(/\s/g, ''));
         }
@@ -27,10 +27,15 @@ module.exports = {
         });
 
         message.channel.send({embed}).then(embedMessage => {
-            embedMessage.react("1⃣");
-            embedMessage.react("2⃣");
-            embedMessage.react("3⃣");
-            embedMessage.react("4⃣");
+            for (let i = 0; i <= choices.length; i++)
+            {
+                for (let n in reactions)
+                {
+                    if (i == n) {
+                        embedMessage.react(reactions[n]);
+                    }
+                }
+            }
         });
     },
 };
