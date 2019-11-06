@@ -18,6 +18,7 @@ module.exports = {
                             if (err !== null && err !== '') console.log(err);
                             const rows = result.rows;
                             console.log(rows);
+                            console.log(rows[0]);
                         }
                     );
                 });
