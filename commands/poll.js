@@ -11,7 +11,7 @@ module.exports = {
         let split = fullPoll.split("/");
         let reactions = {1: "1⃣", 2: "2⃣", 3: "3⃣", 4: "4⃣"};
         for (let i = 1; i <= (split.length - 1); i++) {
-            choices.push(split[i].replace(/\s/g, ''));
+            choices.push(split[i].replace(/^\s+|\s+$/g, ''));
         }
 
         if (choices.length > 4) {
