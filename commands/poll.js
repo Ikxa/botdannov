@@ -27,7 +27,10 @@ module.exports = {
         });
 
         message.channel.send({embed}).then(embedMessage => {
-            embedMessage.react("👍");
+            embedMessage.react("1⃣");
+            embedMessage.react("2⃣");
+            embedMessage.react("3⃣");
+            embedMessage.react("4⃣");
         });
     },
 };
