@@ -17,8 +17,11 @@ module.exports = {
                         (err, result) => {
                             if (err !== null && err !== '') console.log(err);
                             const rows = result.rows;
-                            console.log(rows);
-                            console.log(rows[0]);
+                            let cpt = 0;
+                            rows.forEach(function (r) {
+                               cpt += 1;
+                               message.channel.send("Top #" + cpt + " - " + r.nickname + " : " + r.nb + " message(s).");
+                            });
                         }
                     );
                 });
