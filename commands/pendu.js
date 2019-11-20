@@ -2,8 +2,8 @@ const {Client} = require('pg');
 const fs = require("fs");
 
 module.exports = {
-    name: 'message',
-    description: "Comment participes-tu sur le serveur ?",
+    name: 'pendu',
+    description: "Jouer au jeu du pendu, un mot du dictionnaire est tiré aléatoirement. Devinez le !",
     execute(message, args) {
         console.log('Salut 1');
         if (args[0] === 'start') {
