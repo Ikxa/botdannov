@@ -24,9 +24,10 @@ module.exports = {
 
             let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
 
+            console.log('Nombre de lignes : ' + countLines);
             console.log(arrayOfLines);
-            console.log(randomNumber);
-            console.log(arrayOfLines[randomNumber]);
+            console.log('Numéro aléatoire : ' + randomNumber);
+            console.log('Mot aléatoire : ' + arrayOfLines[randomNumber]);
         }
     }
 };

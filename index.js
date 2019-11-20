@@ -46,16 +46,6 @@ bot.on('ready', (message) => {
         );
 
         client.query(
-            'delete from counter_msg \
-                where id = $1',
-            ['193467165389619211'],
-            (err, result) => {
-                //disconnent from database on error
-                if (err !== null && err !== '') console.log(err);
-            }
-        );
-
-        client.query(
             'create table if not exists chifoumi( \
                 id text primary key, \
                 nickname text, \
