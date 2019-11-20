@@ -6,13 +6,6 @@ module.exports = {
     description: "Jouer au jeu du pendu, un mot du dictionnaire est tiré aléatoirement. Devinez le !",
     execute(message, args) {
         if (args[0] === 'start') {
-            /*fs.readFile('./config/mots_dictionnaire.txt', function (err, data) {
-                if (err) throw err;
-                let dataJson = JSON.parse(data.toString());
-                // let contentJsoned = JSON.parse(content);
-                console.log(dataJson);
-            });*/
-
             let file = './config/mots_dictionnaire.txt';
             let countLines = 0;
             let arrayOfLines = [];
@@ -26,10 +19,13 @@ module.exports = {
                 arrayOfLines.push(line);
             });
             rl.on('close', function () {
-                console.log(countLines);
+                // console.log(countLines);
             });
 
             let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
+
+            console.log(arrayOfLines);
+            console.log(randomNumber);
             console.log(arrayOfLines[randomNumber]);
         }
     }
