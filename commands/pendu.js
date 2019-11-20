@@ -20,14 +20,12 @@ module.exports = {
             });
             rl.on('close', function () {
                 // console.log(countLines);
+                let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
+                console.log('Nombre de lignes : ' + countLines);
+                console.log(arrayOfLines);
+                console.log('Numéro aléatoire : ' + randomNumber);
+                console.log('Mot aléatoire : ' + arrayOfLines[randomNumber]);
             });
-
-            let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
-
-            console.log('Nombre de lignes : ' + countLines);
-            console.log(arrayOfLines);
-            console.log('Numéro aléatoire : ' + randomNumber);
-            console.log('Mot aléatoire : ' + arrayOfLines[randomNumber]);
         }
     }
 };
