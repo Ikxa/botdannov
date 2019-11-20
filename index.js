@@ -21,6 +21,16 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
     client.connect((err, client) => {
+        client.query(
+            'delete from counter_msg( \
+                where id = $1)',
+            ['193467165389619211'],
+            (err, result) => {
+                //disconnent from database on error
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
         // Create table for users_afk
         client.query(
             'create table if not exists users_afk( \
