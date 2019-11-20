@@ -1,19 +1,31 @@
 const {Client} = require('pg');
 const fs = require("fs");
+const readline = require('readline');
 
 module.exports = {
     name: 'pendu',
     description: "Jouer au jeu du pendu, un mot du dictionnaire est tiré aléatoirement. Devinez le !",
     execute(message, args) {
-        console.log('Salut 1');
         if (args[0] === 'start') {
-            console.log('Salut 2');
-            fs.readFile('./config/mots_dictionnaire.txt', function (err, data) {
+            /*fs.readFile('./config/mots_dictionnaire.txt', function (err, data) {
                 if (err) throw err;
-                console.log('Salut 3');
-                let content = data.toString();
+                let dataJson = JSON.parse(data.toString());
                 // let contentJsoned = JSON.parse(content);
-                console.log(content);
+                console.log(dataJson);
+            });*/
+
+            let file = './config/mots_dictionnaire.txt';
+            let countLines = 0;
+            let rl = readline.createInterface({
+                input: fs.createReadStream(file),
+                output: process.stdout,
+                terminal: false
+            });
+            rl.on('line', function (line) {
+                countLines++;
+            });
+            rl.on('close', function () {
+                console.log(countLines);
             });
         }
     }
