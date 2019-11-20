@@ -16,6 +16,7 @@ module.exports = {
 
             let file = './config/mots_dictionnaire.txt';
             let countLines = 0;
+            let arrayOfLines = [];
             let rl = readline.createInterface({
                 input: fs.createReadStream(file),
                 output: process.stdout,
@@ -23,10 +24,14 @@ module.exports = {
             });
             rl.on('line', function (line) {
                 countLines++;
+                arrayOfLines.push(line);
             });
             rl.on('close', function () {
                 console.log(countLines);
             });
+
+            let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
+            console.log(arrayOfLines[randomNumber]);
         }
     }
 };
