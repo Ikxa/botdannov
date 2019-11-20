@@ -1,4 +1,3 @@
-const {Client} = require('pg');
 const fs = require("fs");
 const readline = require('readline');
 
