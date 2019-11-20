@@ -6,7 +6,7 @@ module.exports = {
     description: "Comment participes-tu sur le serveur ?",
     execute(message, args) {
         if (args[0] === 'start') {
-            fs.readFile('./config/mot_dictionnaire.txt', function (err, data) {
+            fs.readFile('./config/mots_dictionnaire.txt', function (err, data) {
                 if (err) throw err;
 
                 let content = data.toString();
