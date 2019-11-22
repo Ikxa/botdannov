@@ -12,7 +12,6 @@ module.exports = {
             let arrayOfLines = [];
             randomWord = '';
             let randomWordHide = '';
-            let lives = 5;
             let rl = readline.createInterface({
                 input: fs.createReadStream(file),
                 output: process.stdout,
@@ -29,12 +28,10 @@ module.exports = {
                 let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
 
-                randomWordHide = randomWord.replace('[a-zA-Z]', "_");
+                randomWordHide = randomWord.replace(/[a-zA-Z]/, "_");
                 console.log(randomWord.toString());
                 console.log(randomWordHide);
             });
-
-
         } else {
             if (randomWord.contains(args[0].toString())) {
                 message.channel.send('Vous avez trouvé une lettre !');
