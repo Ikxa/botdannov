@@ -21,6 +21,18 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
     client.connect((err, client) => {
+        client.query(
+            'create table if not exists pendu( \
+                id text primary key, \
+                wordToGuess text, \
+                wordLength integer)',
+            (err, result) => {
+                //disconnent from database on error
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
+
         // Create table for users_afk
         client.query(
             'create table if not exists users_afk( \
