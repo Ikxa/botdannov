@@ -31,8 +31,8 @@ module.exports = {
             });
 
             randomWordHide = randomWord.replace(/_/g, "_");
-            message.channel.send(randomWord.toString());
-            message.channel.send(randomWordHide.toString());
+            console.log(randomWord.toString());
+            console.log(randomWordHide.toString());
         } else {
             if (randomWord.contains(args[0].toString())) {
                 message.channel.send('Vous avez trouvé une lettre !');
