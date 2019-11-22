@@ -29,9 +29,9 @@ module.exports = {
                 let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
 
-                randomWordHide = randomWord.replace(/_/g, "_");
+                randomWordHide = randomWord.replace('[a-zA-Z]', "_");
                 console.log(randomWord.toString());
-                console.log(randomWordHide.toString());
+                console.log(randomWordHide);
             });
 
 
