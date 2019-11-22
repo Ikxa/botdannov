@@ -5,11 +5,12 @@ module.exports = {
     name: 'pendu',
     description: "Jouer au jeu du pendu, un mot du dictionnaire est tiré aléatoirement. Devinez le !",
     execute(message, args) {
+        let randomWord;
         if (args[0] === 'start') {
             let file = './config/mots_dictionnaire.txt';
             let countLines = 0;
             let arrayOfLines = [];
-            let randomWord = '';
+            randomWord = '';
             let randomWordHide = '';
             let lives = 5;
             let rl = readline.createInterface({
@@ -29,11 +30,15 @@ module.exports = {
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
             });
 
-            for (let i = 0; i <= randomWord.length; i++) {
-                randomWordHide += '_';
+            randomWordHide = randomWord.replace(/_/g, "_");
+            message.channel.send(randomWord.toString());
+            message.channel.send(randomWordHide.toString());
+        } else {
+            if (randomWord.contains(args[0].toString())) {
+                message.channel.send('Vous avez trouvé une lettre !');
+            } else {
+                message.channel.send('Vous n\'avez pas trouvé une lettre !');
             }
-
-            console.log(randomWordHide);
         }
     }
 };
