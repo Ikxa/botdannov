@@ -28,11 +28,13 @@ module.exports = {
                 // console.log(countLines);
                 let randomNumber = Math.floor(Math.random() * Math.floor(countLines));
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
+
+                randomWordHide = randomWord.replace(/_/g, "_");
+                console.log(randomWord.toString());
+                console.log(randomWordHide.toString());
             });
 
-            randomWordHide = randomWord.replace(/_/g, "_");
-            console.log(randomWord.toString());
-            console.log(randomWordHide.toString());
+
         } else {
             if (randomWord.contains(args[0].toString())) {
                 message.channel.send('Vous avez trouvé une lettre !');
