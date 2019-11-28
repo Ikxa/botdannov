@@ -52,14 +52,19 @@ module.exports = {
                         if (typeof rows[0] !== 'undefined') {
                             wordToGuess = rows[0]['wordToGuess'];
                             wordLength = rows[0]['wordLength'];
+                            console.log(wordToGuess);
+                            console.log(wordLength);
                         }
                     }
                 );
             });
 
-            if (args[0].length > 0 && args[0].length <= 1) {
+            if (args[0].length > 0 && args[0].length === 1) {
+                console.log(args[0]);
                 if (wordToGuess.contains(args[0].toString())) {
-                    message.channel.send('Vous avez trouvé une lettre du mot à deviner !');
+                    console.log("une lettre trouvé!");
+                } else {
+                    console.log("aucune lettre trouvé!");
                 }
             }
         }
