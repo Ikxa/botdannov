@@ -33,7 +33,8 @@ module.exports = {
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
                 client.connect((err, client) => {
                     client.query(
-                        'insert into pendu (id, wordToGuess, wordLength) values (1, $1, $2)',
+                        'insert into pendu (id, wordToGuess, wordLength) \
+                        values (1, $1, $2)',
                         [message.author.id, randomWord, randomWord.length],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
@@ -45,7 +46,9 @@ module.exports = {
             let wordToGuess, wordLength;
             client.connect((err, client) => {
                 client.query(
-                    'select * from pendu',
+                    'select * from pendu \
+                    where 1 = $1',
+                    [1],
                     (err, result) => {
                         if (err !== null && err !== '') console.log(err);
                         const rows = result.rows;
