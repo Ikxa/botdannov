@@ -34,7 +34,7 @@ module.exports = {
                 client.connect((err, client) => {
                     client.query(
                         'delete from pendu where id = $1',
-                        [193467165389619211],
+                        ['193467165389619211'],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
                         }
