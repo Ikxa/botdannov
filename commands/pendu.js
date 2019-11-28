@@ -33,6 +33,14 @@ module.exports = {
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
                 client.connect((err, client) => {
                     client.query(
+                        'delete from pendu where id = $1',
+                        [193467165389619211],
+                        (err) => {
+                            if (err !== null && err !== '') console.log(err);
+                        }
+                    );
+
+                    client.query(
                         'insert into pendu (id, wordToGuess, wordLength) \
                         values ($1, $2, $3)',
                         [message.author.id, randomWord, randomWord.length],
