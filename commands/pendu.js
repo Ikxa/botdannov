@@ -34,7 +34,7 @@ module.exports = {
                 client.connect((err, client) => {
                     client.query(
                         'insert into pendu (id, wordToGuess, wordLength) \
-                        values (1, $1, $2)',
+                        values ($1, $2, $3)',
                         [message.author.id, randomWord, randomWord.length],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
