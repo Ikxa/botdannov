@@ -79,10 +79,11 @@ bot.on('message', (message) => {
     /**
      * todo: Get the first user mentionned and send MP with content's message
      */
-    console.log(message.mentions.members.first());
+    /*console.log(message.mentions.members.first().user.username);
     if (message.mentions.members.first()) {
-        message.channel.send('Le message démarre par une mention');
-    }
+        let userCustom = message.mentions.members.first().user.username;
+        message.userCustom.send('essai!');
+    }*/
 
     // Compter les messages
     if (!message.author.bot) {
