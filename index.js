@@ -76,6 +76,13 @@ bot.on('message', (message) => {
         return;
     }
 
+    /**
+     * todo: Get the first user mentionned and send MP with content's message
+     */
+    if (message.mentions.members.first()) {
+        message.channel.send('Le message démarre par une mention');
+    }
+
     // Compter les messages
     if (!message.author.bot) {
         const excludeMessage = '!message';
