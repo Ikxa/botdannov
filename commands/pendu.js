@@ -33,7 +33,16 @@ module.exports = {
                 randomWord = arrayOfLines[randomNumber].toLowerCase();
                 client.connect((err, client) => {
                     client.query(
-                        'insert into pendu (id, wordToGuess, wordLength) values (1, $1, $2)',
+                        'delete from pendu where id = $1',
+                        ['193467165389619211'],
+                        (err) => {
+                            if (err !== null && err !== '') console.log(err);
+                        }
+                    );
+
+                    client.query(
+                        'insert into pendu (id, wordToGuess, wordLength) \
+                        values ($1, $2, $3)',
                         [message.author.id, randomWord, randomWord.length],
                         (err) => {
                             if (err !== null && err !== '') console.log(err);
@@ -45,21 +54,28 @@ module.exports = {
             let wordToGuess, wordLength;
             client.connect((err, client) => {
                 client.query(
-                    'select * from pendu',
+                    'select * from pendu \
+                    where 1 = $1',
+                    [1],
                     (err, result) => {
                         if (err !== null && err !== '') console.log(err);
                         const rows = result.rows;
                         if (typeof rows[0] !== 'undefined') {
                             wordToGuess = rows[0]['wordToGuess'];
                             wordLength = rows[0]['wordLength'];
+                            console.log(wordToGuess);
+                            console.log(wordLength);
                         }
                     }
                 );
             });
 
-            if (args[0].length > 0 && args[0].length <= 1) {
+            if (args[0].length > 0 && args[0].length === 1) {
+                console.log(args[0]);
                 if (wordToGuess.contains(args[0].toString())) {
-                    message.channel.send('Vous avez trouvé une lettre du mot à deviner !');
+                    console.log("une lettre trouvé!");
+                } else {
+                    console.log("aucune lettre trouvé!");
                 }
             }
         }
