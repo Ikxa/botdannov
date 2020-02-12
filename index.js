@@ -28,7 +28,6 @@ bot.on('message', (message) => {
     }
 
     if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
-        message.channel.send('Je déplace l\'image au bon endroit.');
         message.attachments.forEach(attachment => {
             const url = attachment.url;
             bot.channels.get('525134186504519680').send('', {file: url});
