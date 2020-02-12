@@ -28,12 +28,11 @@ bot.on('message', (message) => {
     }
 
     if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
-        message.channel.send('Une image a été envoyée dans le mauvais channel.');
-        bot.channels.get('525134186504519680').send('La photo devrait être envoyé ici.');
         message.attachments.forEach(attachment => {
             const url = attachment.url;
-            bot.channels.get('525134186504519680').send('some text', {file: url});
+            bot.channels.get('525134186504519680').send('', {file: url});
         });
+        message.delete();
     }
 
     // Commande à exécuter
