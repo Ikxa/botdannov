@@ -27,8 +27,8 @@ bot.on('message', (message) => {
         return;
     }
 
-    if (message.attachments.size > 0) {
-        message.channel.send('Une image a été envoyée.');
+    if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
+        message.channel.send('Une image a été envoyée dans le mauvais channel.');
     }
 
     // Commande à exécuter
