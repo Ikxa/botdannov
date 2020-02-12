@@ -32,6 +32,7 @@ bot.on('message', (message) => {
         message.attachments.forEach(attachment => {
             const url = attachment.url;
             bot.channels.get('525134186504519680').send('', {file: url});
+            bot.channels.get('525134186504519680').send("<@" + message.author.id + ">, je déplace la photo ici.");
         });
         message.delete();
     }
