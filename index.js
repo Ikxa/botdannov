@@ -27,6 +27,10 @@ bot.on('message', (message) => {
         return;
     }
 
+    if (message.attachments.size > 0) {
+        message.channel.send('Une image a été envoyée.');
+    }
+
     // Commande à exécuter
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
