@@ -32,7 +32,11 @@ bot.on('message', (message) => {
 
     if (cdu === true && message.channel.id != '680739479862247429') {
         bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
-        bot.channels.get('680739479862247429').send(message);
+        bot.channels.get('680739479862247429').send(message.content);
+
+        console.log(message);
+        console.log(message.content);
+
         message.delete();
     }
 
