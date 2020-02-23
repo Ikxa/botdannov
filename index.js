@@ -27,6 +27,12 @@ bot.on('message', (message) => {
         return;
     }
 
+    let regx = /(?:(?:https?|ftp):\/\/|\b(?:[a-z\d]+\.))(?:(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))?\))+(?:\((?:[^\s()<>]+|(?:\(?:[^\s()<>]+\)))?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))?/g;
+    let cdu = regx.test(message.content.toLowerCase());
+
+    console.log(cdu);
+
+
     if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
         message.attachments.forEach(attachment => {
             const url = attachment.url;
@@ -36,7 +42,7 @@ bot.on('message', (message) => {
         message.delete();
     }
 
-    // Commande à exécuter
+// Commande à exécuter
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
@@ -50,7 +56,8 @@ bot.on('message', (message) => {
             message.reply('Error code 3 : Execute command');
         }
     }
-});
+})
+;
 
 bot.login(process.env.TOKEN);
 
