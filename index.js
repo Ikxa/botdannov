@@ -30,7 +30,11 @@ bot.on('message', (message) => {
     let regx = /(?:(?:https?|ftp):\/\/|\b(?:[a-z\d]+\.))(?:(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))?\))+(?:\((?:[^\s()<>]+|(?:\(?:[^\s()<>]+\)))?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))?/g;
     let cdu = regx.test(message.content.toLowerCase());
 
-    console.log(cdu);
+    if (cdu === true && message.channel.id != '680739479862247429') {
+        bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
+        bot.channels.get('680739479862247429').send(message);
+        message.delete();
+    }
 
 
     if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
