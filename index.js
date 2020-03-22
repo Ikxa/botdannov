@@ -27,7 +27,9 @@ bot.on('message', (message) => {
         return;
     }
 
-    let regx = /([a-z]+\:\/+)([^\/\s]*)([a-z0-9\-@\^=%&;\/~\+]*)[\?]?([^ \#]*)#?([^ \#]*)/ig;
+    console.log('Un message a été envoyé !');
+
+    let regx = (https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,});
     let cdu = regx.test(message.content.toLowerCase());
 
     if (cdu === true && message.channel.id != '680739479862247429') {
