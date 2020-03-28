@@ -22,28 +22,28 @@ bot.on('ready', (message) => {
     // Database connection
     client.connect((err) => {
         client.query(
-            'create table if not exists played( \
-                id text primary key, \
-                id_user text, \
-                id_game text, \
-                name_game text, \
+            'DROP TABLE if exists played ',
+            (err, result) => {
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
+        client.query(
+            'create table if not exists played ( \
+                id_user bigint, \
+                id_game bigint, \
+                game_nom text, \
                 played_at date)',
             (err, result) => {
                 if (err !== null && err !== '') console.log(err);
+                else console.log('Table crée');
             }
         );
     });
 });
 
 bot.on('presenceUpdate', (user) => {
-    console.log('User');
-    console.log(user.user);
-    console.log('Game');
-    console.log(user.presence.game);
-    console.log('GameId');
-    console.log(user.presence.game.applicationID);
-
-    /*if (user.presence.game.applicationID != null) {
+    if (typeof user.presence.game !== 'undefined' && user.presence.game !== null) {
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true
@@ -51,14 +51,14 @@ bot.on('presenceUpdate', (user) => {
 
         client.connect((err) => {
             client.query(
-                'insert into played (id_user, id_game, name_game, played_at) values ($1, $2, $3, $4)',
-                [user.id, user.presence.game.applicationID, user.presence.game.name, new Date()],
+                'insert into played (id_user, id_game, game_nom, played_at) values ($1, $2, $3, $4)',
+                [user.user.id, user.presence.game.applicationID, user.presence.game.name, new Date()],
                 (err) => {
                     if (err !== null && err !== '') console.log(err);
                 }
             );
         });
-    }*/
+    }
 });
 
 bot.on('message', (message) => {
