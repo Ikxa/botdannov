@@ -70,9 +70,11 @@ bot.on('message', (message) => {
     let cdu = regx.test(message.content.toLowerCase());
 
     if (cdu === true && message.channel.id != '680739479862247429') {
-        bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
-        bot.channels.get('680739479862247429').send(message.content);
-        message.delete();
+        if (!message.content.startsWith('https://tenor.com')) {
+            bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
+            bot.channels.get('680739479862247429').send(message.content);
+            message.delete();
+        }
     }
 
 

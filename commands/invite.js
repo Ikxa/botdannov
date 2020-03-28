@@ -15,7 +15,10 @@ module.exports = {
             ssl: true
         });
 
+        // todo: Date pour ne pas prendre tout
+
         client.connect((err) => {
+            // cast(DATE as date) BETWEEN cast(DATEADD(D, -2, GETDATE()) as date) AND cast(GETDATE() as date)
             client.query(
                 'select * from played \
                         where id_user != $1',
@@ -27,7 +30,7 @@ module.exports = {
                         rows.forEach(function (row) {
                             if (user.presence.game.applicationID == row.id_game)
                             {
-                                if (found.includes(row.id_user) === false && (currentDate - row.played_at <= 2)) {
+                                if (found.includes(row.id_user) === false) {
                                     found.push(row.id_user);
                                     message.channel.send('<@' + row.id_user + '> a joué récemment à ' + row.game_nom + ', invite le ?!');
                                 }
