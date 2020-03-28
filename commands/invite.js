@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const {Client} = require('pg');
 const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: 'postgres://efbrwpzfgdilef:88c1889e6fe792001f46717b05b8420bdc5e270f7e944262d11292451b7bb805@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/da0cm0pgfn2t41',
     ssl: true
 });
 

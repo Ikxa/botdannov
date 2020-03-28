@@ -20,7 +20,7 @@ commandFiles.forEach((file) => {
 bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
-    client.connect((err, client) => {
+    client.connect((client, err) => {
         // Create table for users_afk
         client.query(
             'create table if not exists played( \
@@ -41,13 +41,13 @@ bot.on('presenceUpdate', (user) => {
     // console.log(user.user);
     // console.log(user.presence.game.applicationID);
 
-    if (user.presence.game.applicationID != null) {
+    /*if (user.presence.game.applicationID != null) {
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true
         });
 
-        client.connect((err, client) => {
+        client.connect((err) => {
             client.query(
                 'insert into played (id_user, id_game, name_game, played_at) values ($1, $2, $3, $4)',
                 [user.id, user.presence.game.applicationID, user.presence.game.name, new Date()],
@@ -56,7 +56,7 @@ bot.on('presenceUpdate', (user) => {
                 }
             );
         });
-    }
+    }*/
 });
 
 bot.on('message', (message) => {
