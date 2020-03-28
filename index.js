@@ -36,11 +36,14 @@ bot.on('ready', (message) => {
 });
 
 bot.on('presenceUpdate', (user) => {
-    console.log('Présence update');
+    console.log('User');
     console.log(user.user);
+    console.log('Game');
+    console.log(user.presence.game);
+    console.log('GameId');
     console.log(user.presence.game.applicationID);
 
-    if (user.presence.game.applicationID != null) {
+    /*if (user.presence.game.applicationID != null) {
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true
@@ -55,7 +58,7 @@ bot.on('presenceUpdate', (user) => {
                 }
             );
         });
-    }
+    }*/
 });
 
 bot.on('message', (message) => {
