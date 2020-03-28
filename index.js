@@ -20,6 +20,42 @@ commandFiles.forEach((file) => {
 bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
+    client.connect((client, err) => {
+        client.query(
+            'create table if not exists played( \
+                id text primary key, \
+                id_user text, \
+                id_game text, \
+                name_game text, \
+                played_at date)',
+            (err, result) => {
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+    });
+});
+
+bot.on('presenceUpdate', (user) => {
+    console.log('Présence update');
+    console.log(user.user);
+    console.log(user.presence.game.applicationID);
+
+    if (user.presence.game.applicationID != null) {
+        const client = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: true
+        });
+
+        client.connect((err) => {
+            client.query(
+                'insert into played (id_user, id_game, name_game, played_at) values ($1, $2, $3, $4)',
+                [user.id, user.presence.game.applicationID, user.presence.game.name, new Date()],
+                (err) => {
+                    if (err !== null && err !== '') console.log(err);
+                }
+            );
+        });
+    }
 });
 
 bot.on('message', (message) => {
@@ -64,3 +100,4 @@ bot.on('message', (message) => {
 ;
 
 bot.login(process.env.TOKEN);
+
