@@ -20,7 +20,7 @@ commandFiles.forEach((file) => {
 bot.on('ready', (message) => {
     console.log('Bot ready');
     // Database connection
-    client.connect((client, err) => {
+    client.connect((err) => {
         client.query(
             'create table if not exists played( \
                 id text primary key, \
