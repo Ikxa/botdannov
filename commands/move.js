@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
 module.exports = {
     name: 'mv',
     description: "Rediriger les images et les liens",
