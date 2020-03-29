@@ -66,7 +66,7 @@ bot.on('message', (message) => {
         return;
     }
 
-    let regx = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+    /*let regx = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
     let cdu = regx.test(message.content.toLowerCase());
 
     if (cdu === true && message.channel.id != '680739479862247429') {
@@ -85,7 +85,7 @@ bot.on('message', (message) => {
             bot.channels.get('525134186504519680').send("<@" + message.author.id + ">, je déplace la photo ici.");
         });
         message.delete();
-    }
+    }*/
 
 // Commande à exécuter
     if (message.content.startsWith(prefix)) {
