@@ -10,8 +10,6 @@ module.exports = {
         let found = [];
         let currentDate = new Date();
 
-        console.log('Kikou');
-
         const client = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: true
