@@ -1,12 +1,9 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-
 module.exports = {
     name: 'mv',
     description: "Rediriger les images et les liens",
-    execute(message, args) {
-        if (message.attachments.size > 0 && message.channel.id != '525134186504519680') {
-            message.attachments.forEach(attachment => {
+    execute(message, args, bot) {
+        if (args[0].attachments.size > 0 && message.channel.id != '525134186504519680') {
+            args[0].attachments.forEach(attachment => {
                 const url = attachment.url;
                 bot.channels.get('525134186504519680').send('', {file: url});
                 bot.channels.get('525134186504519680').send("<@" + message.author.id + ">, je déplace la photo ici.");
@@ -18,9 +15,9 @@ module.exports = {
         let cdu = regx.test(message.content.toLowerCase());
 
         if (cdu === true && message.channel.id != '680739479862247429') {
-            if (!message.content.startsWith('https://tenor.com')) {
+            if (!args[0].content.startsWith('https://tenor.com')) {
                 bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
-                bot.channels.get('680739479862247429').send(message.content);
+                bot.channels.get('680739479862247429').send(args[0]);
                 message.delete();
             }
         }
