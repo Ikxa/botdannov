@@ -2,6 +2,9 @@ module.exports = {
     name: 'mv',
     description: "Rediriger les images et les liens",
     execute(message, args, bot) {
+
+        console.log(args);
+
         if (args[0].attachments.size > 0 && message.channel.id != '525134186504519680') {
             args[0].attachments.forEach(attachment => {
                 const url = attachment.url;
