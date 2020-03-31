@@ -15,7 +15,7 @@ module.exports = {
         let cdu = regx.test(message.content.toLowerCase());
 
         if (cdu === true && message.channel.id != '680739479862247429') {
-            if (!args[0].content.startsWith('https://tenor.com')) {
+            if (!args[0].startsWith('https://tenor.com')) {
                 bot.channels.get('680739479862247429').send("<@" + message.author.id + ">, je déplace le lien ici.");
                 bot.channels.get('680739479862247429').send(args[0]);
                 message.delete();
