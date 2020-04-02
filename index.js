@@ -66,9 +66,21 @@ bot.on('message', (message) => {
         return;
     }
 
-    /**/
+    window.setTimeout(function () {
+        let date = new Date();
 
-// Commande à exécuter
+        fs.readFile('./config/calendar.json', function read(err, data) {
+            if (err) {
+                throw err;
+            }
+
+            let content = data;
+            console.log(content);
+
+        });
+    }, 3600000);
+
+    // Commande à exécuter
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
         const commandName = args.shift().toLowerCase();
