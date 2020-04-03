@@ -40,6 +40,19 @@ bot.on('ready', (message) => {
             }
         );
     });
+
+    window.setTimeout(function () {
+        let date = new Date();
+
+        fs.readFile('./config/calendar.json', function read(err, data) {
+            if (err) {
+                throw err;
+            }
+
+            let content = data;
+            console.log(content);
+        });
+    }, 3600000);
 });
 
 bot.on('presenceUpdate', (user) => {
@@ -65,19 +78,6 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    window.setTimeout(function () {
-        let date = new Date();
-
-        fs.readFile('./config/calendar.json', function read(err, data) {
-            if (err) {
-                throw err;
-            }
-
-            let content = data;
-            console.log(content);
-        });
-    }, 3600000);
 
     // Commande à exécuter
     if (message.content.startsWith(prefix)) {

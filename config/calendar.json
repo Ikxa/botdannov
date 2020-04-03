@@ -1,4 +1,10 @@
 {
-  "Anniversaire de Guillaume" : "04/04",
-  "Anniversaire de Jordan" : "08/04"
+  "Anniversaire de Guillaume" : {
+    "date": "04/04",
+    "send": "false"
+  },
+  "Anniversaire de Jordan" : {
+    "date": "08/04",
+    "send": "false"
+  }
 }
