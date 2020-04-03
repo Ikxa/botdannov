@@ -76,7 +76,6 @@ bot.on('message', (message) => {
 
             let content = data;
             console.log(content);
-
         });
     }, 3600000);
 
