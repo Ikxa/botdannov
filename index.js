@@ -41,9 +41,7 @@ bot.on('ready', (message) => {
         );
     });
 
-    window.setTimeout(function () {
-        let date = new Date();
-
+    var checkCalendar = setInterval(function () {
         fs.readFile('./config/calendar.json', function read(err, data) {
             if (err) {
                 throw err;
