@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client();
 const {Client} = require('pg');
+const axios = require('axios');
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
@@ -40,17 +41,6 @@ bot.on('ready', (message) => {
             }
         );
     });
-
-    var checkCalendar = setInterval(function () {
-        fs.readFile('./config/calendar.json', function read(err, data) {
-            if (err) {
-                throw err;
-            }
-
-            let content = data;
-            console.log(content);
-        });
-    }, 3600000);
 });
 
 bot.on('presenceUpdate', (user) => {
@@ -77,6 +67,17 @@ bot.on('message', (message) => {
         return;
     }
 
+    // Si attachment > 0 alors requête AJAX
+    if (message.attachments > 0) {
+        axios.post('jordanrenard.fr/add', {
+            name: 'Jordan'
+        }).then(function (response) {
+            console.log(response)
+        }).catch(function (error) {
+            console.log('error ' + error);
+        });
+    }
+
     // Commande à exécuter
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).split(' ');
@@ -91,8 +92,7 @@ bot.on('message', (message) => {
             message.reply('Error code 3 : Execute command');
         }
     }
-})
-;
+});
 
 bot.login(process.env.TOKEN);
 

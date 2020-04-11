@@ -22,6 +22,7 @@
     "discord.js": "*",
     "dom-storage": "^2.1.0",
     "ffmpeg": "0.0.4",
+    "merge-images": "^2.0.0",
     "moment": "^2.24.0",
     "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
