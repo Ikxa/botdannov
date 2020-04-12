@@ -73,7 +73,7 @@ bot.on('message', (message) => {
         axios
             .get('http://www.jordanrenard.fr/add')
             .then(function (response) {
-                console.log(response)
+                message.channel.send(response.data);
             })
             .catch(function (error) {
                 console.log('error ' + error);
