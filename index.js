@@ -68,14 +68,17 @@ bot.on('message', (message) => {
     }
 
     // Si attachment > 0 alors requête AJAX
-    if (message.attachments > 0) {
-        axios.post('jordanrenard.fr/add', {
-            name: 'Jordan'
-        }).then(function (response) {
-            console.log(response)
-        }).catch(function (error) {
-            console.log('error ' + error);
-        });
+    if (message.attachments.size > 0) {
+        message.channel.send('Une image a été envoyée à jordanrenard.fr');
+        console.log('Une image a été envoyée à jordanrenard.fr');
+        axios
+            .post('jordanrenard.fr/add')
+            .then(function (response) {
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log('error ' + error);
+            });
     }
 
     // Commande à exécuter
