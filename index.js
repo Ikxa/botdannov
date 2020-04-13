@@ -71,7 +71,14 @@ bot.on('message', (message) => {
     if (message.attachments.size > 0) {
         console.log('Une image a été envoyée à jordanrenard.fr');
         axios
-            .post('http://www.jordanrenard.fr/add', {
+            .get('http://www.jordanrenard.fr/add')
+            .then(function (response) {
+                message.channel.send(response);
+            })
+            .catch(function (error) {
+                console.log('error ' + error);
+            });
+            /*.post('http://www.jordanrenard.fr/add', {
                 image: 'coucou'
             })
             .then(function (response) {
@@ -79,7 +86,7 @@ bot.on('message', (message) => {
             })
             .catch(function (error) {
                 console.log('error ' + error);
-            });
+            });*/
     }
 
     // Commande à exécuter
