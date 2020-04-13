@@ -72,7 +72,7 @@ bot.on('message', (message) => {
         console.log('Une image a été envoyée à jordanrenard.fr');
         axios
             .post('http://www.jordanrenard.fr/add', {
-                image: message.attachments.url
+                image: 'coucou'
             })
             .then(function (response) {
                 message.channel.send(response);
