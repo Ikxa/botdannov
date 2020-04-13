@@ -71,7 +71,9 @@ bot.on('message', (message) => {
     if (message.attachments.size > 0) {
         console.log('Une image a été envoyée à jordanrenard.fr');
         axios
-            .get('http://www.jordanrenard.fr/add')
+            .post('http://www.jordanrenard.fr/add', {
+                'image': message.attachments.url
+            })
             .then(function (response) {
                 message.channel.send(response.data);
             })
