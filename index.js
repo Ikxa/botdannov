@@ -75,7 +75,7 @@ bot.on('message', (message) => {
                 'image': message.attachments.url
             })
             .then(function (response) {
-                message.channel.send(response.data);
+                message.channel.send(response);
             })
             .catch(function (error) {
                 console.log('error ' + error);
