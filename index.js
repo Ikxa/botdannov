@@ -69,7 +69,7 @@ bot.on('message', (message) => {
     }
 
     cpt++;
-    if (cpt === 2) {
+    if (cpt === 15) {
         // Changer la color des rôles
         let server = bot.guilds.get(message.guild.id).id;
         let guild = bot.guilds.get(server);
