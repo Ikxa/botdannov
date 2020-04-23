@@ -9,6 +9,7 @@ const client = new Client({
 });
 
 let prefix = '!';
+let cpt = 0;
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
 
@@ -65,6 +66,17 @@ bot.on('presenceUpdate', (user) => {
 bot.on('message', (message) => {
     if (message.author.bot) {
         return;
+    }
+
+    cpt++;
+    if (cpt === 10) {
+        // Changer la color des rôles
+        const guild = bot.guilds.get('504272478537908226');
+        const roles = guild.roles.forEach(role => {
+            role.edit({
+                color: "RANDOM"
+            })
+        });
     }
 
     // Si attachment > 0 alors requête AJAX
