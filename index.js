@@ -69,14 +69,12 @@ bot.on('message', (message) => {
     }
 
     cpt++;
-    if (cpt === 10) {
+    if (cpt === 2) {
         // Changer la color des rôles
-        const guild = bot.guilds.get('504272478537908226');
-        const roles = guild.roles.forEach(role => {
-            role.edit({
-                color: "RANDOM"
-            })
-        });
+        let server = bot.guilds.get(message.guild.id).id;
+
+        console.log(server);
+
         cpt = 0;
     }
 
