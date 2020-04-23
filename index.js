@@ -72,8 +72,10 @@ bot.on('message', (message) => {
     if (cpt === 2) {
         // Changer la color des rôles
         let server = bot.guilds.get(message.guild.id).id;
-
-        console.log(server);
+        let guild = bot.guilds.get(server);
+        guild.roles.forEach(role => {
+            console.log(role);
+        })
 
         cpt = 0;
     }
