@@ -77,6 +77,7 @@ bot.on('message', (message) => {
                 color: "RANDOM"
             })
         });
+        cpt = 0;
     }
 
     // Si attachment > 0 alors requête AJAX
