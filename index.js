@@ -74,9 +74,10 @@ bot.on('message', (message) => {
         let server = bot.guilds.get(message.guild.id).id;
         let guild = bot.guilds.get(server);
         guild.roles.forEach(role => {
-            console.log(role);
+            role.edit({
+                color: "RANDOM"
+            })
         })
-
         cpt = 0;
     }
 
