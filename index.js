@@ -77,8 +77,6 @@ bot.on('message', (message) => {
             role.edit({
                 color: "RANDOM"
             })
-        }).catch(error => {
-            console.log(error);
         })
         cpt = 0;
     }
