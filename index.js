@@ -61,6 +61,10 @@ bot.on('presenceUpdate', (user) => {
             );
         });
     }
+
+    if (user.presence.game === 'streaming') {
+        message.channel.send(user.nickname + ' vient tout juste de lancer un stream. Go check it out !');
+    }
 });
 
 bot.on('message', (message) => {
@@ -77,8 +81,6 @@ bot.on('message', (message) => {
             role.edit({
                 color: "RANDOM"
             })
-        }).catch(error => {
-            console.log(error);
         })
         cpt = 0;
     }
@@ -94,15 +96,6 @@ bot.on('message', (message) => {
             .catch(function (error) {
                 console.log('error ' + error);
             });
-            /*.post('http://www.jordanrenard.fr/add', {
-                image: 'coucou'
-            })
-            .then(function (response) {
-                message.channel.send(response);
-            })
-            .catch(function (error) {
-                console.log('error ' + error);
-            });*/
     }
 
     // Commande à exécuter
