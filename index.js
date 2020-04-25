@@ -62,11 +62,8 @@ bot.on('presenceUpdate', (user) => {
         });
     }
 
-    console.log(user.presence.game);
+    console.log(user.presence);
 
-    if (user.presence.game === 'streaming') {
-        message.channel.send(user.nickname + ' vient tout juste de lancer un stream. Go check it out !');
-    }
 });
 
 bot.on('message', (message) => {
