@@ -62,7 +62,7 @@ bot.on('presenceUpdate', (user) => {
         });
     }
 
-    console.log(user.presence);
+    console.log(user.presence.game.streaming);
 
 });
 
