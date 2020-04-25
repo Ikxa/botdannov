@@ -44,26 +44,22 @@ bot.on('ready', (message) => {
     });
 });
 
-bot.on('presenceUpdate', (user) => {
-    if (typeof user.presence.game !== 'undefined' && user.presence.game !== null) {
-        const client = new Client({
-            connectionString: process.env.DATABASE_URL,
-            ssl: true
-        });
+bot.on('presenceUpdate', (oldMember, newMember) => {
+    const channel = oldMember.guild.channels.find(x => x.name === "les-messages");
+    if (!channel) return;
+    let oldStreamingStatus = oldMember.presence.game ? oldMember.presence.game.streaming : false;
+    let newStreamingStatus = newMember.presence.game ? newMember.presence.game.streaming : false;
 
-        client.connect((err) => {
-            client.query(
-                'insert into played (id_user, id_game, game_nom, played_at) values ($1, $2, $3, $4)',
-                [user.user.id, user.presence.game.applicationID, user.presence.game.name, new Date()],
-                (err) => {
-                    if (err !== null && err !== '') console.log(err);
-                }
-            );
-        });
+    if(oldStreamingStatus == newStreamingStatus){
+        return;
     }
 
-    console.log(user.presence.game.streaming);
-
+    if(newStreamingStatus){
+        if (newMember.presence.game && newMember.presence.game.name === 'game name' || newMember.presence.game.details.match(/keywords in stream/gi)) {
+            channel.send(`${newMember.user}, is live URL: ${newMember.presence.game.url}`);
+            return;
+        }
+    }
 });
 
 bot.on('message', (message) => {
