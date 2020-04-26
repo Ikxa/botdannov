@@ -82,7 +82,7 @@ bot.on('message', (message) => {
 
     // Si attachment > 0 alors requête AJAX
     if (message.attachments.size > 0) {
-        console.log(message.attachments.filename);
+        console.log(message.attachments[0].filename);
         console.log('Une image a été envoyée à jordanrenard.fr');
         axios
             .post('http://www.jordanrenard.fr/add', {
