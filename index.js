@@ -89,7 +89,7 @@ bot.on('message', (message) => {
             .post('http://www.jordanrenard.fr/add', {
                 image: message.attachments.first().filename
             }).then(function (response) {
-                message.channel.send(response.data);
+                console.log(response);
             }).catch(function (error) {
                 console.log('error ' + error);
             });
