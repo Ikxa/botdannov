@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, bot) {
         let member = message.mentions.members.first();
         let listMembers = bot.guilds.get("504272478537908226");
-        let random = listMembers.random();
+        let random = message.guild.members.random();
 
         console.log(random);
 
