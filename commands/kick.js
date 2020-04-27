@@ -11,8 +11,6 @@ module.exports = {
                 message.channel.send('Permission non accordée.');
             });
         } else {
-            message.channel.send('Adrien arrête.');
-
             let random = listMembers.members.random();
 
             random.kick().then((random) => {
