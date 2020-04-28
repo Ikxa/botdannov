@@ -3,7 +3,6 @@ module.exports = {
     description: "Kick une personne",
     execute(message, args, bot) {
         let member = message.mentions.members.first();
-        let listMembers = bot.guilds.get("504272478537908226");
         let random = message.guild.members.random();
 
         if (member != null && message.author.id !== '344551142916882442') {
