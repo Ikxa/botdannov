@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'kick',
-    description: "Kick une personne",
+    name: 'role',
+    description: "Créer un rôle",
     execute(message, args, bot) {
         message.roles.create({
             data: {
