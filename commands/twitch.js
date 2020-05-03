@@ -9,7 +9,7 @@ module.exports = {
         const member = <message>.mentions.members.first();
         member.roles.add(role);*/
 
-        axios.get('https://api.twitch.tv/kraken/users', {
+        axios.get('https://api.twitch.tv/helix/users', {
             params: {
                 login: args[0],
                 client_id: "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
