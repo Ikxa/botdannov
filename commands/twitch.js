@@ -8,11 +8,12 @@ module.exports = {
         /*const role = <guild>.roles.cache.find(role => role.name === '<role name>');
         const member = <message>.mentions.members.first();
         member.roles.add(role);*/
+        const client_id = "ykzb2tmxxwwd4nhu4ijdst4hwutpkd";
 
         axios.get('https://api.twitch.tv/helix/users', {
+            headers: {'Client-ID': client_id},
             params: {
                 login: args[0],
-                "Client-ID": "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
             }
         })
         .then(function (response) {
