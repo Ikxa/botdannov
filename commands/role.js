@@ -2,15 +2,15 @@ module.exports = {
     name: 'kick',
     description: "Kick une personne",
     execute(message, args, bot) {
-        message.guild.roles.create({
+        message.roles.create({
             data: {
-                name: 'Super Cool People',
-                color: 'BLUE',
+                name: "Super Cool Role",
+                color: "RANDOM",
             },
-            reason: 'we needed a role for Super Cool People',
-        })
-            .then(console.log)
-            .catch(console.error);
+            reason: 'On aime les gens coolos !',
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 };
 
