@@ -12,7 +12,7 @@ module.exports = {
         axios.get('https://api.twitch.tv/helix/users', {
             params: {
                 login: args[0],
-                client_id: "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
+                "Client-ID": "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
             }
         })
         .then(function (response) {
