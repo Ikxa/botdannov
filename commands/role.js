@@ -3,7 +3,7 @@ module.exports = {
     description: "Créer un rôle",
     execute(message, args, bot) {
 
-        console.log(message.guilds.roles);
+        console.log(message.guild.roles);
 
         message.roles.create({
             data: {
