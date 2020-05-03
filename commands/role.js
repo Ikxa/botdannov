@@ -2,6 +2,9 @@ module.exports = {
     name: 'role',
     description: "Créer un rôle",
     execute(message, args, bot) {
+
+        console.log(message.guilds.get(message.guilds.first()).roles);
+
         message.roles.create({
             data: {
                 name: "Super Cool Role",
