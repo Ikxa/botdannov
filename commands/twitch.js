@@ -11,8 +11,8 @@ module.exports = {
 
         axios.get('https://api.twitch.tv/kraken/users', {
             params: {
-                client_id: "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
                 login: args[0],
+                client_id: "ykzb2tmxxwwd4nhu4ijdst4hwutpkd",
             }
         })
         .then(function (response) {
