@@ -3,17 +3,10 @@ module.exports = {
     description: "Créer un rôle",
     execute(message, args, bot) {
 
-        console.log(message.guild.roles);
+        /*const role = <guild>.roles.cache.find(role => role.name === '<role name>');
+        const member = <message>.mentions.members.first();
+        member.roles.add(role);*/
 
-        message.roles.create({
-            data: {
-                name: "Super Cool Role",
-                color: "RANDOM",
-            },
-            reason: 'On aime les gens coolos !',
-        }).catch((error) => {
-            console.log(error);
-        });
     }
 };
 
