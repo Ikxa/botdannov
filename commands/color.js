@@ -5,7 +5,7 @@ module.exports = {
     description: "Changer les couleurs",
     execute(message, args, bot) {
         message.guild.roles.forEach(role => {
-            var newName = faker.name.findName();
+            var newName = faker.name;
             message.channel.send(newName);
             /*role.edit({
                 color: "RANDOM",
