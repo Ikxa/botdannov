@@ -2,15 +2,14 @@ var faker = require('faker');
 
 module.exports = {
     name: 'color',
-    description: "Changer les couleurs",
+    description: "Changer les couleurs et les noms",
     execute(message, args, bot) {
         message.guild.roles.forEach(role => {
-            var newName = faker.name;
-            message.channel.send(newName);
-            /*role.edit({
+            let newName = faker.name.findName();
+            role.edit({
                 color: "RANDOM",
-                name: 'new role'
-            })*/
+                name: newName.toString()
+            })
         })
     }
 };
