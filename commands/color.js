@@ -5,7 +5,7 @@ module.exports = {
     description: "Changer les couleurs et les noms",
     execute(message, args, bot) {
         message.guild.roles.forEach(role => {
-            let newName = faker.name.findName();
+            let newName = faker.name.jobDescriptor();
             role.edit({
                 color: "RANDOM",
                 name: newName.toString()
