@@ -1,10 +1,9 @@
-var faker = require('faker');
+import faker from 'faker/locale/fr';
 
 module.exports = {
     name: 'color',
     description: "Changer les couleurs et les noms",
     execute(message, args, bot) {
-        faker.setLocale("fr");
         message.guild.roles.forEach(role => {
             let newName = faker.name.jobDescriptor();
             role.edit({
