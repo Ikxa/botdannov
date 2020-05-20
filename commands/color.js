@@ -1,4 +1,4 @@
-import faker from 'faker/locale/fr';
+var faker = require('faker/locale/fr');
 
 module.exports = {
     name: 'color',
