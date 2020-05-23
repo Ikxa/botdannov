@@ -5,7 +5,6 @@ module.exports = {
     description: "Changer les couleurs et les noms",
     execute(message, args, bot) {
         message.guild.roles.forEach(role => {
-            // let newName = faker.name.jobDescriptor();
             let newName = faker.random.arrayElement([
                 "Les Bonnets d’Âne",
                 "Les Congolais",
@@ -29,7 +28,7 @@ module.exports = {
             role.edit({
                 color: "RANDOM",
                 name: newName.toString().toUpperCase()
-            })
+            });
         })
     }
 };
