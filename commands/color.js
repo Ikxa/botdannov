@@ -34,10 +34,7 @@ module.exports = {
                 name: newName.toString().toUpperCase()
             });
 
-            const index = names.indexOf(newName.toString());
-            if (index > -1) {
-                names.splice(index, 1);
-            }
+            names.splice(names.indexOf(newName), 1);
 
         })
     }
