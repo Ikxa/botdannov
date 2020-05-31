@@ -19,7 +19,7 @@ commandFiles.forEach((file) => {
 });
 
 client.on('guildMemberRemove',(member) => {
-    client.channels.find('les-messages').send(`**${member.username}** has just left server.. Bye Bye`);
+    client.channels.get('les-messages').send(`**${member.username}** vient de quitter le serveur..`);
 })
 
 bot.on('ready', (message) => {
