@@ -24,12 +24,12 @@ module.exports = {
             "Les Fermiers"
         ];
 
-        message.guild.fetchMembers().then(r => {
+        /*message.guild.fetchMembers().then(r => {
             r.members.array().forEach(r => {
                 let username = `${r.user.tag}`;
                 message.channel.send(username);
             })
-        });
+        });*/
 
         message.guild.roles.forEach(role => {
             let newName = faker.random.arrayElement(names);
