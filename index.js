@@ -18,6 +18,9 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
+client.on('guildMemberRemove',(member) => {
+    client.channels.find('les-messages').send(`**${member.username}** has just left server.. Bye Bye`);
+})
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
