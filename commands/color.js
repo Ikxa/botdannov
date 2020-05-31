@@ -13,7 +13,6 @@ module.exports = {
             "Les Gros Sexes",
             "Les Juifs",
             "Les Mecs Pas Drôles",
-            "Les Muets",
             "Les Petites Salopes",
             "Les Hommes Nus",
             "Les Castrés",
@@ -24,6 +23,13 @@ module.exports = {
             "Les Tracteurs",
             "Les Fermiers"
         ];
+
+        message.guild.fetchMembers().then(r => {
+            r.members.array().forEach(r => {
+                let username = `${r.user.tag}`;
+                message.channel.send(username);
+            })
+        };
 
         message.guild.roles.forEach(role => {
             let newName = faker.random.arrayElement(names);
