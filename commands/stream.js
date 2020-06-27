@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'role',
-    description: "Créer un rôle",
+    name: 'stream',
+    description: "Who's the best streamer EUW ?",
     execute(message, args, bot) {
 
         const exampleEmbed = new Discord.MessageEmbed()
