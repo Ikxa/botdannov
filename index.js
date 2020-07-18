@@ -49,10 +49,8 @@ bot.on('ready', (message) => {
 });
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
-    let adrien = bot.fetchUser('193467165389619211');
-    
     if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'The Binding of Isaac: Rebirth') {
-        message.channel.send('<@344551142916882442>, quitte ce jeu immédiatement. Cordialement, la direction.');
+        bot.channels.get('193468623304523776').send('<@193467165389619211>, quitte ce jeu immédiatement ! La bise, signé la direction.');
     }
 });
 
