@@ -18,7 +18,7 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
-client.on('guildMemberRemove',(member) => {
+client.on('guildMemberRemove', (member) => {
     client.channels.get('les-messages').send(`**${member.username}** vient de quitter le serveur..`);
     client.channels.get('504272478537908226').send(`**${member.username}** vient de quitter le serveur !`);
 })
@@ -49,10 +49,8 @@ bot.on('ready', (message) => {
 });
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
-    if (oldMember.presence.status != newMember.presence.status) {
-        if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'The Binding of Isaac: Rebirth') {
-            bot.channels.get('193468623304523776').send('<@193467165389619211>, quitte ce jeu immédiatement ! La bise, signé la direction.');
-        }
+    if (newMember.user.id === '344551142916882442' && newMember.presence.game.name.toString() === 'League of Legends') {
+        bot.channels.get('504272478537908226').send('<@344551142916882442>, quitte ce jeu immédiatement ! La bise, signé la direction.');
     }
 });
 
@@ -80,11 +78,11 @@ bot.on('message', (message) => {
             .post('http://www.jordanrenard.fr/add', {
                 image: message.attachments.first()
             }).then(function (response) {
-                console.log(response.data);
-                console.log('Coucou la réponse');
-            }).catch(function (error) {
-                console.log('error ' + error);
-            });
+            console.log(response.data);
+            console.log('Coucou la réponse');
+        }).catch(function (error) {
+            console.log('error ' + error);
+        });
     }
 
     // Commande à exécuter
