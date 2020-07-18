@@ -49,8 +49,10 @@ bot.on('ready', (message) => {
 });
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
-    if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'The Binding of Isaac: Rebirth') {
-        bot.channels.get('193468623304523776').send('<@193467165389619211>, quitte ce jeu immédiatement ! La bise, signé la direction.');
+    if (oldMember.presence.status != newMember.presence.status) {
+        if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'The Binding of Isaac: Rebirth') {
+            bot.channels.get('193468623304523776').send('<@193467165389619211>, quitte ce jeu immédiatement ! La bise, signé la direction.');
+        }
     }
 });
 
