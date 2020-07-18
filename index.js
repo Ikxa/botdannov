@@ -50,11 +50,8 @@ bot.on('ready', (message) => {
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
     let adrien = bot.fetchUser('193467165389619211');
-
-    console.log(newMember);
-    console.log(newMember.presence.game.name.toString());
-
-    if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'League of Legends') {
+    
+    if (newMember.user.id === '193467165389619211' && newMember.presence.game.name.toString() === 'The Binding of Isaac: Rebirth') {
         message.channel.send('<@344551142916882442>, quitte ce jeu immédiatement. Cordialement, la direction.');
     }
 });
