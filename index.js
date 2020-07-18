@@ -50,7 +50,8 @@ bot.on('ready', (message) => {
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
     let adrien = bot.fetchUser('193467165389619211');
-    console.log(adrien);
+    console.log(adrien.presence.activities);
+    console.log(adrien.presence.game);
     if (adrien.presence.game.toString() === 'League of Legends') {
         message.channel.send('<@344551142916882442>, quitte ce jeu immédiatement. Cordialement, la direction.');
     }
