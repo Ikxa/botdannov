@@ -49,20 +49,9 @@ bot.on('ready', (message) => {
 });
 
 bot.on('presenceUpdate', (oldMember, newMember) => {
-    const channel = oldMember.guild.channels.find(x => x.name === "les-messages");
-    if (!channel) return;
-    let oldStreamingStatus = oldMember.presence.game ? oldMember.presence.game.streaming : false;
-    let newStreamingStatus = newMember.presence.game ? newMember.presence.game.streaming : false;
-
-    if(oldStreamingStatus == newStreamingStatus){
-        return;
-    }
-
-    if(newStreamingStatus){
-        if (newMember.presence.game && newMember.presence.game.name === 'game name' || newMember.presence.game.details.match(/keywords in stream/gi)) {
-            channel.send(`${newMember.user}, is live URL: ${newMember.presence.game.url}`);
-            return;
-        }
+    let adrien = message.member.guild.members.get('193467165389619211');
+    if (adrien.presence.game.toString() === 'League of Legends') {
+        message.channel.send('<@344551142916882442>, quitte ce jeu immédiatement. Cordialement, la direction.');
     }
 });
 
