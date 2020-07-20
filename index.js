@@ -48,12 +48,6 @@ bot.on('ready', (message) => {
     });
 });
 
-bot.on('presenceUpdate', (oldMember, newMember) => {
-    if (newMember.user.id === '344551142916882442' && newMember.presence.game.name.toString() === 'League of Legends') {
-        bot.channels.get('504272478537908226').send('<@344551142916882442>, quitte ce jeu immédiatement ! La bise, signé la direction.');
-    }
-});
-
 bot.on('message', (message) => {
     if (message.author.bot) {
         return;
