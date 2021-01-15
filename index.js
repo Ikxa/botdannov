@@ -80,7 +80,7 @@ bot.on('ready', (message) => {
 bot.on('message', (message) => {
     if (message.content.startsWith("~")) {
         if (message.content === "~epic") {
-            sendMessage(msg.channel);
+            sendMessage(message.channel);
         }
     }
 
