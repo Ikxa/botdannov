@@ -19,6 +19,7 @@ module.exports = async () => {
             }).url;
 
             if (obj.promotions != undefined) {
+                console.log(obj.title + ' has promotions');
                 if (obj.promotions.upcomingPromotionalOffers.length != 0) {
                     const game = {
                         title: obj.title,
