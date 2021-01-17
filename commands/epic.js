@@ -18,10 +18,8 @@ module.exports = async () => {
                 }
             }).url;
 
-            if (obj.promotions !== 'undefined' && obj.promotions !== null) {
+            if (obj.promotions != undefined) {
                 if (obj.promotions.upcomingPromotionalOffers.length != 0) {
-                    console.log('je passe ici', obj);
-                    console.log('upcomingPromotionalOffers', obj.promotions.upcomingPromotionalOffers.length);
                     const game = {
                         title: obj.title,
                         offerTill: new Date(
@@ -34,7 +32,6 @@ module.exports = async () => {
                 }
             }
         }
-        console.log('ret', ret);
     } catch (e) {
         error = e;
     }
