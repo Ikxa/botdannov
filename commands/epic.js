@@ -19,7 +19,7 @@ module.exports = async () => {
             }).url;
 
             if (obj.promotions !== 'undefined' && obj.promotions !== null) {
-                if (obj.promotions.upcomingPromotionalOffers.length == 0) {
+                if (obj.promotions.upcomingPromotionalOffers.length != 0) {
                     console.log('je passe ici', obj);
                     console.log('upcomingPromotionalOffers', obj.promotions.upcomingPromotionalOffers.length);
                     const game = {
