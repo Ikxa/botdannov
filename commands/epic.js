@@ -21,6 +21,11 @@ module.exports = async () => {
             if (obj.promotions != undefined) {
                 console.log(obj.title + ' has promotions');
                 if (obj.promotions.upcomingPromotionalOffers.length != 0) {
+                    console.log([
+                        obj.promotions.upcomingPromotionalOffers,
+                        obj.promotions.upcomingPromotionalOffers.promotionalOffers[0],
+                        obj.promotions.upcomingPromotionalOffers.promotionalOffers
+                    ]);
                     const game = {
                         title: obj.title,
                         offerTill: new Date(
