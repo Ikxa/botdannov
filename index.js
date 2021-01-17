@@ -49,7 +49,7 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-}
+})
 
 bot.on('message', (message) => {
     if (message.content.startsWith("~")) {
