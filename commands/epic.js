@@ -8,6 +8,7 @@ module.exports = async () => {
     try {
         let res = await fetch(url);
         let data = await res.json();
+        console.log(data.data.Catalog.searchStore.elements.length);
         for (let i = 1; i < data.data.Catalog.searchStore.elements.length; i++) {
             obj = data.data.Catalog.searchStore.elements[i];
             const imageUrl = obj.keyImages.reduce((acc, cur) => {
