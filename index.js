@@ -47,35 +47,9 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
-client.on('guildMemberRemove', (member) => {
-    client.channels.get('les-messages').send(`**${member.username}** vient de quitter le serveur..`);
-    client.channels.get('504272478537908226').send(`**${member.username}** vient de quitter le serveur !`);
-})
-
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    // Database connection
-    client.connect((err) => {
-        client.query(
-            'DROP TABLE if exists played ',
-            (err, result) => {
-                if (err !== null && err !== '') console.log(err);
-            }
-        );
-
-        client.query(
-            'create table if not exists played ( \
-                id_user bigint, \
-                id_game bigint, \
-                game_nom text, \
-                played_at date)',
-            (err, result) => {
-                if (err !== null && err !== '') console.log(err);
-                else console.log('Table crée');
-            }
-        );
-    });
-});
+}
 
 bot.on('message', (message) => {
     if (message.content.startsWith("~")) {
@@ -99,19 +73,6 @@ bot.on('message', (message) => {
             })
         })
         cpt = 0;
-    }
-
-    // Si attachment > 0 alors requête AJAX
-    if (message.attachments.size > 0) {
-        axios
-            .post('http://www.jordanrenard.fr/add', {
-                image: message.attachments.first()
-            }).then(function (response) {
-            console.log(response.data);
-            console.log('Coucou la réponse');
-        }).catch(function (error) {
-            console.log('error ' + error);
-        });
     }
 
     // Commande à exécuter

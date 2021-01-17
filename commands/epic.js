@@ -19,18 +19,21 @@ module.exports = async () => {
                 }
             }).url;
 
-            if (obj.promotions.upcomingPromotionalOffers.length == 0) {
-                const game = {
-                    title: obj.title,
-                    offerTill: new Date(
-                        obj.promotions.promotionalOffers[0].promotionalOffers[0].endDate
-                    ),
-                    image: imageUrl,
-                    productSlug: obj.productSlug,
-                };
-                ret.push(game);
+            if (obj.promotions !== 'undefined' && obj.promotions !== null) {
+                if (obj.promotions.upcomingPromotionalOffers.length == 0) {
+                    const game = {
+                        title: obj.title,
+                        offerTill: new Date(
+                            obj.promotions.promotionalOffers[0].promotionalOffers[0].endDate
+                        ),
+                        image: imageUrl,
+                        productSlug: obj.productSlug,
+                    };
+                    ret.push(game);
+                }
             }
         }
+        console.log('ret', ret);
     } catch (e) {
         error = e;
     }
