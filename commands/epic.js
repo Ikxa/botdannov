@@ -10,7 +10,7 @@ module.exports = async () => {
         let data = await res.json();
         for (let i = 1; i < data.data.Catalog.searchStore.elements.length; i++) {
             obj = data.data.Catalog.searchStore.elements[i];
-            console.log(data.data.Catalog.searchStore.elements[i]);
+            console.log('obj', obj.promotions);
             const imageUrl = obj.keyImages.reduce((acc, cur) => {
                 if (cur.type === "Thumbnail") {
                     return cur;
