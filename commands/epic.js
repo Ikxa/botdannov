@@ -10,7 +10,6 @@ module.exports = async () => {
         let data = await res.json();
         for (let i = 1; i < data.data.Catalog.searchStore.elements.length; i++) {
             obj = data.data.Catalog.searchStore.elements[i];
-            console.log('obj', obj.promotions);
             const imageUrl = obj.keyImages.reduce((acc, cur) => {
                 if (cur.type === "Thumbnail") {
                     return cur;
@@ -21,6 +20,8 @@ module.exports = async () => {
 
             if (obj.promotions !== 'undefined' && obj.promotions !== null) {
                 if (obj.promotions.upcomingPromotionalOffers.length == 0) {
+                    console.log('je passe ici', obj);
+                    console.log('upcomingPromotionalOffers', obj.promotions.upcomingPromotionalOffers.length);
                     const game = {
                         title: obj.title,
                         offerTill: new Date(
