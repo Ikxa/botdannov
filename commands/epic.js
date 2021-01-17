@@ -24,7 +24,7 @@ module.exports = async () => {
                     const game = {
                         title: obj.title,
                         offerTill: new Date(
-                            obj.promotions.promotionalOffers[0].promotionalOffers[0].endDate
+                            obj.promotions.upcomingPromotionalOffers.promotionalOffers[0].endDate
                         ),
                         image: imageUrl,
                         productSlug: obj.productSlug,
