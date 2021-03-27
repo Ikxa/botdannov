@@ -33,12 +33,14 @@ bot.on('message', (message) => {
     huejay.discover({strategy: 'all'})
         .then(bridges => {
             for (let bridge of bridges) {
-                message.channel.send(`Id: ${bridge.id}, IP: ${bridge.ip}`)
+                console.log(`Id: ${bridge.id}, IP: ${bridge.ip}`);
             }
         })
         .catch(error => {
-            message.channel.send(`An error occurred: ${error.message}`)
+            console.log(`An error occurred: ${error.message}`);
         });
+
+
 
     cpt++;
     if (cpt === 15) {
