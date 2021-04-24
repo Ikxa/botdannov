@@ -26,15 +26,19 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
-        console.info(symbol+" previous day:", prevDay);
-        console.info("BNB change since yesterday: "+prevDay.priceChangePercent+"%")
+    binance.prevDay("BTC", (error, prevDay, symbol) => {
+        console.info("BTC change since yesterday: "+prevDay.priceChangePercent+"%")
+    });
+    binance.prevDay("ETH", (error, prevDay, symbol) => {
+        console.info("ETH change since yesterday: "+prevDay.priceChangePercent+"%")
+    });
+    binance.prevDay("TRX", (error, prevDay, symbol) => {
+        console.info("TRX change since yesterday: "+prevDay.priceChangePercent+"%")
+    });
+    binance.prevDay("BAT", (error, prevDay, symbol) => {
+        console.info("BAT change since yesterday: "+prevDay.priceChangePercent+"%")
     });
 })
-
-/*async function binanceCall () {
-    console.log(await binance.futuresPrices());
-}*/
 
 bot.on('message', (message) => {
     if (message.author.bot) {
