@@ -26,6 +26,7 @@
     "huejay": "^1.9.0",
     "merge-images": "^2.0.0",
     "moment": "^2.24.0",
+    "node-binance-api": "^0.12.5",
     "node-fetch": "^2.6.1",
     "node-hue-api": "*",
     "opencollective-postinstall": "^2.0.1",

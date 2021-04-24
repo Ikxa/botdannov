@@ -3,6 +3,11 @@ const fs = require('fs');
 const bot = new Discord.Client();
 const {Client} = require('pg');
 const axios = require('axios');
+const Binance = require('node-binance-api');
+const binance = new Binance().options({
+    APIKEY: process.env.API,
+    APISECRET: process.env.SECRET,
+});
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
@@ -11,10 +16,8 @@ const client = new Client({
 let gameDB = [];
 let prefix = '!';
 let cpt = 0;
-let huejay = require('huejay');
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
-
 
 commandFiles.forEach((file) => {
     const command = require(`./commands/${file}`); // eslint-disable-line
@@ -23,24 +26,17 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
+    binanceCall();
 })
+
+async function binanceCall () {
+    console.log(await binance.futuresPrices());
+}
 
 bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    huejay.discover({strategy: 'all'})
-        .then(bridges => {
-            for (let bridge of bridges) {
-                console.log(`Id: ${bridge.id}, IP: ${bridge.ip}`);
-            }
-        })
-        .catch(error => {
-            console.log(`An error occurred: ${error.message}`);
-        });
-
-
 
     cpt++;
     if (cpt === 15) {
@@ -70,11 +66,6 @@ bot.on('message', (message) => {
         }
     }
 });
-
-(async () => {
-    await fetchNewData();
-})();
-
 
 bot.login(process.env.TOKEN);
 
