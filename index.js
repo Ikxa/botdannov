@@ -28,7 +28,8 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     //binanceCall();
     //binance.futuresMiniTickerStream( 'BTCUSDT', console.log );
-    binance.futuresMarkPriceStream('TRX', console.log);
+    binance.futuresMarkPriceStream('BTCUSDT', console.log);
+    binance.futuresTickerStream( 'BTCUSDT', console.log );
 })
 
 /*async function binanceCall () {
