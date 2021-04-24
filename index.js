@@ -26,12 +26,12 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    binanceCall();
+    //binanceCall();
 })
 
-async function binanceCall () {
+/*async function binanceCall () {
     console.log(await binance.futuresPrices());
-}
+}*/
 
 bot.on('message', (message) => {
     if (message.author.bot) {
