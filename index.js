@@ -26,10 +26,10 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    //binanceCall();
-    //binance.futuresMiniTickerStream( 'BTCUSDT', console.log );
-    binance.futuresMarkPriceStream('BTCUSDT', console.log);
-    binance.futuresTickerStream( 'BTCUSDT', console.log );
+    binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
+        console.info(symbol+" previous day:", prevDay);
+        console.info("BNB change since yesterday: "+prevDay.priceChangePercent+"%")
+    });
 })
 
 /*async function binanceCall () {
