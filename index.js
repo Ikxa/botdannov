@@ -26,7 +26,7 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    binance.prevDay("BTC", (error, prevDay, symbol) => {
+    /*binance.prevDay("BTC", (error, prevDay, symbol) => {
         console.info("BTC change since yesterday: "+prevDay.priceChangePercent+"%")
     });
     binance.prevDay("ETH", (error, prevDay, symbol) => {
@@ -37,6 +37,14 @@ bot.on('ready', (message) => {
     });
     binance.prevDay("BAT", (error, prevDay, symbol) => {
         console.info("BAT change since yesterday: "+prevDay.priceChangePercent+"%")
+    });*/
+
+    binance.prevDay(false, (error, prevDay) => {
+        // console.info(prevDay); // view all data
+        for ( let obj of prevDay ) {
+            let symbol = obj.symbol;
+            console.info(symbol+" volume:"+obj.volume+" change: "+obj.priceChangePercent+"%");
+        }
     });
 })
 
