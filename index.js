@@ -27,6 +27,7 @@ commandFiles.forEach((file) => {
 bot.on('ready', (message) => {
     console.log('Bot ready');
     //binanceCall();
+    binance.futuresMiniTickerStream( 'BTCUSDT', console.log );
 })
 
 /*async function binanceCall () {
