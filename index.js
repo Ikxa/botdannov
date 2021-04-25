@@ -30,6 +30,14 @@ bot.on('ready', (message) => {
         console.info("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
         bot.channels.find("name","les-cryptos").send("TRXBTC depuis hier: " + prevDay.priceChangePercent + "%")
     });
+    binance.prevDay("ETHBTC", (error, prevDay, symbol) => {
+        console.info("ETHBTC change since yesterday: "+prevDay.priceChangePercent+"%")
+        bot.channels.find("name","les-cryptos").send("ETHBTC depuis hier: " + prevDay.priceChangePercent + "%")
+    });
+    binance.prevDay("BATBTC", (error, prevDay, symbol) => {
+        console.info("BATBTC change since yesterday: "+prevDay.priceChangePercent+"%")
+        bot.channels.find("name","les-cryptos").send("BATBTC depuis hier: " + prevDay.priceChangePercent + "%")
+    });
 })
 
 bot.on('message', (message) => {
