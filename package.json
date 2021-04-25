@@ -29,6 +29,7 @@
     "node-binance-api": "^0.12.5",
     "node-fetch": "^2.6.1",
     "node-hue-api": "*",
+    "node-localstorage": "^2.1.6",
     "opencollective-postinstall": "^2.0.1",
     "opusscript": "0.0.6",
     "pg": "^7.7.1",
