@@ -100,7 +100,7 @@ bot.on('ready', (message) => {
             }
             store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: ticker.BTCUSDT})
         });
-    }, 60 * 1000 * 2);
+    }, 60 * 1000 * 80);
 })
 
 bot.on('message', (message) => {
