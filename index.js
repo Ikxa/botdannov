@@ -43,7 +43,9 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC');
             } else {
                 let valueTrx = (((ticker.TRXBTC - previousTrx) / previousTrx) * 100);
-                bot.channels.find("name", "les-cryptos").send('Changement par rapport aux dernières données : ' + valueTrx + '%');
+                if (valueTrx > 7 || valueTrx < -7) {
+                    bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
+                }
                 previousTrx = ticker.TRXBTC;
             }
         });
@@ -55,7 +57,9 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + ticker.ETHBTC + ' BTC');
             } else {
                 let valueEth = (((ticker.ETHBTC - previousEth) / previousEth) * 100);
-                bot.channels.find("name", "les-cryptos").send('Changement par rapport aux dernières données : ' + valueEth + '%');
+                if (valueBat > 7 || valueBat < -7) {
+                    bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + valueBat + '%');
+                }
                 previousEth = ticker.ETHBTC;
             }
         });
@@ -67,7 +71,9 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BATBTC + ' BTC');
             } else {
                 let valueBat = (((ticker.BATBTC - previousBat) / previousBat) * 100);
-                bot.channels.find("name", "les-cryptos").send('Changement par rapport aux dernières données : ' + valueBat + '%');
+                if (valueBat > 7 || valueBat < -7) {
+                    bot.channels.find("name", "les-cryptos").send('BATBTC : ' + valueBat + '%');
+                }
                 previousBat = ticker.BATBTC;
             }
         });
@@ -76,14 +82,16 @@ bot.on('ready', (message) => {
             if (previousBtc === 0) {
                 previousBtc = ticker.BTCUSDT;
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
-                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BTCUSDT + ' BTC');
+                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BTCUSDT + ' $');
             } else {
                 let valueBtc = (((ticker.BTCUSDT - previousBtc) / previousBtc) * 100);
-                bot.channels.find("name", "les-cryptos").send('Changement par rapport aux dernières données : ' + valueBtc + '%');
+                if (valueBtc > 7 || valueBtc < -7) {
+                    bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
+                }
                 previousBtc = ticker.BTCUSDT;
             }
         });
-    }, 60 * 1000 * 60);
+    }, 60 * 1000 * 30);
 })
 
 bot.on('message', (message) => {
