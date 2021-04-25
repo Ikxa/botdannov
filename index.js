@@ -28,7 +28,7 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     binance.prevDay("TRXBTC", (error, prevDay, symbol) => {
         console.info("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
-        bot.channels.get('344551142916882442').send("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
+        //bot.channels.get('344551142916882442').send("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
 
         client.channels.cache.get('344551142916882442').send('Hello here!')
     });
