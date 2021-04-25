@@ -34,6 +34,7 @@
     "opusscript": "0.0.6",
     "pg": "^7.7.1",
     "snekfetch": "latest",
+    "store": "^2.0.12",
     "superagent": "^5.1.0",
     "twitch-api-v5": "^2.0.4",
     "typescript": "^4.2.3",
