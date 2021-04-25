@@ -27,11 +27,6 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
-if (typeof localStorage === "undefined" || localStorage === null) {
-    var LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./scratch');
-}
-
 bot.on('ready', (message) => {
     console.log('Bot ready');
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
@@ -43,7 +38,6 @@ bot.on('ready', (message) => {
                 bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le TRXBTC');
                 console.log(error);
             }
-            bot.channels.find("name", "les-cryptos").send(store.get('values').previousTrx == 0);
             if (store.get('values').previousTrx == 0) {
                 store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + store.get('values').previousTrx + ' BTC sauvegardée');
@@ -58,7 +52,6 @@ bot.on('ready', (message) => {
                 bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le ETHBTC');
                 console.log(error);
             }
-            bot.channels.find("name", "les-cryptos").send(store.get('values').previousEth == 0);
             if (store.get('values').previousEth == 0) {
                 store.set('values', {previousTrx: 0, previousEth: ticker.ETHBTC, previousBat: 0, previousBtc: 0})
                 bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + store.get('values').previousEth + ' BTC sauvegardée');
@@ -96,7 +89,7 @@ bot.on('ready', (message) => {
             }
             store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: ticker.BTCUSDT})
         });*/
-    }, 60 * 1000);
+    }, 60 * 1000 * 60);
 })
 
 bot.on('message', (message) => {
