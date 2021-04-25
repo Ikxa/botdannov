@@ -36,6 +36,7 @@ bot.on('ready', (message) => {
 
     setInterval(function () {
         binance.prices('TRXBTC', (error, ticker) => {
+            console.log(error);
             if (previousTrx === 0) {
                 previousTrx = ticker.TRXBTC;
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
@@ -47,6 +48,7 @@ bot.on('ready', (message) => {
             }
         });
         binance.prices('ETHBTC', (error, ticker) => {
+            console.log(error);
             if (previousEth === 0) {
                 previousEth = ticker.ETHBTC;
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
@@ -58,6 +60,7 @@ bot.on('ready', (message) => {
             }
         });
         binance.prices('BATBTC', (error, ticker) => {
+            console.log(error);
             if (previousBat === 0) {
                 previousBat = ticker.BATBTC;
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
@@ -69,8 +72,7 @@ bot.on('ready', (message) => {
             }
         });
         binance.prices('BTCUSDT', (error, ticker) => {
-            bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + ticker.BTCUSDT + ' $');
-
+            console.log(error);
             if (previousBtc === 0) {
                 previousBtc = ticker.BTCUSDT;
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
@@ -81,7 +83,7 @@ bot.on('ready', (message) => {
                 previousBtc = ticker.BTCUSDT;
             }
         });
-    }, 60 * 1000 * 60);
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
