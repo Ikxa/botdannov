@@ -26,27 +26,16 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    /*binance.prevDay("TRXBTC", (error, prevDay, symbol) => {
-        console.info("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
-        bot.channels.find("name","les-cryptos").send("TRXBTC depuis hier: " + prevDay.priceChangePercent + "%")
-    });
-    binance.prevDay("ETHBTC", (error, prevDay, symbol) => {
-        console.info("ETHBTC change since yesterday: "+prevDay.priceChangePercent+"%")
-        bot.channels.find("name","les-cryptos").send("ETHBTC depuis hier: " + prevDay.priceChangePercent + "%")
-    });
-    binance.prevDay("BATBTC", (error, prevDay, symbol) => {
-        console.info("BATBTC change since yesterday: "+prevDay.priceChangePercent+"%")
-        bot.channels.find("name","les-cryptos").send("BATBTC depuis hier: " + prevDay.priceChangePercent + "%")
-    });*/
-
     setInterval(function() {
         let cryptos = ["TRXBTC", "ETHBTC", "BATBTC", "BTCUSDT"];
         cryptos.forEach(function (item) {
             binance.prevDay(item, (error, prevDay, symbol) => {
-                bot.channels.find("name","les-cryptos").send(item + " depuis hier: " + prevDay.priceChangePercent + "%")
+                if (prevDay.priceChangePercent > 7 || prevDay.priceChangePercent < -7) {
+                    bot.channels.find("name","les-cryptos").send(item + " depuis hier: " + prevDay.priceChangePercent + "%")
+                }
             });
         });
-    }, 1000 * 60 * 60); // 60 * 1000 milsec
+    }, 1000 * 60 * 60);
 })
 
 bot.on('message', (message) => {
