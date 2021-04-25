@@ -31,7 +31,6 @@ bot.on('ready', (message) => {
         bot.channels.get('344551142916882442').send("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
 
         client.channels.cache.get('344551142916882442').send('Hello here!')
-        bot.channels.cache.get('344551142916882442').send('Hello here!')
     });
 })
 
