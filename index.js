@@ -26,25 +26,10 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    /*binance.prevDay("BTC", (error, prevDay, symbol) => {
-        console.info("BTC change since yesterday: "+prevDay.priceChangePercent+"%")
-    });
-    binance.prevDay("ETH", (error, prevDay, symbol) => {
-        console.info("ETH change since yesterday: "+prevDay.priceChangePercent+"%")
-    });
-    binance.prevDay("TRX", (error, prevDay, symbol) => {
-        console.info("TRX change since yesterday: "+prevDay.priceChangePercent+"%")
-    });
-    binance.prevDay("BAT", (error, prevDay, symbol) => {
-        console.info("BAT change since yesterday: "+prevDay.priceChangePercent+"%")
-    });*/
-
-    binance.prevDay(false, (error, prevDay) => {
-        // console.info(prevDay); // view all data
-        for ( let obj of prevDay ) {
-            let symbol = obj.symbol;
-            console.info(symbol+" volume:"+obj.volume+" change: "+obj.priceChangePercent+"%");
-        }
+    binance.prevDay("TRXBTC", (error, prevDay, symbol) => {
+        console.info("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
+        channel = bot.channels.cache.get('344551142916882442');
+        channel.send("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
     });
 })
 
