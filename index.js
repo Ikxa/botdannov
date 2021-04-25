@@ -29,67 +29,62 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
-    let previousTrx = 0;
-    let previousEth = 0;
-    let previousBat = 0;
-    let previousBtc = 0;
-
+    localStorage.setItem('previousTrx', 0);
+    localStorage.setItem('previousEth', 0);
+    localStorage.setItem('previousBat', 0);
+    localStorage.setItem('previousBtc', 0);
     setInterval(function () {
         binance.prices('TRXBTC', (error, ticker) => {
             console.log(error);
-            if (previousTrx === 0) {
-                previousTrx = ticker.TRXBTC;
+            let storageTrx = parseInt(localStorage.getItem('previousTrx'));
+            if (storageTrx === 0) {
+                localStorage.setItem('previousTrx', ticker.TRXBTC);
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
-                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC');
+                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + storageTrx + ' BTC');
             } else {
-                let valueTrx = (((ticker.TRXBTC - previousTrx) / previousTrx) * 100);
-                if (valueTrx > 7 || valueTrx < -7) {
-                    bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
-                }
-                previousTrx = ticker.TRXBTC;
+                let valueTrx = (((ticker.TRXBTC - storageTrx) / storageTrx) * 100);
+                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
             }
+            localStorage.setItem('previousTrx', ticker.TRXBTC);
         });
         binance.prices('ETHBTC', (error, ticker) => {
             console.log(error);
-            if (previousEth === 0) {
-                previousEth = ticker.ETHBTC;
+            let storageEth = parseInt(localStorage.getItem('previousEth'));
+            if (storageEth === 0) {
+                localStorage.setItem('previousEth', ticker.ETHBTC);
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
-                bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + ticker.ETHBTC + ' BTC');
+                bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + storageEth + ' BTC');
             } else {
-                let valueEth = (((ticker.ETHBTC - previousEth) / previousEth) * 100);
-                if (valueBat > 7 || valueBat < -7) {
-                    bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + valueBat + '%');
-                }
-                previousEth = ticker.ETHBTC;
+                let valueEth = (((ticker.ETHBTC - storageEth) / storageEth) * 100);
+                bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + valueEth + '%');
             }
+            localStorage.setItem('previousEth', ticker.ETHBTC);
         });
         binance.prices('BATBTC', (error, ticker) => {
             console.log(error);
-            if (previousBat === 0) {
-                previousBat = ticker.BATBTC;
+            let storageBat = parseInt(localStorage.getItem('previousBat'));
+            if (storageBat === 0) {
+                localStorage.setItem('previousBat', ticker.BATBTC);
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
-                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BATBTC + ' BTC');
+                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + storageBat + ' BTC');
             } else {
-                let valueBat = (((ticker.BATBTC - previousBat) / previousBat) * 100);
-                if (valueBat > 7 || valueBat < -7) {
-                    bot.channels.find("name", "les-cryptos").send('BATBTC : ' + valueBat + '%');
-                }
-                previousBat = ticker.BATBTC;
+                let valueBat = (((ticker.BATBTC - storageBat) / storageBat) * 100);
+                bot.channels.find("name", "les-cryptos").send('BATBTC : ' + valueBat + '%');
             }
+            localStorage.setItem('previousBat', ticker.BATBTC);
         });
         binance.prices('BTCUSDT', (error, ticker) => {
             console.log(error);
-            if (previousBtc === 0) {
-                previousBtc = ticker.BTCUSDT;
+            let storageBtc = parseInt(localStorage.getItem('previousBtc'));
+            if (storageBtc == 0) {
+                localStorage.setItem('previousBtc', ticker.BTCUSDT);
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
-                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BTCUSDT + ' $');
+                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + storageBtc + ' $');
             } else {
-                let valueBtc = (((ticker.BTCUSDT - previousBtc) / previousBtc) * 100);
-                if (valueBtc > 7 || valueBtc < -7) {
-                    bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
-                }
-                previousBtc = ticker.BTCUSDT;
+                let valueBtc = (((ticker.BTCUSDT - storageBtc) / storageBtc) * 100);
+                bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
             }
+            localStorage.setItem('previousBtc', ticker.BTCUSDT);
         });
     }, 60 * 1000 * 30);
 })
