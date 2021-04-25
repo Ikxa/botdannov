@@ -21,7 +21,7 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', (message) => {
     console.log('Bot ready');
-    setInterval(function() {
+    bot.channels.find('name', 'les-cryptos').send('Cryptos en préparation');
         binance.prices('TRXBTC', (error, ticker) => {
             bot.channels.find('name', 'les-cryptos').send("Price of TRXBTC: ", ticker.TRXBTC);
             if (error !== undefined) {
@@ -46,7 +46,6 @@ bot.on('ready', (message) => {
                 console.log(error);
             }
         });
-    }, 1000 * 60);
 })
 
 bot.on('message', (message) => {
