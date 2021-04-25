@@ -83,7 +83,7 @@ bot.on('ready', (message) => {
                 previousBtc = ticker.BTCUSDT;
             }
         });
-    }, 60 * 1000);
+    }, 60 * 1000 * 60);
 })
 
 bot.on('message', (message) => {
