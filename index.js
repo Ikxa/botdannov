@@ -29,17 +29,17 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     bot.channels.find('name', 'les-cryptos').send('Cryptos en préparation');
         binance.prices('TRXBTC', (error, ticker) => {
-            bot.channels.find("name","les-cryptos").send(ticker.TRXBTC)
+            bot.channels.find("name","les-cryptos").send('Valeur actuelle : ' + ticker.TRXBTC + ' BTC');
         });
         binance.prices('ETHBTC', (error, ticker) => {
-            bot.channels.find("name","les-cryptos").send(ticker.ETHBTC)
+            bot.channels.find("name","les-cryptos").send('Valeur actuelle : ' + ticker.ETHBTC + ' BTC');
         });
         binance.prices('BATBTC', (error, ticker) => {
-            bot.channels.find("name","les-cryptos").send(ticker.BATBTC)
+            bot.channels.find("name","les-cryptos").send('Valeur actuelle : ' + ticker.BATBTC + ' BTC');
 
         });
         binance.prices('BTCUSDT', (error, ticker) => {
-            bot.channels.find("name","les-cryptos").send(ticker.BTCUSDT)
+            bot.channels.find("name","les-cryptos").send('Valeur actuelle : ' + ticker.BTCUSDT + ' $');
         });
 })
 
