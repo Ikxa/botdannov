@@ -3,11 +3,6 @@ const fs = require('fs');
 const bot = new Discord.Client();
 const {Client} = require('pg');
 const axios = require('axios');
-const Binance = require('node-binance-api');
-const binance = new Binance().options({
-    APIKEY: process.env.API,
-    APISECRET: process.env.SECRET,
-});
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
@@ -27,13 +22,17 @@ commandFiles.forEach((file) => {
 bot.on('ready', (message) => {
     console.log('Bot ready');
     setInterval(function() {
-        let cryptos = ["TRXBTC", "ETHBTC", "BATBTC", "BTCUSDT"];
-        cryptos.forEach(function (item) {
-            binance.prevDay(item, (error, prevDay, symbol) => {
-                if (prevDay.priceChangePercent > 7 || prevDay.priceChangePercent < -7) {
-                    bot.channels.find("name","les-cryptos").send(item + " depuis hier: " + prevDay.priceChangePercent + "%")
-                }
-            });
+        binance.prices('TRXBTC', (error, ticker) => {
+            console.info("Price of TRXBTC: ", ticker.TRXBTC);
+        });
+        binance.prices('ETHBTC', (error, ticker) => {
+            console.info("Price of ETHBTC: ", ticker.ETHBTC);
+        });
+        binance.prices('BATBTC', (error, ticker) => {
+            console.info("Price of BATBTC: ", ticker.BATBTC);
+        });
+        binance.prices('BTCUSDT', (error, ticker) => {
+            console.info("Price of BTCUSDT: ", ticker.BTCUSDT);
         });
     }, 1000 * 60 * 60);
 })
