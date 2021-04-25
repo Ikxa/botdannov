@@ -23,18 +23,30 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     setInterval(function() {
         binance.prices('TRXBTC', (error, ticker) => {
-            console.info("Price of TRXBTC: ", ticker.TRXBTC);
+            bot.channels.find('name', 'les-cryptos').send("Price of TRXBTC: ", ticker.TRXBTC);
+            if (error !== undefined) {
+                console.log(error);
+            }
         });
         binance.prices('ETHBTC', (error, ticker) => {
-            console.info("Price of ETHBTC: ", ticker.ETHBTC);
+            bot.channels.find('name', 'les-cryptos').send("Price of ETHBTC: ", ticker.ETHBTC);
+            if (error !== undefined) {
+                console.log(error);
+            }
         });
         binance.prices('BATBTC', (error, ticker) => {
-            console.info("Price of BATBTC: ", ticker.BATBTC);
+            bot.channels.find('name', 'les-cryptos').send("Price of BATBTC: ", ticker.BATBTC);
+            if (error !== undefined) {
+                console.log(error);
+            }
         });
         binance.prices('BTCUSDT', (error, ticker) => {
-            console.info("Price of BTCUSDT: ", ticker.BTCUSDT);
+            bot.channels.find('name', 'les-cryptos').send("Price of BTCUSDT: ", ticker.BTCUSDT);
+            if (error !== undefined && error !== null) {
+                console.log(error);
+            }
         });
-    }, 1000 * 60 * 60);
+    }, 1000 * 60);
 })
 
 bot.on('message', (message) => {
