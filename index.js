@@ -30,7 +30,7 @@ bot.on('ready', (message) => {
         console.info("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
         //bot.channels.get('344551142916882442').send("TRXBTC change since yesterday: "+prevDay.priceChangePercent+"%")
 
-        client.channels.cache.get('344551142916882442').send('Hello here!')
+        bot.channels.find("name","les-cryptos").send("Welcome!")
     });
 })
 
