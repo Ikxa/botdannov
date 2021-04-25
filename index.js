@@ -45,6 +45,8 @@ bot.on('ready', (message) => {
                 bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le TRXBTC');
                 console.log(error);
             }
+            console.log('previousTrx');
+            console.log(store.get('values').previousTrx);
             if (store.get('values').previousTrx == 0) {
                 store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
                 bot.channels.find("name", "les-cryptos").send('Pas de données de référence pour le moment. Donc...');
@@ -55,7 +57,7 @@ bot.on('ready', (message) => {
             }
             store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
         });
-        binance.prices('ETHBTC', (error, ticker) => {
+        /*binance.prices('ETHBTC', (error, ticker) => {
             if (typeof error === "undefined" || error !== null) {
                 bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le ETHBTC');
                 console.log(error);
@@ -99,8 +101,8 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
             }
             store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: ticker.BTCUSDT})
-        });
-    }, 60 * 1000 * 80);
+        });*/
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
