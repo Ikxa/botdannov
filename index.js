@@ -40,14 +40,13 @@ bot.on('ready', (message) => {
     });*/
 
     setInterval(function() {
-        let cryptos = ["TRXBTC", "ETHBTC", "BATBTC"];
+        let cryptos = ["TRXBTC", "ETHBTC", "BATBTC", "BTCUSDT"];
         cryptos.forEach(function (item) {
             binance.prevDay(item, (error, prevDay, symbol) => {
-                console.info(item + " change since yesterday: "+prevDay.priceChangePercent+"%")
                 bot.channels.find("name","les-cryptos").send(item + " depuis hier: " + prevDay.priceChangePercent + "%")
             });
         });
-    }, 60 * 1000); // 60 * 1000 milsec
+    }, 1000 * 60 * 60); // 60 * 1000 milsec
 })
 
 bot.on('message', (message) => {
