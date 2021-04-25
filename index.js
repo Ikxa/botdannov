@@ -8,6 +8,12 @@ const client = new Client({
     ssl: true
 });
 
+const Binance = require('node-binance-api');
+const binance = new Binance().options({
+    APIKEY: process.env.API,
+    APISECRET: process.env.SECRET,
+});
+
 let gameDB = [];
 let prefix = '!';
 let cpt = 0;
