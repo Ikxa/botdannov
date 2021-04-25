@@ -91,7 +91,7 @@ bot.on('ready', (message) => {
             }
             localStorage.setItem('previousBtc', ticker.BTCUSDT);
         });
-    }, 60 * 1000 * 30);
+    }, 60 * 1000 * 2);
 })
 
 bot.on('message', (message) => {
