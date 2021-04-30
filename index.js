@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 var store = require('store');
-store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: 0});
+store.set('values', {previousTrx: 1, previousEth: 2, previousBat: 3, previousBtc: 4});
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
@@ -17,7 +17,6 @@ const binance = new Binance().options({
     APISECRET: process.env.SECRET,
 });
 
-let gameDB = [];
 let prefix = '!';
 let cpt = 0;
 bot.commands = new Discord.Collection();
@@ -35,14 +34,20 @@ bot.on('ready', (message) => {
     setInterval(function () {
         binance.prices('TRXBTC', (error, ticker) => {
             let trx = parseInt(store.get('values').previousTrx);
-            if (trx === 0) {
-                store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
-                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + store.get('values').previousTrx + ' BTC sauvegardée');
-            } else {
-                let valueTrx = (((ticker.TRXBTC - store.get('values').previousTrx) / store.get('values').previousTrx) * 100);
-                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
-            }
+            bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + trx + ' sauvegardée');
             store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
+            bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + trx + ' sauvegardée');
+            bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + store.get('values').previousTrx + ' sauvegardée');
+
+
+            // if (trx === 0) {
+            //     store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
+            //     bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + store.get('values').previousTrx + ' BTC sauvegardée');
+            // } else {
+            //     let valueTrx = (((ticker.TRXBTC - store.get('values').previousTrx) / store.get('values').previousTrx) * 100);
+            //     bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
+            // }
+            // store.set('values', {previousTrx: ticker.TRXBTC, previousEth: 0, previousBat: 0, previousBtc: 0})
         });
         /*binance.prices('ETHBTC', (error, ticker) => {
             let eth = store.get('values').previousEth;
