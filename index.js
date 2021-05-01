@@ -34,7 +34,43 @@ bot.on('ready', (message) => {
     console.log('Bot ready');
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
+    client.connect((err, client) => {
+        client.query(
+            'create table if not exists cryptos_list( \
+                id integer primary key, \
+                nameCrypto text)',
+            (err, result) => {
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+
+        client.query(
+            'insert into cryptos_list (nameCrypto) values ($1)',
+            ['TRXBTC'],
+            ['ETHBTC'],
+            ['BATBTC'],
+            ['BTCUSDT'],
+            (err) => {
+                if (err !== null && err !== '') console.log(err);
+            }
+        );
+    });
+
     setInterval(function () {
+
+        client.connect((err, client) => {
+            client.query(
+                'select nameCrypto from cryptos_list',
+                (err, result) => {
+                    if (err !== null && err !== '') console.log(err);
+                    const rows = result.rows;
+                    if (typeof rows[0] !== 'undefined') {
+                        console.log(rows);
+                    }
+                }
+            );
+        });
+
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée');
@@ -71,7 +107,7 @@ bot.on('ready', (message) => {
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });
-    }, 60 * 1000 * 30);
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
