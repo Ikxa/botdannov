@@ -64,14 +64,14 @@ bot.on('ready', (message) => {
         });
         binance.prices('BTCUSDT', (error, ticker) => {
             if (store.get('previousBtc').value == 0) {
-                bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + ticker.BTCUSDT + ' sauvegardée');
+                bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + ticker.BTCUSDT + ' $ sauvegardée');
             } else {
                 let valueBtc = (((ticker.BTCUSDT - store.get('previousBtc').value) / store.get('previousBtc').value) * 100);
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + ' %');
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });
-    }, 60 * 1000);
+    }, 60 * 1000 * 30);
 })
 
 bot.on('message', (message) => {
