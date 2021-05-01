@@ -55,35 +55,27 @@ bot.on('ready', (message) => {
             }
             store.set('previousEth', {value: ticker.ETHBTC})
         });
-        /*binance.prices('BATBTC', (error, ticker) => {
-            if (typeof error === "undefined" || error !== null) {
-                bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le BATBTC');
-                console.log(error);
-            }
-            if (store.get('values').previousBat == 0) {
-                store.set('values', {previousTrx: 0, previousEth: 0, previousBat: ticker.BATBTC, previousBtc: 0})
-                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + store.get('values').previousBat + ' BTC sauvegardée');
+        binance.prices('BATBTC', (error, ticker) => {
+            if (store.get('previousBat').value === 0) {
+                bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + store.get('previousBat').value + ' sauvegardée');
+                store.set('previousBat', {value: ticker.BATBTC})
             } else {
-                let valueBat = (((ticker.BATBTC - store.get('values').previousBat) / store.get('values').previousBat) * 100);
+                let valueBat = (((ticker.BATBTC - store.get('previousBat').value) / store.get('previousBat').value) * 100);
                 bot.channels.find("name", "les-cryptos").send('BATBTC : ' + valueBat + '%');
             }
-            store.set('values', {previousTrx: 0, previousEth: 0, previousBat: ticker.BATBTC, previousBtc: 0})
-        });*/
-        /*binance.prices('BTCUSDT', (error, ticker) => {
-            if (typeof error === "undefined" || error !== null) {
-                bot.channels.find('name', 'les-cryptos').send('Une erreur a été trouvée pour le BTCUSDT');
-                console.log(error);
-            }
-            if (store.get('values').previousBtc == 0) {
-                store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: ticker.BTCUSDT})
-                bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + store.get('values').previousBtc + ' $ sauvegardée');
+            store.set('previousBat', {value: ticker.BATBTC})
+        });
+        binance.prices('BTCUSDT', (error, ticker) => {
+            if (store.get('previousBtc').value === 0) {
+                bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + store.get('values').previousBtc + ' sauvegardée');
+                store.set('previousBtc', {value: ticker.BTCUSDT})
             } else {
-                let valueBtc = (((ticker.BTCUSDT - store.get('values').previousBtc) / store.get('values').previousBtc) * 100);
+                let valueBtc = (((ticker.BTCUSDT - store.get('previousBtc').value) / store.get('previousBtc').value) * 100);
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
             }
-            store.set('values', {previousTrx: 0, previousEth: 0, previousBat: 0, previousBtc: ticker.BTCUSDT})
-        });*/
-    }, 60 * 1000 * 60);
+            store.set('previousBtc', {value: ticker.BTCUSDT})
+        });
+    }, 60 * 1000 * 30);
 })
 
 bot.on('message', (message) => {
