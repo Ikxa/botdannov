@@ -36,9 +36,8 @@ bot.on('ready', (message) => {
 
     setInterval(function () {
         binance.prices('TRXBTC', (error, ticker) => {
-            if (store.get('previousTrx').value === 0) {
-                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + store.get('previousTrx').value + ' sauvegardée');
-                store.set('previousTrx', {value: ticker.TRXBTC})
+            if (store.get('previousTrx').value == 0) {
+                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' sauvegardée');
             } else {
                 let valueTrx = (((ticker.TRXBTC - store.get('previousTrx').value) / store.get('previousTrx').value) * 100);
                 bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + '%');
@@ -46,16 +45,15 @@ bot.on('ready', (message) => {
             store.set('previousTrx', {value: ticker.TRXBTC})
         });
         binance.prices('ETHBTC', (error, ticker) => {
-            if (store.get('previousEth').value === 0) {
-                bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + store.get('previousEth').value + ' sauvegardée');
-                store.set('previousEth', {value: ticker.ETHBTC})
+            if (store.get('previousEth').value == 0) {
+                bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + ticker.ETHBTC + ' sauvegardée');
             } else {
                 let valueEth = (((ticker.ETHBTC - store.get('previousEth').value) / store.get('previousEth').value) * 100);
                 bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + valueEth + '%');
             }
             store.set('previousEth', {value: ticker.ETHBTC})
         });
-        binance.prices('BATBTC', (error, ticker) => {
+        /*binance.prices('BATBTC', (error, ticker) => {
             if (store.get('previousBat').value === 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + store.get('previousBat').value + ' sauvegardée');
                 store.set('previousBat', {value: ticker.BATBTC})
@@ -74,8 +72,8 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + '%');
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
-        });
-    }, 60 * 1000 * 30);
+        });*/
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
