@@ -54,23 +54,20 @@ bot.on('ready', (message) => {
                 if (err !== null && err !== '') console.log(err);
             }
         );
+
+        client.query(
+            'select nameCrypto from cryptos_list',
+            (err, result) => {
+                if (err !== null && err !== '') console.log(err);
+                const rows = result.rows;
+                if (typeof rows[0] !== 'undefined') {
+                    console.log(rows);
+                }
+            }
+        );
     });
 
     setInterval(function () {
-
-        client.connect((err, client) => {
-            client.query(
-                'select nameCrypto from cryptos_list',
-                (err, result) => {
-                    if (err !== null && err !== '') console.log(err);
-                    const rows = result.rows;
-                    if (typeof rows[0] !== 'undefined') {
-                        console.log(rows);
-                    }
-                }
-            );
-        });
-
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée');
