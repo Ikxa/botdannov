@@ -73,7 +73,7 @@ bot.on('ready', (message) => {
         });*/
 
         store.each(function (value, key) {
-            bot.channels.find('name', 'les-cryptos').send(key + ' == ' + value)
+            bot.channels.find('name', 'les-cryptos').send(key + ' == ' + value.value.toString())
         })
 
     }, 60 * 1000);
@@ -86,8 +86,8 @@ bot.on('message', (message) => {
 
     if (message.content.startsWith(prefix + 'cryptoadd')) {
         const args = message.content.slice(prefix.length).split(' ');
-        store.set(args[0], {value: 0});
-        store.set(args[1], {crypto: 0});
+        store.set(args[1], {value: 0});
+        store.set(args[2], {crypto: 0});
     }
 
     cpt++;
