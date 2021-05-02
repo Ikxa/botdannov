@@ -35,12 +35,12 @@ bot.on('ready', (message) => {
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
-        binance.prices('TRXBTC', (error, ticker) => {
+        /*binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
             } else {
                 let valueTrx = (((ticker.TRXBTC - store.get('previousTrx').value) / store.get('previousTrx').value) * 100);
-                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + ' % 🚀');
+                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + getMessage(valueTrx));
             }
             store.set('previousTrx', {value: ticker.TRXBTC})
         });
@@ -49,7 +49,7 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur ETHBTC : ' + ticker.ETHBTC + ' BTC sauvegardée');
             } else {
                 let valueEth = (((ticker.ETHBTC - store.get('previousEth').value) / store.get('previousEth').value) * 100);
-                bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + valueEth + ' %');
+                bot.channels.find("name", "les-cryptos").send('ETHBTC : ' + getMessage(valueEth));
             }
             store.set('previousEth', {value: ticker.ETHBTC})
         });
@@ -58,7 +58,7 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur BATBTC : ' + ticker.BATBTC + ' BTC sauvegardée');
             } else {
                 let valueBat = (((ticker.BATBTC - store.get('previousBat').value) / store.get('previousBat').value) * 100);
-                bot.channels.find("name", "les-cryptos").send('BATBTC : ' + valueBat + ' %');
+                bot.channels.find("name", "les-cryptos").send('BATBTC : ' + getMessage(valueBat));
             }
             store.set('previousBat', {value: ticker.BATBTC})
         });
@@ -67,16 +67,27 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('Valeur BTCUSDT : ' + ticker.BTCUSDT + ' $ sauvegardée');
             } else {
                 let valueBtc = (((ticker.BTCUSDT - store.get('previousBtc').value) / store.get('previousBtc').value) * 100);
-                bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + valueBtc + ' %');
+                bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + getMessage(valueBtc));
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
-        });
+        });*/
+
+        store.each(function (value, key) {
+            bot.channels.find('name', 'les-cryptos').send(key + ' == ' + value)
+        })
+
     }, 60 * 1000 * 30);
 })
 
 bot.on('message', (message) => {
     if (message.author.bot) {
         return;
+    }
+
+    if (message.content.startsWith(prefix + 'cryptoadd')) {
+        const args = message.content.slice(prefix.length).split(' ');
+        store.set(args[0], {value: 0});
+        store.set(args[1], {crypto: 0});
     }
 
     cpt++;
@@ -109,4 +120,17 @@ bot.on('message', (message) => {
 });
 
 bot.login(process.env.TOKEN);
+
+function getMessage(value) {
+    switch (value) {
+        case value >= 0:
+            return value + ' % ⬆😁'
+        case value < 0:
+            return value + ' % 🙄'
+        case value > 1:
+            return value + ' % 🚀'
+        default:
+            return value + ' % ⬆😁'
+    }
+}
 
