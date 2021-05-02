@@ -72,11 +72,7 @@ bot.on('ready', (message) => {
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });*/
 
-        store.each(function (value, key) {
-            bot.channels.find('name', 'les-cryptos').send(key + ' == ' + value.value.toString())
-        })
-
-    }, 60 * 1000);
+    }, 60 * 1000 * 36000);
 })
 
 bot.on('message', (message) => {
@@ -84,11 +80,11 @@ bot.on('message', (message) => {
         return;
     }
 
-    if (message.content.startsWith(prefix + 'cryptoadd')) {
-        const args = message.content.slice(prefix.length).split(' ');
-        store.set(args[1], {value: 0});
-        store.set(args[2], {crypto: 0});
-    }
+    /*    if (message.content.startsWith(prefix + 'cryptoadd')) {
+            const args = message.content.slice(prefix.length).split(' ');
+            store.set(args[1], {value: 0});
+            store.set(args[2], {crypto: 0});
+        }*/
 
     cpt++;
     if (cpt === 15) {
