@@ -37,10 +37,10 @@ bot.on('ready', (message) => {
     setInterval(function () {
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
-                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée');
+                bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
             } else {
                 let valueTrx = (((ticker.TRXBTC - store.get('previousTrx').value) / store.get('previousTrx').value) * 100);
-                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + ' %');
+                bot.channels.find("name", "les-cryptos").send('TRXBTC : ' + valueTrx + ' % 🚀');
             }
             store.set('previousTrx', {value: ticker.TRXBTC})
         });
