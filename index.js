@@ -17,7 +17,7 @@ store.set('previousBtc', {value: 0});
 
 let rawdata = fs.readFileSync('config/cryptos.json');
 let cryptos = JSON.parse(rawdata);
-console.log(cryptos);
+console.log(cryptos.cryptos);
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
