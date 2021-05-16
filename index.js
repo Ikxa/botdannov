@@ -120,13 +120,13 @@ bot.login(process.env.TOKEN);
 function getMessage(value) {
     switch (value) {
         case value >= 0:
-            return value + ' % ⬆😁'
+            return value + ' %'
         case value < 0:
             return value + ' % 🙄'
         case value > 1:
             return value + ' % 🚀'
         default:
-            return value + ' % ⬆😁'
+            return value + ' %'
     }
 }
 
