@@ -83,7 +83,7 @@ bot.on('ready', async message => {
         cryptos.forEach(element => {
             binance.prices(element.toString(), (error, ticker) => {
                 if (store.get('previous' + element.toString()).value == 0) {
-                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element.toString() + ' : ' + ticker.BTCUSDT + ' sauvegardée');
+                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element.toString() + ' : ' + ticker.element + ' sauvegardée');
                 } else {
                     let valueBtc = (((ticker.BTCUSDT - store.get('previous' + element.toString()).value) / store.get('previous' + element.toString()).value) * 100);
                     bot.channels.find("name", "les-cryptos").send(element.toString() + ' : ' + getMessage(valueBtc));
