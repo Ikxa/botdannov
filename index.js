@@ -17,9 +17,9 @@ store.set('previousBtc', {value: 0});
 
 let rawdata = fs.readFileSync('config/cryptos.json');
 let cryptos = JSON.parse(rawdata).cryptos;
-// console.log(cryptos.cryptos);
-
-cryptos.forEach(element => console.log(element))
+cryptos.forEach(element => {
+    store.set('previous' + element, {value: 0});
+});
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
@@ -42,7 +42,7 @@ bot.on('ready', async message => {
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
-        bot.channels.find('name', 'les-cryptos').send((new Date()).toLocaleString());
+        /*bot.channels.find('name', 'les-cryptos').send((new Date()).toLocaleString());
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
@@ -78,8 +78,19 @@ bot.on('ready', async message => {
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + getMessage(valueBtc));
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
+        });*/
+
+        cryptos.forEach(element => {
+            binance.prices(element, (error, ticker) => {
+                if (store.get('previous' + element).value == 0) {
+                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element + ' : ' + ticker.BTCUSDT + ' sauvegardée');
+                } else {
+                    let valueBtc = (((ticker.BTCUSDT - store.get('previous' + element).value) / store.get('previous' + element).value) * 100);
+                    bot.channels.find("name", "les-cryptos").send(element + ' : ' + getMessage(valueBtc));
+                }
+                store.set('previous' + element, {value: ticker.BTCUSDT})
+            });
         });
-        bot.channels.find('name', 'les-cryptos').send('---');
     }, 60 * 1000);
 })
 
