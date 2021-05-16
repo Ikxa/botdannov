@@ -35,7 +35,7 @@ bot.on('ready', (message) => {
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
-        /*binance.prices('TRXBTC', (error, ticker) => {
+        binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
             } else {
@@ -70,9 +70,9 @@ bot.on('ready', (message) => {
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + getMessage(valueBtc));
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
-        });*/
+        });
 
-    }, 60 * 1000 * 36000);
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
