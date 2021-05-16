@@ -30,7 +30,7 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
-bot.on('ready', (message) => {
+bot.on('ready', async message => {
     console.log('Bot ready');
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
@@ -121,7 +121,7 @@ bot.login(process.env.TOKEN);
 function getMessage(value) {
     switch (value) {
         case value >= 0:
-            return value + ' %'
+            return value + ' % 😁'
         case value < 0:
             return value + ' % 🙄'
         case value > 1:
