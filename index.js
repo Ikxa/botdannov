@@ -1,18 +1,23 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const bot = new Discord.Client();
-const {Client} = require('pg');
+
+/*const {Client} = require('pg');
 const axios = require('axios');
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
-});
+});*/
 
 var store = require('store');
 store.set('previousTrx', {value: 0});
 store.set('previousEth', {value: 0});
 store.set('previousBat', {value: 0});
 store.set('previousBtc', {value: 0});
+
+let rawdata = fs.readFileSync('config/cryptos.json');
+let cryptos = JSON.parse(rawdata);
+console.log(cryptos);
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
