@@ -71,7 +71,7 @@ bot.on('ready', (message) => {
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });
-
+        bot.channels.find('name', 'les-cryptos').send('---');
     }, 60 * 1000);
 })
 
