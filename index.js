@@ -81,14 +81,14 @@ bot.on('ready', async message => {
         });*/
 
         cryptos.forEach(element => {
-            binance.prices(element, (error, ticker) => {
-                if (store.get('previous' + element).value == 0) {
-                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element + ' : ' + ticker.BTCUSDT + ' sauvegardée');
+            binance.prices(element.toString(), (error, ticker) => {
+                if (store.get('previous' + element.toString()).value == 0) {
+                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element.toString() + ' : ' + ticker.BTCUSDT + ' sauvegardée');
                 } else {
-                    let valueBtc = (((ticker.BTCUSDT - store.get('previous' + element).value) / store.get('previous' + element).value) * 100);
-                    bot.channels.find("name", "les-cryptos").send(element + ' : ' + getMessage(valueBtc));
+                    let valueBtc = (((ticker.BTCUSDT - store.get('previous' + element.toString()).value) / store.get('previous' + element.toString()).value) * 100);
+                    bot.channels.find("name", "les-cryptos").send(element.toString() + ' : ' + getMessage(valueBtc));
                 }
-                store.set('previous' + element, {value: ticker.BTCUSDT})
+                store.set('previous' + element.toString(), {value: ticker.BTCUSDT})
             });
         });
     }, 60 * 1000);
