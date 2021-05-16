@@ -16,7 +16,7 @@ store.set('previousBat', {value: 0});
 store.set('previousBtc', {value: 0});
 
 let rawdata = fs.readFileSync('config/cryptos.json');
-let cryptos = JSON.parse(rawdata);
+let cryptos = JSON.parse(rawdata).cryptos;
 // console.log(cryptos.cryptos);
 
 cryptos.forEach(element => console.log(element))
