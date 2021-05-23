@@ -11,10 +11,10 @@ const client = new Client({
 });*/
 
 var store = require('store');
-store.set('previousTrx', {value: 0});
+/*store.set('previousTrx', {value: 0});
 store.set('previousEth', {value: 0});
 store.set('previousBat', {value: 0});
-store.set('previousBtc', {value: 0});
+store.set('previousBtc', {value: 0});*/
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
@@ -33,22 +33,22 @@ commandFiles.forEach((file) => {
 });
 
 bot.on('ready', message => {
-    bot.channels.find('name', 'les-cryptos').send('Bot ready');
-
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
             console.log(typeof row.NAME);
+            store.set('previous' + row.NAME, {value: 0});
         })
         .on('end', () => {
-            console.log('CSV successfully read !');
+            bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire le fichier des cryptos.');
         })
+    ;
 
     bot.channels.find('name', 'les-cryptos').send('Si pas de message autre que bot ready, problème');
 
-    /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
+    /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');*/
     setInterval(function () {
-        bot.channels.find('name', 'les-cryptos').send('**' + (new Date()).toLocaleString('fr-FR', {timeZone: 'UTC'}) + '**');
+        /*bot.channels.find('name', 'les-cryptos').send('**' + (new Date()).toLocaleString('fr-FR', {timeZone: 'UTC'}) + '**');
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
@@ -84,8 +84,28 @@ bot.on('ready', message => {
                 bot.channels.find("name", "les-cryptos").send('BTCUSDT : ' + getMessage(valueBtc));
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
-        });
-    }, 60 * 1000);*/
+        });*/
+
+        fs.createReadStream('./config/cryptos.csv')
+            .pipe(csv())
+            .on('data', (row) => {
+                binance.prices(row.NAME, (error, ticker) => {
+                    let cryptoName = row.NAME.toObject();
+                    if (store.get('previous' + row.NAME).value == 0) {
+                        bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker.cryptoName + ' $ sauvegardée');
+                    } else {
+                        let value = (((ticker.cryptoName - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
+                        bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
+                    }
+                    store.set('previous' + row.NAME, {value: ticker.cryptoName})
+                });
+            })
+            .on('end', () => {
+                bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
+            })
+        ;
+
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
