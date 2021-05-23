@@ -38,7 +38,7 @@ bot.on('ready', async message => {
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
-            bot.channels.find('name', 'les-cryptos').send(row);
+            console.log(row);
         })
         .on('end', () => {
             console.log('CSV successfully read !');
