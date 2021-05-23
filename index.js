@@ -33,7 +33,7 @@ commandFiles.forEach((file) => {
 });
 
 bot.on('ready', async message => {
-    console.log('Bot ready');
+    bot.channels.find('name', 'les-cryptos').send('Bot ready');
 
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
@@ -43,6 +43,8 @@ bot.on('ready', async message => {
         .on('end', () => {
             console.log('CSV successfully read !');
         })
+
+    bot.channels.find('name', 'les-cryptos').send('Si pas de message autre que bot ready, problème');
 
     /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
