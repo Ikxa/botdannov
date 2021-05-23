@@ -79,18 +79,6 @@ bot.on('ready', async message => {
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });
-
-        /*cryptos.forEach(element => {
-            binance.prices(element.toString(), (error, ticker) => {
-                if (store.get('previous' + element.toString()).value == 0) {
-                    bot.channels.find("name", "les-cryptos").send('Valeur ' + element.toString() + ' : ' + ticker.element + ' sauvegardée');
-                } else {
-                    let valueBtc = (((ticker.BTCUSDT - store.get('previous' + element.toString()).value) / store.get('previous' + element.toString()).value) * 100);
-                    bot.channels.find("name", "les-cryptos").send(element.toString() + ' : ' + getMessage(valueBtc));
-                }
-                store.set('previous' + element.toString(), {value: ticker.BTCUSDT})
-            });
-        });*/
     }, 60 * 1000);
 })
 
@@ -98,12 +86,6 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
-
-    /*    if (message.content.startsWith(prefix + 'cryptoadd')) {
-            const args = message.content.slice(prefix.length).split(' ');
-            store.set(args[1], {value: 0});
-            store.set(args[2], {crypto: 0});
-        }*/
 
     cpt++;
     if (cpt === 15) {
@@ -137,15 +119,15 @@ bot.on('message', (message) => {
 bot.login(process.env.TOKEN);
 
 function getMessage(value) {
-    switch (value) {
+    switch (parseInt(value)) {
         case value >= 0:
-            return value + ' % 😁'
+            return value.toFixed(3) + ' % 😁'
         case value < 0:
-            return value + ' % 🙄'
+            return value.toFixed(3) + ' % 🙄'
         case value > 1:
-            return value + ' % 🚀'
+            return value.toFixed(3) + ' % 🚀'
         default:
-            return value + ' %'
+            return value.toFixed(3) + ' %'
     }
 }
 
