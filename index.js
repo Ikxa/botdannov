@@ -38,7 +38,7 @@ bot.on('ready', message => {
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
-            console.log('row', row);
+            console.log('row', row.NAME);
         })
         .on('end', () => {
             console.log('CSV successfully read !');
@@ -47,7 +47,6 @@ bot.on('ready', message => {
     bot.channels.find('name', 'les-cryptos').send('Si pas de message autre que bot ready, problème');
 
     /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
-
     setInterval(function () {
         bot.channels.find('name', 'les-cryptos').send('**' + (new Date()).toLocaleString('fr-FR', {timeZone: 'UTC'}) + '**');
         binance.prices('TRXBTC', (error, ticker) => {
