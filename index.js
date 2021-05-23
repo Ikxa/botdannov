@@ -90,17 +90,13 @@ bot.on('ready', message => {
             .pipe(csv())
             .on('data', (row) => {
                 binance.prices(row.NAME, (error, ticker) => {
-                    let cryptoName = row.NAME;
-                    console.log(ticker);
-                    console.log(ticker.TRXBTC);
-                    console.log(typeof ticker.TRXBTC);
                     if (store.get('previous' + row.NAME).value == 0) {
-                        bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker.cryptoName + ' $ sauvegardée');
+                        bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
                     } else {
-                        let value = (((ticker.cryptoName - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
+                        let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
                     }
-                    store.set('previous' + row.NAME, {value: ticker.cryptoName})
+                    store.set('previous' + row.NAME, {value: ticker[row.NAME]})
                 });
             })
             .on('end', () => {
