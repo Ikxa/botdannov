@@ -91,6 +91,7 @@ bot.on('ready', message => {
             .on('data', (row) => {
                 binance.prices(row.NAME, (error, ticker) => {
                     let cryptoName = row.NAME;
+                    console.log(typeof ticker);
                     if (store.get('previous' + row.NAME).value == 0) {
                         bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker.cryptoName + ' $ sauvegardée');
                     } else {
