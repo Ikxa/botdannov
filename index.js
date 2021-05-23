@@ -38,7 +38,7 @@ bot.on('ready', message => {
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
-            console.log('row', row.NAME);
+            console.log(typeof row.NAME);
         })
         .on('end', () => {
             console.log('CSV successfully read !');
