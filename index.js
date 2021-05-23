@@ -32,13 +32,13 @@ commandFiles.forEach((file) => {
     bot.commands.set(command.name, command);
 });
 
-bot.on('ready', async message => {
+bot.on('ready', message => {
     bot.channels.find('name', 'les-cryptos').send('Bot ready');
 
     fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
-            console.log(row);
+            console.log('row', row);
         })
         .on('end', () => {
             console.log('CSV successfully read !');
