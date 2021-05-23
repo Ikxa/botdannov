@@ -80,14 +80,10 @@ bot.on('message', (message) => {
 
     if (message.content.startsWith('/cryptoadd')) {
         const args = message.content.slice(prefix.length).split(' ');
-        fs.writeFile('./config/cryptos.csv', args[1], 'utf8', function (err) {
-            if (err) {
-                console.log('Some error occured - file either not saved or corrupted file saved.');
-            } else {
-                console.log('It\'s saved!');
-                console.log(args[1]);
-                store.set('previous' + args[1], {value: 0});
-            }
+        fs.appendFile('./config/cryptos.csv', args[1], function (err) {
+            if (err) throw err;
+            console.log('Saved!');
+            store.set('previous' + args[1], {value: 0});
         });
     }
 
