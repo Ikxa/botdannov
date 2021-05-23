@@ -11,10 +11,6 @@ const client = new Client({
 });*/
 
 var store = require('store');
-/*store.set('previousTrx', {value: 0});
-store.set('previousEth', {value: 0});
-store.set('previousBat', {value: 0});
-store.set('previousBtc', {value: 0});*/
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
@@ -61,7 +57,6 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-
     }, 60 * 1000);
 })
 
@@ -90,6 +85,7 @@ bot.on('message', (message) => {
                 console.log('Some error occured - file either not saved or corrupted file saved.');
             } else {
                 console.log('It\'s saved!');
+                store.set('previous' + args[0], {value: 0});
             }
         });
     }
