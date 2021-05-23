@@ -127,7 +127,7 @@ function getMessage(value) {
         case (parseInt(value) > 1):
             return value.toFixed(3) + ' % 🚀'
         default:
-            return value.toFixed(3) + ' %'
+            return '+ ' + value.toFixed(3) + ' %'
     }
 }
 
