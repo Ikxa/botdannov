@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
+const csv = require('csv-parser');
 const bot = new Discord.Client();
 
 /*const {Client} = require('pg');
@@ -15,11 +16,14 @@ store.set('previousEth', {value: 0});
 store.set('previousBat', {value: 0});
 store.set('previousBtc', {value: 0});
 
-/*let rawdata = fs.readFileSync('config/cryptos.json');
-let cryptos = JSON.parse(rawdata).cryptos;
-cryptos.forEach(element => {
-    store.set('previous' + element, {value: 0});
-});*/
+fs.createReadStream('config/cryptos.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+        bot.channels.find('name', 'les-cryptos').send(row);
+    })
+    .on('end', () => {
+        console.log('CSV successfully read !');
+    })
 
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
@@ -39,7 +43,7 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', async message => {
     console.log('Bot ready');
-    bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
+    /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
         bot.channels.find('name', 'les-cryptos').send('**' + (new Date()).toLocaleString('fr-FR', {timeZone: 'UTC'}) + '**');
@@ -79,7 +83,7 @@ bot.on('ready', async message => {
             }
             store.set('previousBtc', {value: ticker.BTCUSDT})
         });
-    }, 60 * 1000);
+    }, 60 * 1000);*/
 })
 
 bot.on('message', (message) => {
