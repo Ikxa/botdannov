@@ -85,6 +85,7 @@ bot.on('message', (message) => {
                 console.log('Some error occured - file either not saved or corrupted file saved.');
             } else {
                 console.log('It\'s saved!');
+                console.log(args[0]);
                 store.set('previous' + args[0], {value: 0});
             }
         });
