@@ -35,7 +35,7 @@ commandFiles.forEach((file) => {
 bot.on('ready', async message => {
     console.log('Bot ready');
 
-    fs.createReadStream('config/cryptos.csv')
+    fs.createReadStream('./config/cryptos.csv')
         .pipe(csv())
         .on('data', (row) => {
             bot.channels.find('name', 'les-cryptos').send(row);
