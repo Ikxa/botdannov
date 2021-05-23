@@ -16,15 +16,6 @@ store.set('previousEth', {value: 0});
 store.set('previousBat', {value: 0});
 store.set('previousBtc', {value: 0});
 
-fs.createReadStream('config/cryptos.csv')
-    .pipe(csv())
-    .on('data', (row) => {
-        bot.channels.find('name', 'les-cryptos').send(row);
-    })
-    .on('end', () => {
-        console.log('CSV successfully read !');
-    })
-
 const Binance = require('node-binance-api');
 const binance = new Binance().options({
     APIKEY: process.env.API,
@@ -43,6 +34,16 @@ commandFiles.forEach((file) => {
 
 bot.on('ready', async message => {
     console.log('Bot ready');
+
+    fs.createReadStream('config/cryptos.csv')
+        .pipe(csv())
+        .on('data', (row) => {
+            bot.channels.find('name', 'les-cryptos').send(row);
+        })
+        .on('end', () => {
+            console.log('CSV successfully read !');
+        })
+
     /*bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
