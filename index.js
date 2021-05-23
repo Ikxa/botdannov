@@ -119,12 +119,12 @@ bot.on('message', (message) => {
 bot.login(process.env.TOKEN);
 
 function getMessage(value) {
-    switch (parseInt(value)) {
-        case value >= 0:
+    switch (value) {
+        case (parseInt(value) >= 0):
             return value.toFixed(3) + ' % 😁'
-        case value < 0:
+        case (parseInt(value) < 0):
             return value.toFixed(3) + ' % 🙄'
-        case value > 1:
+        case (parseInt(value) > 1):
             return value.toFixed(3) + ' % 🚀'
         default:
             return value.toFixed(3) + ' %'
