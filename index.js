@@ -42,7 +42,7 @@ bot.on('ready', async message => {
     bot.channels.find('name', 'les-cryptos').send('Calcul des cryptos en cours...');
 
     setInterval(function () {
-        bot.channels.find('name', 'les-cryptos').send((new Date()).toLocaleString());
+        bot.channels.find('name', 'les-cryptos').send('**' + (new Date()).toLocaleString() + '**');
         binance.prices('TRXBTC', (error, ticker) => {
             if (store.get('previousTrx').value == 0) {
                 bot.channels.find("name", "les-cryptos").send('Valeur TRXBTC : ' + ticker.TRXBTC + ' BTC sauvegardée 🚀');
