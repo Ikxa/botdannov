@@ -49,6 +49,8 @@ bot.on('ready', message => {
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
+                        bot.users.get('344551142916882442').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+                        bot.users.get('193467165389619211').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
                 });
