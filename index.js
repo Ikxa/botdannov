@@ -85,15 +85,7 @@ bot.on('message', (message) => {
     }
 
     if (message.content.startsWith('!cryptoadd')) {
-        const args = message.content.slice(prefix.length).split(' ')[1];
-        const data = [
-            {
-                name: args[1]
-            }
-        ];
-        csvWriter
-            .writeRecords(data)
-            .then(()=> console.log('The CSV file was written successfully'));
+        message.reply("https://github.com/Ikxa/botdannov/blob/master/config/cryptos.csv");
     }
 
     // Commande à exécuter
