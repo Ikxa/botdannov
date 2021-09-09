@@ -2,13 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const csv = require('csv-parser');
 const bot = new Discord.Client();
-
-/*const {Client} = require('pg');
-const axios = require('axios');
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
-});*/
+const csvWriter = require('csv-writer');
 
 var store = require('store');
 
@@ -84,13 +78,8 @@ bot.on('message', (message) => {
         cpt = 0;
     }
 
-    if (message.content.startsWith('/cryptoadd')) {
-        const args = message.content.slice(prefix.length).split(' ');
-        fs.appendFile('./config/cryptos.csv', args[1], function (err) {
-            if (err) throw err;
-            console.log('Saved!');
-            store.set('previous' + args[1], {value: 0});
-        });
+    if (message.content.startsWith('!cryptoadd')) {
+        message.reply('J\'essai d\'ajouter une crypto !');
     }
 
     // Commande à exécuter

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/chifoumi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/meteo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/rd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/rg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/bin/csv-parser" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/bin/csv-parser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-parser/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifier-factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifier-factory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/abstract.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/abstract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/array.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/object.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-stringifiers/object.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-writer-factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-writer-factory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-writer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/csv-writer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/field-stringifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/field-stringifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/file-writer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/file-writer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/lang/object.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/lang/object.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/lang/promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/lang/promise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/record.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/lib/record.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/csv-stringifiers/array.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/csv-stringifiers/array.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/csv-stringifiers/object.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/csv-stringifiers/object.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/field-stringifier.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/field-stringifier.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/helper/delimiter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/helper/delimiter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/lang/promise.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/lang/promise.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/write-array-records.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/write-array-records.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/write-object-records.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/dist/test/write-object-records.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifier-factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifier-factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/abstract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/abstract.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/array.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/array.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/object.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-stringifiers/object.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-writer-factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-writer-factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-writer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/csv-writer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/field-stringifier.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/field-stringifier.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/file-writer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/file-writer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/lang/object.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/lang/object.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/lang/promise.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/lang/promise.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/lib/record.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/csv-stringifiers/array.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/csv-stringifiers/array.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/csv-stringifiers/object.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/csv-stringifiers/object.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/field-stringifier.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/field-stringifier.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/helper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/helper/delimiter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/helper/delimiter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/lang/promise.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/lang/promise.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/write-array-records.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/write-array-records.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/csv-writer/src/test/write-object-records.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/csv-writer/src/test/write-object-records.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/opencollective-postinstall/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/opencollective-postinstall/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/opencollective-postinstall/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/opencollective-postinstall/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/opencollective-postinstall/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/opencollective-postinstall/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/opencollective-postinstall/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/opencollective-postinstall/index.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/opencollective-postinstall/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/opencollective-postinstall/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>config.startCommand</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>startCommand</replace>
+      <replace>prefix</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Renard &lt;jord.renard@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/essai.php" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/config/config.json" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/commands/rg.js" />
+        <option value="$PROJECT_DIR$/commands/chifoumi.js" />
+        <option value="$PROJECT_DIR$/commands/help.js" />
+        <option value="$PROJECT_DIR$/commands/say.js" />
+        <option value="$PROJECT_DIR$/commands/meteo.js" />
+        <option value="$PROJECT_DIR$/commands/rd.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="68" />
+    <option name="y" value="-22" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectId" id="1xv1PTomEJEFb5Y9WatpRVp7jG2" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="botdannov" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="botdannov" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="botdannov" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="botdannov" type="b2602c69:ProjectViewProjectNode" />
+              <item name="botdannov" type="462c0819:PsiDirectoryNode" />
+              <item name="emotes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RunManager">
+    <configuration name="essai.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" editBeforeRun="true" temporary="true" path="$PROJECT_DIR$/essai.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.essai.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone" />
+      <created>1539480244201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539480244201</updated>
+      <workItem from="1539480245327" duration="141000" />
+      <workItem from="1539535598433" duration="643000" />
+      <workItem from="1541607552352" duration="416000" />
+      <workItem from="1542467137948" duration="29000" />
+      <workItem from="1542472946959" duration="603000" />
+      <workItem from="1544987208666" duration="5543000" />
+      <workItem from="1544998819311" duration="1662000" />
+      <workItem from="1545055077197" duration="687000" />
+      <workItem from="1545072658472" duration="5219000" />
+      <workItem from="1545164769475" duration="499000" />
+      <workItem from="1545177040355" duration="1481000" />
+      <workItem from="1545264268068" duration="49000" />
+      <workItem from="1545264356991" duration="2024000" />
+      <workItem from="1545314450075" duration="221000" />
+      <workItem from="1631220729494" duration="307000" />
+    </task>
+    <task id="LOCAL-00001" summary="DM someone">
+      <created>1631215394672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631215394672</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DM someone">
+      <created>1631216070496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631216070496</updated>
+    </task>
+    <task id="LOCAL-00003" summary="DM someone">
+      <created>1631216338858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631216338858</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19217000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32879582" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32931727" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3296875" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12447917" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32879582" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32931727" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="9339e78e-9d87-4f41-acee-e0f84086149c">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DM someone" />
+    <option name="LAST_COMMIT_MESSAGE" value="DM someone" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/essai.php" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.json" />
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/chifoumi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/rd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/rg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/help.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/say.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commands/meteo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
