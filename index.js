@@ -50,7 +50,7 @@ bot.on('ready', message => {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
 
-                        if (value > 1 || value < -1) {
+                        if (value > 0 || value < 0) {
                             bot.users.get('344551142916882442').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
                             bot.users.get('193467165389619211').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
                         }
@@ -62,7 +62,7 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 60 * 1000 * 60);
+    }, 60 * 1000);
 })
 
 bot.on('message', (message) => {
