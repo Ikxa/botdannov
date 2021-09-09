@@ -51,8 +51,10 @@ bot.on('ready', message => {
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
                         console.log(bot.users.get('344551142916882442'));
                         console.log(bot.users.get('193467165389619211'));
-                        bot.users.get('344551142916882442').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
-                        bot.users.get('193467165389619211').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+                        if (value > 1 || value < 1) {
+                            bot.users.get('344551142916882442').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+                            bot.users.get('193467165389619211').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+                        }
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
                 });
@@ -61,7 +63,7 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 1000 * 60);
+    }, 1000 * 60 * 60);
 })
 
 bot.on('message', (message) => {
