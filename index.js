@@ -57,7 +57,7 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 1000);
+    }, 1000 * 60);
 })
 
 bot.on('message', (message) => {
