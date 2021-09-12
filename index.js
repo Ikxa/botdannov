@@ -17,6 +17,8 @@ const binance = new Binance().options({
     APIKEY: process.env.API,
     APISECRET: process.env.SECRET,
 });
+const crytosValue = [];
+
 
 let prefix = '!';
 let cpt = 0;
@@ -49,12 +51,7 @@ bot.on('ready', message => {
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
-                        console.log(bot.users.get('344551142916882442'));
-                        console.log(bot.users.get('193467165389619211'));
-                        if (value > 1 || value < 1) {
-                            bot.users.get('344551142916882442').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
-                            bot.users.get('193467165389619211').send(row.NAME + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
-                        }
+                        crytosValue[row.NAME] = value;
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
                 });
@@ -64,6 +61,16 @@ bot.on('ready', message => {
             })
         ;
     }, 1000 * 60 * 60);
+
+    setInterval(function () {
+        for (const [key, value] of Object.entries(crytosValue)) {
+            console.log(key, value);
+            if (parseInt(value) > 1 || parseInt(value) < -1) {
+                bot.users.get('344551142916882442').send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+                bot.users.get('193467165389619211').send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
+            }
+        }
+    }, 1000 * 60 * 70);
 })
 
 bot.on('message', (message) => {
@@ -108,11 +115,11 @@ bot.login(process.env.TOKEN);
 
 function getMessage(value) {
     switch (value) {
-        case (parseInt(value) >= 0):
+        case (value >= 0):
             return value.toFixed(3) + ' % 😁'
-        case (parseInt(value) < 0):
+        case (value < 0):
             return value.toFixed(3) + ' % 🙄'
-        case (parseInt(value) > 1):
+        case (value > 1):
             return value.toFixed(3) + ' % 🚀'
         default:
             return value.toFixed(3) + ' %'

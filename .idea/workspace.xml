@@ -2,79 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
-      <change afterPath="$PROJECT_DIR$/commands/chifoumi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/help.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/meteo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/rd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/rg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/csv-parser" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/csv-parser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/csv-parser.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/csv-parser.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/csv-parser.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/csv-parser.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/json5" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/json5.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/json5.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/json5.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/json5.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mime" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mime.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mime.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mime.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mime.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/opencollective-postinstall.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/lib/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/lib/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json5/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/json5/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/Mime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/Mime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/cli.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/lite.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/lite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/README_js.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/README_js.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/benchmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/benchmark.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/.npmignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/bin/semver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/foot.js.txt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/foot.js.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/head.js.txt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/head.js.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/semver.browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/semver.browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/semver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/amd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/big-numbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/big-numbers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/clean.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/clean.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/gtr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/gtr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/ltr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/ltr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/major-minor-patch.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/major-minor-patch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/semver/test/no-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/test/no-module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/.bin/semver.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/bin/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/bin/semver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/range.bnf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/range.bnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/superagent/node_modules/semver/semver.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +165,8 @@
       <workItem from="1545264268068" duration="49000" />
       <workItem from="1545264356991" duration="2024000" />
       <workItem from="1545314450075" duration="221000" />
-      <workItem from="1631220729494" duration="710000" />
+      <workItem from="1631220729494" duration="1778000" />
+      <workItem from="1631481286710" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -266,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631221099732</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DM someone">
+      <created>1631221467294</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631221467294</updated>
+    </task>
+    <task id="LOCAL-00006" summary="DM someone">
+      <created>1631221875306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631221875306</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
