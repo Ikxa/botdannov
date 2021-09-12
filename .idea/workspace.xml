@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +165,7 @@
       <workItem from="1545264356991" duration="2024000" />
       <workItem from="1545314450075" duration="221000" />
       <workItem from="1631220729494" duration="1778000" />
-      <workItem from="1631481286710" duration="1341000" />
+      <workItem from="1631481286710" duration="1442000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -210,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631221875306</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DM someone">
+      <created>1631483438899</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631483438899</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

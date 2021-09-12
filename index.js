@@ -37,7 +37,7 @@ bot.on('ready', message => {
             store.set('previous' + row.NAME, {value: 0});
         })
         .on('end', () => {
-            bot.channels.find('name', 'les-cryptos').send('J\'ai terminé d\'initialiser les cryptos.');
+            bot.channels.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
         })
     ;
 
