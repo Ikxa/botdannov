@@ -60,17 +60,17 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 1000 * 60 * 60);
+    }, 1000 * 60 * 30);
 
     setInterval(function () {
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
-            if (parseInt(value) > 1 || parseInt(value) < -1) {
+            if (parseInt(value) > 2 || parseInt(value) < -2) {
                 bot.users.get('344551142916882442').send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
                 bot.users.get('193467165389619211').send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value))
             }
         }
-    }, 1000 * 60 * 70);
+    }, 1000 * 60 * 33);
 })
 
 bot.on('message', (message) => {
