@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/color.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/color.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +120,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TEXT" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
@@ -165,7 +167,8 @@
       <workItem from="1545264356991" duration="2024000" />
       <workItem from="1545314450075" duration="221000" />
       <workItem from="1631220729494" duration="1778000" />
-      <workItem from="1631481286710" duration="1442000" />
+      <workItem from="1631481286710" duration="2182000" />
+      <workItem from="1631566650558" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -216,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631483438899</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="DM someone">
+      <created>1631483538368</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631483538368</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
