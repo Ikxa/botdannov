@@ -2,22 +2,16 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const csv = require('csv-parser');
 const bot = new Discord.Client();
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const csvWriter = createCsvWriter({
-    path: './config/cryptos.csv',
-    header: [
-        {id: 'name', title: 'Name'}
-    ]
-});
-
 var store = require('store');
 
 const Binance = require('node-binance-api');
+const {Chart} = require("chart.js");
 const binance = new Binance().options({
     APIKEY: process.env.API,
     APISECRET: process.env.SECRET,
 });
 const crytosValue = [];
+let crytosValueByTime = [];
 
 
 let prefix = '!';
@@ -52,6 +46,8 @@ bot.on('ready', message => {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
                         crytosValue[row.NAME] = value;
+                        // >> "09/08/2014, 2:35:56 AM"
+                        crytosValueByTime[row.name] = {value: value, time: new Date().toLocaleString()}
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
                 });
@@ -71,6 +67,11 @@ bot.on('ready', message => {
             }
         }
     }, 1000 * 60 * 33);
+
+    var dayInMilliseconds = 1000 * 60 * 60 * 24;
+    setInterval(function() {
+        createChart();
+    }, dayInMilliseconds);
 })
 
 bot.on('message', (message) => {
@@ -126,3 +127,34 @@ function getMessage(value) {
     }
 }
 
+function createChart() {
+    if (crytosValueByTime.length === 12) {
+        var ctx = document.getElementById('myChart');
+        var labels = [];
+        var values = [];
+
+        for (const [key, value] of Object.entries(crytosValueByTime)) {
+            labels.push(key);
+            values.push(value);
+        }
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            labels: labels,
+            datasets: [{
+                label: 'Evolution every 24 hours',
+                data: values,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        })
+        crytosValueByTime = [];
+    }
+}
