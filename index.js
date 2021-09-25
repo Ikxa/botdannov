@@ -59,18 +59,14 @@ bot.on('ready', message => {
                 channel.send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 1000 * 40);
+    }, 1000 * 60 * 40);
 
     setInterval(async function () {
-        crytosValue['DENTUSDT2'] = 4;
-        crytosValue['BTCUSDT2'] = -4;
-
         for (const [key, value] of Object.entries(crytosValue)) {
-            console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
                 try {
                     let userJ = await bot.users.fetch('193467165389619211');
-                    let userA = await bot.users.fetch('193467165389619211');
+                    let userA = await bot.users.fetch('344551142916882442');
                     await bot.users.cache.get(userJ.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
                     await bot.users.cache.get(userA.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
                 } catch (error) {
@@ -78,7 +74,7 @@ bot.on('ready', message => {
                 }
             }
         }
-    }, 1000 * 60);
+    }, 1000 * 60 * 50);
 
 })
 
