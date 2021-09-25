@@ -191,7 +191,7 @@
       <workItem from="1631989629826" duration="16000" />
       <workItem from="1631999352492" duration="65000" />
       <workItem from="1632072059265" duration="1859000" />
-      <workItem from="1632608930837" duration="332000" />
+      <workItem from="1632608930837" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -347,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632609187865</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="DM someone">
+      <created>1632609273656</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1632609273656</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

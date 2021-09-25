@@ -17,10 +17,15 @@ let prefix = '!';
 let cpt = 0;
 bot.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/');
+let channel = null;
 
 commandFiles.forEach((file) => {
     const command = require(`./commands/${file}`); // eslint-disable-line
     bot.commands.set(command.name, command);
+});
+
+bot.once("ready", async () => {
+    channel = await bot.channels.fetch("835793675534467103")
 });
 
 bot.on('ready', message => {
@@ -31,7 +36,7 @@ bot.on('ready', message => {
         })
         .on('end', () => {
             // bot.channels.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
-            bot.channels.fetch('835793675534467103', true, true).send('J\'ai lu les cryptos souhaitées dans le csv.');
+            channel.send('J\'ai lu les cryptos souhaitées dans le csv.');
         })
     ;
 
@@ -42,11 +47,11 @@ bot.on('ready', message => {
                 binance.prices(row.NAME, (error, ticker) => {
                     if (store.get('previous' + row.NAME).value == 0) {
                         // bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
-                        bot.channels.fetch('835793675534467103', true, true).send(row.NAME + ' : ' + getMessage(value));
+                        channel.send(row.NAME + ' : ' + getMessage(value));
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         // bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
-                        bot.channels.fetch('835793675534467103', true, true).send(row.NAME + ' : ' + getMessage(value));
+                        channel.send(row.NAME + ' : ' + getMessage(value));
                         crytosValue[row.NAME] = value;
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
@@ -54,7 +59,7 @@ bot.on('ready', message => {
             })
             .on('end', () => {
                 // bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
-                bot.channels.fetch('835793675534467103', true, true).send(row.NAME + ' : ' + getMessage(value));
+                channel.send(row.NAME + ' : ' + getMessage(value));
             })
         ;
     }, 1000 * 40);
