@@ -22,7 +22,7 @@
     "config.json": "^0.0.1",
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0",
-    "discord.js": "*",
+    "discord.js": "^12.4.1",
     "dom-storage": "^2.1.0",
     "faker": "^4.1.0",
     "ffmpeg": "0.0.4",
