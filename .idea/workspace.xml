@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/chifoumi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/gitlab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/kick.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/meteo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/rdopen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/stream.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/twitch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/adrien.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/auplaisir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/giclette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/huh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/surprised.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/emotes/yessay.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
