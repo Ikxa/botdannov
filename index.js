@@ -30,7 +30,7 @@ bot.on('ready', message => {
             store.set('previous' + row.NAME, {value: 0});
         })
         .on('end', () => {
-            bot.channels.cache.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
+            this.bot.channels.cache.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
         })
     ;
 
@@ -40,10 +40,10 @@ bot.on('ready', message => {
             .on('data', (row) => {
                 binance.prices(row.NAME, (error, ticker) => {
                     if (store.get('previous' + row.NAME).value == 0) {
-                        bot.channels.cache.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
+                        this.bot.channels.cache.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
-                        bot.channels.cache.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
+                        this.bot.channels.cache.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
                         crytosValue[row.NAME] = value;
                     }
                     store.set('previous' + row.NAME, {value: ticker[row.NAME]})
@@ -51,7 +51,7 @@ bot.on('ready', message => {
             })
             .on('end', () => {
                 // bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
-                bot.channels.cache.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
+                this.bot.channels.cache.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
     }, 1000 * 40);
