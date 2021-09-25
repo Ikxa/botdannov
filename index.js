@@ -64,11 +64,19 @@ bot.on('ready', message => {
     setInterval(function () {
         crytosValue['DENTUSDT2'] = 4;
         crytosValue['BTCUSDT2'] = -4;
+
+        const getUser = bot.users.find('id', "344551142916882442").first()
+
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
-                bot.users.cache.get("344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
-                bot.users.cache.get("193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                // bot.users.cache.get("344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                // bot.users.cache.get("193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                getUser.send({embed:{
+                        title: `**${message.author.tag}**`,
+                        description:`**${msg}**`,
+                        color: 0x36393e
+                    }})
             }
         }
     }, 1000 * 60);
