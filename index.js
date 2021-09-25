@@ -53,11 +53,11 @@ bot.on('ready', message => {
                 bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
             })
         ;
-    }, 1000 * 50);
+    }, 1000 * 40);
 
     setInterval(function () {
-        cryptosValue['DENTUSDT'] = 4;
-        cryptosValue['BTCUSDT'] = -4;
+        cryptosValue['DENTUSDT2'] = 4;
+        cryptosValue['BTCUSDT2'] = -4;
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
