@@ -30,7 +30,7 @@ bot.on('ready', message => {
             store.set('previous' + row.NAME, {value: 0});
         })
         .on('end', () => {
-            bot.channels.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
+            bot.channels.cache.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
         })
     ;
 
