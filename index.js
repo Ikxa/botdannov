@@ -56,6 +56,8 @@ bot.on('ready', message => {
     }, 1000 * 50);
 
     setInterval(function () {
+        cryptosValue['DENTUSDT'] = 4;
+        cryptosValue['BTCUSDT'] = -4;
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
