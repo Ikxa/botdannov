@@ -47,7 +47,7 @@ bot.on('ready', message => {
                 binance.prices(row.NAME, (error, ticker) => {
                     if (store.get('previous' + row.NAME).value == 0) {
                         // bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
-                        channel.send(row.NAME + ' : ' + getMessage(value));
+                        channel.send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
                         // bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
