@@ -66,7 +66,7 @@ bot.on('ready', message => {
         crytosValue['BTCUSDT2'] = -4;
 
         try {
-            let user = await bot.users.fetch('344551142916882442');
+            let user = await bot.users.fetch('193467165389619211');
             await bot.users.cache.get(user.id).send(`Credits Has Been Added To Your Balance!`);
         } catch (error) {
             console.error(error);
