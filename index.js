@@ -31,7 +31,7 @@ bot.on('ready', message => {
         })
         .on('end', () => {
             // bot.channels.find('name', 'les-cryptos').send('J\'ai lu les cryptos souhaitées dans le csv.');
-            bot.channels.fetch('835793675534467103', true, true).send(row.NAME + ' : ' + getMessage(value));
+            bot.channels.fetch('835793675534467103', true, true).send('J\'ai lu les cryptos souhaitées dans le csv.');
         })
     ;
 
