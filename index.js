@@ -61,22 +61,22 @@ bot.on('ready', message => {
         ;
     }, 1000 * 40);
 
-    setInterval(function () {
+    setInterval(async function () {
         crytosValue['DENTUSDT2'] = 4;
         crytosValue['BTCUSDT2'] = -4;
 
-        const getUser = bot.users.find('id', "344551142916882442").first()
+        try {
+            let user = await bot.users.fetch('344551142916882442');
+            await bot.users.cache.get(user.id).send(`Credits Has Been Added To Your Balance!`);
+        } catch (error) {
+            console.error(error);
+        }
 
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
                 // bot.users.cache.get("344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
                 // bot.users.cache.get("193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
-                getUser.send({embed:{
-                        title: `**${message.author.tag}**`,
-                        description:`**${msg}**`,
-                        color: 0x36393e
-                    }})
             }
         }
     }, 1000 * 60);
