@@ -46,11 +46,9 @@ bot.on('ready', message => {
             .on('data', (row) => {
                 binance.prices(row.NAME, (error, ticker) => {
                     if (store.get('previous' + row.NAME).value == 0) {
-                        // bot.channels.find("name", "les-cryptos").send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
                         channel.send('Valeur ' + row.NAME + ': ' + ticker[row.NAME] + ' $ sauvegardée');
                     } else {
                         let value = (((ticker[row.NAME] - store.get('previous' + row.NAME).value) / store.get('previous' + row.NAME).value) * 100);
-                        // bot.channels.find("name", "les-cryptos").send(row.NAME + ' : ' + getMessage(value));
                         channel.send(row.NAME + ' : ' + getMessage(value));
                         crytosValue[row.NAME] = value;
                     }
@@ -58,7 +56,6 @@ bot.on('ready', message => {
                 });
             })
             .on('end', () => {
-                // bot.channels.find('name', 'les-cryptos').send('J\'ai terminé de lire les cryptos.');
                 channel.send('J\'ai terminé de lire les cryptos.');
             })
         ;
@@ -70,8 +67,8 @@ bot.on('ready', message => {
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
-                bot.users.cache.find(user => user.id === "344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
-                bot.users.cache.find(user => user.id === "193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                bot.users.cache.get("344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                bot.users.cache.get("193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
             }
         }
     }, 1000 * 60);
