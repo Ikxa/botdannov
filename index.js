@@ -65,18 +65,17 @@ bot.on('ready', message => {
         crytosValue['DENTUSDT2'] = 4;
         crytosValue['BTCUSDT2'] = -4;
 
-        try {
-            let user = await bot.users.fetch('193467165389619211');
-            await bot.users.cache.get(user.id).send(`Credits Has Been Added To Your Balance!`);
-        } catch (error) {
-            console.error(error);
-        }
-
         for (const [key, value] of Object.entries(crytosValue)) {
             console.log(key, value);
             if (parseInt(value) > 2 || parseInt(value) < -2) {
-                // bot.users.cache.get("344551142916882442").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
-                // bot.users.cache.get("193467165389619211").send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                try {
+                    let userJ = await bot.users.fetch('193467165389619211');
+                    let userA = await bot.users.fetch('193467165389619211');
+                    await bot.users.cache.get(userJ.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                    await bot.users.cache.get(userA.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                } catch (error) {
+                    console.error(error);
+                }
             }
         }
     }, 1000 * 60);
