@@ -65,10 +65,10 @@ bot.on('ready', message => {
         for (const [key, value] of Object.entries(crytosValue)) {
             if (parseInt(value) > 2 || parseInt(value) < -2) {
                 try {
-                    let userJ = await bot.users.fetch('193467165389619211');
-                    let userA = await bot.users.fetch('344551142916882442');
-                    await bot.users.cache.get(userJ.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
-                    await bot.users.cache.get(userA.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                    let jordan = await bot.users.fetch('193467165389619211');
+                    let adrien = await bot.users.fetch('344551142916882442');
+                    await bot.users.cache.get(jordan.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
+                    await bot.users.cache.get(adrien.id).send(key + ' mérite ton attention, sa valeur actuelle est de ' + getMessage(value));
                 } catch (error) {
                     console.error(error);
                 }
@@ -119,9 +119,8 @@ bot.on('message', (message) => {
 bot.login(process.env.TOKEN);
 
 function getMessage(value) {
+    value = parseFloat(value);
     switch (value) {
-        case (value >= 0):
-            return value.toFixed(3) + ' % 😁'
         case (value < 0):
             return value.toFixed(3) + ' % 🙄'
         case (value > 1):

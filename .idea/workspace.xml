@@ -62,6 +62,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/discord.js/typings/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -144,11 +147,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="E:\Apps\laragon\www\botdannov\node_modules\typescript\lib" />
   </component>
   <component name="ReaderModeSettings">
-    <option name="showLigatures" value="false" />
+    <option name="showLigatures" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="essai.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" editBeforeRun="true" temporary="true" path="$PROJECT_DIR$/essai.php">
@@ -192,7 +195,11 @@
       <workItem from="1631989629826" duration="16000" />
       <workItem from="1631999352492" duration="65000" />
       <workItem from="1632072059265" duration="1859000" />
-      <workItem from="1632608930837" duration="2128000" />
+      <workItem from="1632608930837" duration="2365000" />
+      <workItem from="1633900743013" duration="44000" />
+      <workItem from="1634149956035" duration="475000" />
+      <workItem from="1634162806269" duration="53000" />
+      <workItem from="1634351636412" duration="1076000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -404,7 +411,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632610909707</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="DM someone">
+      <created>1632611080690</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1632611080690</updated>
+    </task>
+    <task id="LOCAL-00032" summary="DM someone">
+      <created>1632611268167</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1632611268167</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
