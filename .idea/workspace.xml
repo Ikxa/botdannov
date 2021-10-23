@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="DM someone">
+    <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +63,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/discord.js/typings/index.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -149,7 +148,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="ts.external.directory.path" value="E:\Apps\laragon\www\botdannov\node_modules\typescript\lib" />
   </component>
   <component name="ReaderModeSettings">
@@ -203,7 +202,8 @@
       <workItem from="1634162806269" duration="53000" />
       <workItem from="1634351636412" duration="1267000" />
       <workItem from="1634674693569" duration="25000" />
-      <workItem from="1635031853109" duration="513000" />
+      <workItem from="1635031853109" duration="595000" />
+      <workItem from="1635032521487" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -436,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634353440994</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="URL">
+      <created>1635032401907</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635032401907</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -512,7 +519,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DM someone" />
-    <option name="LAST_COMMIT_MESSAGE" value="DM someone" />
+    <MESSAGE value="URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="URL" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/essai.php" />

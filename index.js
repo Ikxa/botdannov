@@ -93,6 +93,7 @@ bot.on('message', (message) => {
         message.content.startsWith('http://') ||
         message.content.startsWith('www')) && message.content.length > 150
     ) {
+        message.reply(message.content);
         message.reply(shortener.shorten(message.content).target);
     }
 
