@@ -89,15 +89,10 @@ bot.on('message', (message) => {
         message.content.startsWith('http://') ||
         message.content.startsWith('www')) && message.content.length > 150
     ) {
-        shortUrl.short('https://codeportal.in', function(err, url){
-            message.reply(url);
-            message.reply(err);
-        });
-
         shortUrl.short(message.content.toString(), function(err, url){
             message.reply(url);
-            message.reply(err);
         });
+        message.delete();
     }
 
     cpt++;
