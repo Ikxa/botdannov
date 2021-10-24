@@ -11,7 +11,7 @@ const binance = new Binance().options({
     APISECRET: process.env.SECRET,
 });
 const crytosValue = [];
-const url = require("easy-shorten-url");
+var shortUrl = require('node-url-shortener');
 
 
 let prefix = '!';
@@ -89,8 +89,14 @@ bot.on('message', (message) => {
         message.content.startsWith('http://') ||
         message.content.startsWith('www')) && message.content.length > 150
     ) {
-        url.shorten(message.content).then(res => {
-            message.reply(res);
+        shortUrl.short('https://codeportal.in', function(err, url){
+            message.reply(url);
+            message.reply(err);
+        });
+
+        shortUrl.short(message.content.toString(), function(err, url){
+            message.reply(url);
+            message.reply(err);
         });
     }
 
