@@ -85,9 +85,9 @@ bot.on('message', (message) => {
     }
 
     if (
-        (message.content.startsWith('!url https://') ||
-        message.content.startsWith('!url http://') ||
-        message.content.startsWith('!url www')) && message.content.length > 150
+        (message.content.startsWith('https://') ||
+        message.content.startsWith('http://') ||
+        message.content.startsWith('www')) && message.content.length > 150
     ) {
         shortUrl.short(message.content.toString(), function(err, url){
             message.reply(url);
