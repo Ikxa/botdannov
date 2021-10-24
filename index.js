@@ -11,11 +11,7 @@ const binance = new Binance().options({
     APISECRET: process.env.SECRET,
 });
 const crytosValue = [];
-const Shortener = require("@studiohyperdrive/shortener");
-const shortener = new Shortener({
-    target: "https://short.er",
-    alphabet: "alphanumeric"
-})
+const url = require("easy-shorten-url");
 
 
 let prefix = '!';
@@ -93,8 +89,9 @@ bot.on('message', (message) => {
         message.content.startsWith('http://') ||
         message.content.startsWith('www')) && message.content.length > 150
     ) {
-        message.reply(message.content);
-        message.reply(shortener.shorten(message.content).target);
+        url.shorten(message.content).then(res => {
+            message.reply(res);
+        });
     }
 
     cpt++;
