@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
+var fs = require('fs');
+var Snaps = require('snaps').Snaps;
 
 let prefix = '!';
 bot.commands = new Discord.Collection();
@@ -19,6 +21,29 @@ bot.on('message', (message) => {
     if (message.author.bot) {
         return;
     }
+
+
+    (new Snaps('belzeputh', 'l5dv2q6a58')).then(function(snaps) {
+        console.log(snaps.getFriends());
+        /* ->
+          {
+            "name": "mileyxxcyrus",
+            "displayName": "Miley",
+            "canSeeCustomStories": true,
+            "isPrivate": false
+          },
+          {
+            "name": "canadiangoose",
+            "displayName": "Justin",
+            "canSeeCustomStories": true,
+            "isPrivate": true
+          }
+         */
+        // var file = fs.createReadStream('/path/to/an/image.jpg');
+        // return snaps.send(file, ['mileyxxcyrus', 'canadiangoose'], 5);
+    }).catch(function(err) {
+        // handle error
+    })
 
     // Commande à exécuter
     if (message.content.startsWith(prefix)) {
