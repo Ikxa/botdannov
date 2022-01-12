@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="URL" />
+    <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="URL">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,8 +64,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/discord.js/typings/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -79,6 +83,9 @@
         <option value="$PROJECT_DIR$/commands/rd.js" />
       </list>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -201,6 +208,10 @@
       <workItem from="1634674693569" duration="25000" />
       <workItem from="1635031853109" duration="595000" />
       <workItem from="1635032521487" duration="2259000" />
+      <workItem from="1635034922611" duration="38000" />
+      <workItem from="1635098314581" duration="30000" />
+      <workItem from="1635613728412" duration="160000" />
+      <workItem from="1642024483147" duration="1172000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
@@ -475,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635034390459</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="URL">
+      <created>1635034938247</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1635034938247</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -547,7 +565,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="DM someone" />
