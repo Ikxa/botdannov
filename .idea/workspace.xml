@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c7c373-ccba-4358-8fe4-d56ba288b00a" name="Changes" comment="URL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/snaps/lib/endpoints/bq_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/snaps/lib/endpoints/bq_login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +211,7 @@
       <workItem from="1635098314581" duration="30000" />
       <workItem from="1635613728412" duration="160000" />
       <workItem from="1642024483147" duration="2032000" />
-      <workItem from="1642026684561" duration="1943000" />
+      <workItem from="1642026684561" duration="2061000" />
     </task>
     <task id="LOCAL-00001" summary="DM someone">
       <created>1631215394672</created>
