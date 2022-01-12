@@ -12,7 +12,7 @@ commandFiles.forEach((file) => {
 });
 
 bot.on('ready', message => {
-    message.send('Je suis prêt.');
+    console.log('Je suis prêt.');
 })
 
 bot.on('message', (message) => {
