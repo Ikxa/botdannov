@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
-var fs = require('fs');
 var Snaps = require('snaps').Snaps;
 
 let prefix = '!';
